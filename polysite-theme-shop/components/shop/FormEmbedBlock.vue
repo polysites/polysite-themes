@@ -1,0 +1,23 @@
+<script setup lang="ts">
+// A form chosen in the CMS (an enquiry, a gift card request). Fields, spam protection and sending come from the core; the
+// look is in assets/css/shop.css under .sh-form.
+const props = defineProps<{
+  heading?: string;
+  form?: number | string | { id?: number | string } | null;
+}>();
+
+const intake = useFormIntake(() => props.form);
+</script>
+
+<template>
+  <section v-if="formIdOf(form)" class="sh-section sh-formblock">
+    <div class="sh-wrap sh-wrap--form">
+      <div class="sh-form-card">
+        <h2 v-if="heading" class="sh-h2">{{ heading }}</h2>
+        <div class="sh-form">
+          <PolysiteFormFields :intake="intake" />
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

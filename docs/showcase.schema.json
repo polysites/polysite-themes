@@ -1,0 +1,725 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://polysite.dev/schemas/showcase-site.schema.json",
+  "title": "Polysite showcase site",
+  "description": "The contract of a showcase theme's showcase/site.json: one fictional demo website that the showcase seeder (apps/cms/scripts/seedShowcase.ts) loads into a Polysite install as a separate site. Documented in the core's docs/guide/showcase.md. Every name, brand, person and picture in a showcase is a made-up placeholder.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slug", "name", "theme", "pages"],
+  "properties": {
+    "$schema": { "type": "string", "description": "Optional: point it at this file for completion in an editor." },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "description": "Short identifier of the showcase (salon, portfolio). Used in the demo account's email (<slug>-admin@showcase.localhost) and in messages."
+    },
+    "domainPrefix": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "description": "The site's domain is <domainPrefix>.<base domain>, the base domain being localhost unless SHOWCASE_BASE_DOMAIN is set. Defaults to slug."
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 80, "description": "The site's name (shown in the header). A made-up business or person." },
+    "tagline": { "type": "string", "maxLength": 140, "description": "Short line next to the name in the header." },
+    "theme": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$", "description": "The theme's name: the part after polysite-theme-. It must be installed." },
+    "primaryColor": { "$ref": "#/$defs/color" },
+    "secondaryColor": { "$ref": "#/$defs/color" },
+    "headingFontFamily": { "type": "string", "maxLength": 80, "description": "A CSS font-family name. Use a generic or system family; showcases load no web fonts." },
+    "bodyFontFamily": { "type": "string", "maxLength": 80, "description": "Same, for body text." },
+    "logo": { "$ref": "#/$defs/image", "description": "The site's logo, uploaded to Media. Falls back to the site name as text when absent." },
+    "logoAlt": { "type": "string", "maxLength": 200 },
+    "favicon": { "$ref": "#/$defs/image" },
+    "showDonateButton": { "type": "boolean", "description": "The site's Donate button. Showcases that are not campaigns should set this to false." },
+    "languages": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/lang" },
+      "description": "The languages the site offers, needs the i18n plugin (skipped with a message when it is not installed). The first is the default unless defaultLanguage says otherwise. All text in this file is written in the default language; other languages go in translations."
+    },
+    "defaultLanguage": { "$ref": "#/$defs/lang" },
+    "translations": {
+      "type": "object",
+      "description": "Site-level words per language code other than the default: { \"fr\": { \"tagline\": \"...\" } }.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": { "tagline": { "type": "string", "maxLength": 140 } }
+      }
+    },
+    "header": {
+      "type": "array",
+      "description": "The header menu, in order.",
+      "items": { "$ref": "#/$defs/navItem" }
+    },
+    "footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["heading", "links"],
+            "properties": {
+              "heading": { "type": "string", "minLength": 1 },
+              "translations": { "$ref": "#/$defs/labelTranslations" },
+              "links": { "type": "array", "items": { "$ref": "#/$defs/navItem" } }
+            }
+          }
+        },
+        "copyright": {
+          "type": "string",
+          "description": "Reserved. The sites collection has no copyright field yet, so the seeder reports it as not stored; themes print their own line (c) <year> <site name>."
+        }
+      }
+    },
+    "social": {
+      "type": "array",
+      "description": "Social links. The URL is a placeholder such as # or https://example.org/..., never a real account.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["platform", "url"],
+        "properties": {
+          "platform": { "enum": ["instagram", "facebook", "youtube", "x", "tiktok", "linkedin", "other"] },
+          "url": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The site's privacy settings (forms link to the policy).",
+      "properties": {
+        "policyUrl": { "type": "string" },
+        "contactEmail": { "type": "string", "pattern": "^[^@\\s]+@[^@\\s]+$" }
+      }
+    },
+    "enabledModules": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+      "description": "Content modules the site exposes. Omit to leave the default (all). The seeder adds posts and forms when the site has any."
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/page" },
+      "description": "The pages. One has the slug home (the front page)."
+    },
+    "posts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/post" },
+      "description": "News or blog posts. Needs the posts plugin; skipped with a message when it is not installed."
+    },
+    "newsSettings": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Where the site shows its posts (posts plugin).",
+      "properties": {
+        "label": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "path": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "perPage": { "type": "integer", "minimum": 1, "maximum": 50 }
+      }
+    },
+    "forms": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/form" },
+      "description": "Forms the pages embed (formEmbed and signupForm blocks refer to one by its key)."
+    },
+    "search": { "type": "boolean", "description": "Switch the site search on (search plugin; skipped with a message when it is not installed)." },
+    "share": {
+      "description": "Share buttons (share plugin; skipped when not installed). true switches them on placed by the theme (the layout's share slot); an object also chooses the buttons.",
+      "oneOf": [
+        { "type": "boolean" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "networks": { "type": "array", "items": { "enum": ["facebook", "x", "linkedin", "whatsapp", "telegram", "reddit", "email", "copy", "native"] } },
+            "style": { "enum": ["buttons", "icons", "text"] },
+            "contentTypes": { "type": "array", "items": { "enum": ["home", "pages", "posts", "other"] } }
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$", "description": "A hex colour such as #b4577a." },
+    "lang": { "type": "string", "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]+)?$", "description": "A language code from Polysite's catalog, such as en or fr." },
+    "image": {
+      "type": "string",
+      "pattern": "^images/[A-Za-z0-9._-]+\\.(svg|png|jpe?g|webp|gif)$",
+      "description": "A file under the theme's showcase/images/, written as images/<file>. Original artwork only (generated SVG or PNG, under 60 KB); the seeder uploads it to this site's Media."
+    },
+    "alt": { "type": "string", "maxLength": 200, "description": "Alt text for the picture beside it." },
+    "href": { "type": "string", "minLength": 1, "description": "An internal path (/services), a fragment, mailto: or an https address." },
+    "labelTranslations": {
+      "type": "object",
+      "description": "The label in other languages: { \"fr\": \"Services\" }.",
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "navItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "href"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "href": { "$ref": "#/$defs/href" },
+        "translations": { "$ref": "#/$defs/labelTranslations" }
+      }
+    },
+    "page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "slug", "blocks"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "slug": {
+          "type": "string",
+          "pattern": "^(home|/|[a-z0-9]+(-[a-z0-9]+)*(/[a-z0-9]+(-[a-z0-9]+)*)*)$",
+          "description": "home (or /) is the front page; anything else is the page's address, such as services or about/team."
+        },
+        "description": { "type": "string", "maxLength": 300, "description": "The page's search-result description (SEO)." },
+        "blocks": { "type": "array", "items": { "$ref": "#/$defs/block" } },
+        "translations": {
+          "type": "object",
+          "description": "Other languages, by language code. blocks is positional: item n changes only the fields it names of block n of the default-language blocks (use {} to keep a block as it is); the same goes for lists inside a block.",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+              "description": { "type": "string", "maxLength": 300 },
+              "blocks": { "type": "array", "items": { "type": ["object", "null"] } }
+            }
+          }
+        }
+      }
+    },
+    "block": {
+      "type": "object",
+      "required": ["blockType"],
+      "properties": {
+        "blockType": {
+          "enum": [
+            "hero", "textBlock", "faqAccordion", "featureGrid", "formEmbed", "signupForm", "leaderSpotlight", "donationTiers", "commitmentsGrid",
+            "gallery", "pricing", "testimonials", "timeline", "team", "cta", "hours-contact", "price-list", "schedule", "stats", "logos"
+          ],
+          "description": "The block's slug. The first nine are the core's blocks; the rest come from the blocks-pack plugin and are skipped, with a message, when it is not installed."
+        }
+      },
+      "allOf": [
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "hero" } } }, "then": { "$ref": "#/$defs/block-hero" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "textBlock" } } }, "then": { "$ref": "#/$defs/block-textBlock" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "faqAccordion" } } }, "then": { "$ref": "#/$defs/block-faqAccordion" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "featureGrid" } } }, "then": { "$ref": "#/$defs/block-featureGrid" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "formEmbed" } } }, "then": { "$ref": "#/$defs/block-formEmbed" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "signupForm" } } }, "then": { "$ref": "#/$defs/block-signupForm" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "leaderSpotlight" } } }, "then": { "$ref": "#/$defs/block-leaderSpotlight" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "donationTiers" } } }, "then": { "$ref": "#/$defs/block-donationTiers" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "commitmentsGrid" } } }, "then": { "$ref": "#/$defs/block-commitmentsGrid" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "gallery" } } }, "then": { "$ref": "#/$defs/block-gallery" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "pricing" } } }, "then": { "$ref": "#/$defs/block-pricing" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "testimonials" } } }, "then": { "$ref": "#/$defs/block-testimonials" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "timeline" } } }, "then": { "$ref": "#/$defs/block-timeline" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "team" } } }, "then": { "$ref": "#/$defs/block-team" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "cta" } } }, "then": { "$ref": "#/$defs/block-cta" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "hours-contact" } } }, "then": { "$ref": "#/$defs/block-hours-contact" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "price-list" } } }, "then": { "$ref": "#/$defs/block-price-list" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "schedule" } } }, "then": { "$ref": "#/$defs/block-schedule" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "stats" } } }, "then": { "$ref": "#/$defs/block-stats" } },
+        { "if": { "required": ["blockType"], "properties": { "blockType": { "const": "logos" } } }, "then": { "$ref": "#/$defs/block-logos" } }
+      ]
+    },
+
+    "block-hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "heading"],
+      "properties": {
+        "blockType": { "const": "hero" },
+        "heading": { "type": "string", "minLength": 1 },
+        "subheading": { "type": "string" },
+        "image": { "$ref": "#/$defs/image" },
+        "alt": { "$ref": "#/$defs/alt" },
+        "ctaLabel": { "type": "string" },
+        "ctaHref": { "$ref": "#/$defs/href" }
+      }
+    },
+    "block-textBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "body"],
+      "properties": {
+        "blockType": { "const": "textBlock" },
+        "heading": { "type": "string" },
+        "body": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Plain text turned into rich text: paragraphs separated by a blank line; a line starting with ## or ### is a heading, - a bullet, 1. a numbered item, > a quote; **bold**, *italic* and [text](https://example.org) inside lines."
+        }
+      }
+    },
+    "block-faqAccordion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "items"],
+      "properties": {
+        "blockType": { "const": "faqAccordion" },
+        "heading": { "type": "string" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["question", "answer"],
+            "properties": { "question": { "type": "string", "minLength": 1 }, "answer": { "type": "string", "minLength": 1 } }
+          }
+        }
+      }
+    },
+    "block-featureGrid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "features"],
+      "properties": {
+        "blockType": { "const": "featureGrid" },
+        "heading": { "type": "string" },
+        "features": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title"],
+            "properties": { "title": { "type": "string", "minLength": 1 }, "description": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "block-formEmbed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "form"],
+      "properties": {
+        "blockType": { "const": "formEmbed" },
+        "heading": { "type": "string" },
+        "form": { "type": "string", "minLength": 1, "description": "The key of one of this file's forms." }
+      }
+    },
+    "block-signupForm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "heading", "form"],
+      "properties": {
+        "blockType": { "const": "signupForm" },
+        "heading": { "type": "string", "minLength": 1 },
+        "subheading": { "type": "string" },
+        "form": { "type": "string", "minLength": 1, "description": "The key of one of this file's forms." },
+        "ctaLabel": { "type": "string" }
+      }
+    },
+    "block-leaderSpotlight": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "name", "quote"],
+      "properties": {
+        "blockType": { "const": "leaderSpotlight" },
+        "photo": { "$ref": "#/$defs/image" },
+        "alt": { "$ref": "#/$defs/alt" },
+        "name": { "type": "string", "minLength": 1 },
+        "title": { "type": "string" },
+        "quote": { "type": "string", "minLength": 1 },
+        "ctaLabel": { "type": "string" },
+        "ctaHref": { "$ref": "#/$defs/href" }
+      }
+    },
+    "block-donationTiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "heading", "amounts"],
+      "properties": {
+        "blockType": { "const": "donationTiers" },
+        "heading": { "type": "string", "minLength": 1 },
+        "amounts": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "object", "additionalProperties": false, "required": ["amount"], "properties": { "amount": { "type": "number", "minimum": 1 } } }
+        },
+        "donateHref": { "$ref": "#/$defs/href" }
+      }
+    },
+    "block-commitmentsGrid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "heading", "items"],
+      "properties": {
+        "blockType": { "const": "commitmentsGrid" },
+        "heading": { "type": "string", "minLength": 1 },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["heading"],
+            "properties": {
+              "heading": { "type": "string", "minLength": 1 },
+              "body": { "type": "string" },
+              "ctaLabel": { "type": "string" },
+              "ctaHref": { "$ref": "#/$defs/href" }
+            }
+          }
+        }
+      }
+    },
+
+    "block-gallery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "images"],
+      "properties": {
+        "blockType": { "const": "gallery" },
+        "heading": { "type": "string" },
+        "columns": { "enum": [2, 3, 4] },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["image"],
+            "properties": { "image": { "$ref": "#/$defs/image" }, "alt": { "$ref": "#/$defs/alt" }, "caption": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "block-pricing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "plans"],
+      "properties": {
+        "blockType": { "const": "pricing" },
+        "heading": { "type": "string" },
+        "intro": { "type": "string" },
+        "plans": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "price"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "price": { "type": "string", "minLength": 1, "description": "Text such as $45 or From $120; not a number." },
+              "period": { "type": "string" },
+              "description": { "type": "string" },
+              "features": {
+                "type": "array",
+                "items": { "type": "object", "additionalProperties": false, "required": ["text"], "properties": { "text": { "type": "string", "minLength": 1 } } }
+              },
+              "buttonLabel": { "type": "string" },
+              "buttonHref": { "$ref": "#/$defs/href" },
+              "highlighted": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "block-testimonials": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "items"],
+      "properties": {
+        "blockType": { "const": "testimonials" },
+        "heading": { "type": "string" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["quote", "name"],
+            "properties": {
+              "quote": { "type": "string", "minLength": 1 },
+              "name": { "type": "string", "minLength": 1 },
+              "role": { "type": "string" },
+              "image": { "$ref": "#/$defs/image" },
+              "alt": { "$ref": "#/$defs/alt" }
+            }
+          }
+        }
+      }
+    },
+    "block-timeline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "entries"],
+      "properties": {
+        "blockType": { "const": "timeline" },
+        "heading": { "type": "string" },
+        "entries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["period", "title"],
+            "properties": {
+              "period": { "type": "string", "minLength": 1 },
+              "title": { "type": "string", "minLength": 1 },
+              "subtitle": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "block-team": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "members"],
+      "properties": {
+        "blockType": { "const": "team" },
+        "heading": { "type": "string" },
+        "intro": { "type": "string" },
+        "members": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "role": { "type": "string" },
+              "bio": { "type": "string" },
+              "image": { "$ref": "#/$defs/image" },
+              "alt": { "$ref": "#/$defs/alt" }
+            }
+          }
+        }
+      }
+    },
+    "block-cta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "heading", "buttonLabel", "buttonHref"],
+      "properties": {
+        "blockType": { "const": "cta" },
+        "heading": { "type": "string", "minLength": 1 },
+        "text": { "type": "string" },
+        "buttonLabel": { "type": "string", "minLength": 1 },
+        "buttonHref": { "$ref": "#/$defs/href" },
+        "secondaryLabel": { "type": "string" },
+        "secondaryHref": { "$ref": "#/$defs/href" }
+      }
+    },
+    "block-hours-contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType"],
+      "properties": {
+        "blockType": { "const": "hours-contact" },
+        "heading": { "type": "string" },
+        "hours": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["days", "time"],
+            "properties": { "days": { "type": "string", "minLength": 1 }, "time": { "type": "string", "minLength": 1 } }
+          }
+        },
+        "address": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "block-price-list": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "sections"],
+      "properties": {
+        "blockType": { "const": "price-list" },
+        "heading": { "type": "string" },
+        "intro": { "type": "string" },
+        "sections": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title", "items"],
+            "properties": {
+              "title": { "type": "string", "minLength": 1 },
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["name"],
+                  "properties": {
+                    "name": { "type": "string", "minLength": 1 },
+                    "description": { "type": "string" },
+                    "price": { "type": "string" },
+                    "tag": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "block-schedule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "days"],
+      "properties": {
+        "blockType": { "const": "schedule" },
+        "heading": { "type": "string" },
+        "days": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "sessions"],
+            "properties": {
+              "label": { "type": "string", "minLength": 1 },
+              "sessions": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["time", "title"],
+                  "properties": {
+                    "time": { "type": "string", "minLength": 1 },
+                    "title": { "type": "string", "minLength": 1 },
+                    "speaker": { "type": "string" },
+                    "room": { "type": "string" },
+                    "description": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "block-stats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "items"],
+      "properties": {
+        "blockType": { "const": "stats" },
+        "heading": { "type": "string" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["value", "label"],
+            "properties": { "value": { "type": "string", "minLength": 1 }, "label": { "type": "string", "minLength": 1 } }
+          }
+        }
+      }
+    },
+    "block-logos": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockType", "items"],
+      "properties": {
+        "blockType": { "const": "logos" },
+        "heading": { "type": "string" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "image": { "$ref": "#/$defs/image" },
+              "alt": { "$ref": "#/$defs/alt" },
+              "href": { "$ref": "#/$defs/href" }
+            }
+          }
+        }
+      }
+    },
+
+    "post": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "slug", "body", "date"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "excerpt": { "type": "string", "maxLength": 400 },
+        "body": { "type": "string", "minLength": 1, "description": "Plain text turned into rich text, with the same light markup as the text block." },
+        "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}(T[0-9:.]+Z?)?$", "description": "YYYY-MM-DD, or a full ISO date-time." },
+        "byline": { "type": "string", "maxLength": 100 },
+        "categories": { "type": "array", "items": { "type": "string", "minLength": 1 }, "description": "Category names; the seeder creates each once and derives its address from the name." },
+        "image": { "$ref": "#/$defs/image" },
+        "alt": { "$ref": "#/$defs/alt" },
+        "translations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string", "minLength": 1 },
+              "excerpt": { "type": "string" },
+              "byline": { "type": "string" },
+              "body": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "form": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "title", "fields"],
+      "properties": {
+        "key": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$", "description": "What blocks refer to." },
+        "title": { "type": "string", "minLength": 1 },
+        "submitButtonLabel": { "type": "string" },
+        "confirmationMessage": { "type": "string", "description": "Shown after sending." },
+        "purpose": { "type": "string", "description": "Why the details are collected, in plain words (shown above the button)." },
+        "consentRequired": { "type": "boolean" },
+        "consentLabel": { "type": "string" },
+        "retentionDays": { "type": "integer", "minimum": 1 },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "name", "label"],
+            "properties": {
+              "type": { "enum": ["text", "email", "textarea", "number", "select", "checkbox", "message"] },
+              "name": { "type": "string", "pattern": "^[a-zA-Z][a-zA-Z0-9]*$" },
+              "label": { "type": "string", "minLength": 1 },
+              "required": { "type": "boolean" },
+              "options": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 },
+                "description": "For a select: the choices. Each is both the label and the value."
+              },
+              "message": { "type": "string", "description": "For a message field: the text between fields." }
+            }
+          }
+        }
+      }
+    }
+  }
+}

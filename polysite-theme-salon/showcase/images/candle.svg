@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img"><title>A candle burning in the evening light</title><defs><linearGradient id="g4" x1="0" y1="0" x2="0.2" y2="1"><stop offset="0" stop-color="#5b3a4a"/><stop offset="1" stop-color="#3a2330"/></linearGradient></defs><rect width="800" height="600" fill="url(#g4)"/><rect y="460" width="800" height="140" fill="#2c1a24"/><rect y="460" width="800" height="4" fill="#fff" opacity=".12"/>
+    <circle cx="400" cy="250" r="190" fill="#f0b07a" opacity=".14"/><circle cx="400" cy="250" r="110" fill="#f0b07a" opacity=".2"/>
+    <ellipse cx="400" cy="478" rx="170" ry="18" fill="#000" opacity=".3"/>
+    <rect x="330" y="300" width="140" height="170" rx="14" fill="#f4e7da"/><rect x="330" y="300" width="140" height="22" rx="11" fill="#fff" opacity=".4"/>
+    <rect x="396" y="276" width="8" height="26" fill="#3a2330"/><path d="M400 214c26 30 26 56 0 70c-26-14-26-40 0-70z" fill="#f3a24a"/><path d="M400 240c12 16 12 30 0 38c-12-8-12-22 0-38z" fill="#fde7a8"/>
+    <rect x="230" y="446" width="340" height="30" rx="15" fill="#c4795f"/>
+    <path d="M0 0C30 -38.4 90 -36 120 0C90 36 30 38.4 0 0Z" fill="#7e9a84" opacity="1" transform="translate(610 470) rotate(-140)"/><path d="M0 0C25 -32 75 -30 100 0C75 30 25 32 0 0Z" fill="#9fb5a3" opacity="1" transform="translate(610 470) rotate(-100)"/></svg>

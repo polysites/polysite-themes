@@ -1,0 +1,1117 @@
+{
+  "$schema": "../../docs/showcase.schema.json",
+  "slug": "restaurant",
+  "domainPrefix": "restaurant",
+  "name": "Café Tilleul",
+  "tagline": "A neighbourhood table, morning to night",
+  "theme": "restaurant",
+  "primaryColor": "#a33f20",
+  "secondaryColor": "#3f4a22",
+  "showDonateButton": false,
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "defaultLanguage": "en",
+  "translations": {
+    "fr": {
+      "tagline": "Une table de quartier, du matin au soir"
+    }
+  },
+  "header": [
+    {
+      "label": "Menu",
+      "href": "/menu",
+      "translations": {
+        "fr": "Menu"
+      }
+    },
+    {
+      "label": "Our story",
+      "href": "/our-story",
+      "translations": {
+        "fr": "Notre histoire"
+      }
+    },
+    {
+      "label": "Gallery",
+      "href": "/gallery",
+      "translations": {
+        "fr": "Galerie"
+      }
+    },
+    {
+      "label": "Find us",
+      "href": "/find-us",
+      "translations": {
+        "fr": "Nous trouver"
+      }
+    },
+    {
+      "label": "Reserve",
+      "href": "/reservations",
+      "translations": {
+        "fr": "Réserver"
+      }
+    }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "heading": "Eat",
+        "translations": {
+          "fr": "Manger"
+        },
+        "links": [
+          {
+            "label": "Menu",
+            "href": "/menu",
+            "translations": {
+              "fr": "Menu"
+            }
+          },
+          {
+            "label": "Our story",
+            "href": "/our-story",
+            "translations": {
+              "fr": "Notre histoire"
+            }
+          },
+          {
+            "label": "Gallery",
+            "href": "/gallery",
+            "translations": {
+              "fr": "Galerie"
+            }
+          }
+        ]
+      },
+      {
+        "heading": "Visit",
+        "translations": {
+          "fr": "Venir"
+        },
+        "links": [
+          {
+            "label": "Find us",
+            "href": "/find-us",
+            "translations": {
+              "fr": "Nous trouver"
+            }
+          },
+          {
+            "label": "Reservations",
+            "href": "/reservations",
+            "translations": {
+              "fr": "Réservations"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "social": [
+    {
+      "platform": "instagram",
+      "url": "https://example.org/cafe-tilleul"
+    },
+    {
+      "platform": "facebook",
+      "url": "https://example.org/cafe-tilleul-fb"
+    }
+  ],
+  "privacy": {
+    "contactEmail": "bonjour@example.org"
+  },
+  "search": true,
+  "forms": [
+    {
+      "key": "reservation",
+      "title": "Table request",
+      "submitButtonLabel": "Request a table / Demander une table",
+      "confirmationMessage": "Thank you, we will confirm by email within a day. / Merci, nous confirmons par courriel dans la journée.",
+      "purpose": "Your details are used to confirm your table, and for nothing else. / Vos coordonnées servent à confirmer votre table, et à rien d'autre.",
+      "consentRequired": true,
+      "consentLabel": "I agree to be contacted about my request. / J'accepte d'être contacté(e) au sujet de ma demande.",
+      "retentionDays": 90,
+      "fields": [
+        {
+          "type": "text",
+          "name": "name",
+          "label": "Name / Nom",
+          "required": true
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "label": "Email / Courriel",
+          "required": true
+        },
+        {
+          "type": "select",
+          "name": "guests",
+          "label": "Guests / Convives",
+          "required": true,
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7+"
+          ]
+        },
+        {
+          "type": "text",
+          "name": "when",
+          "label": "Day and time you would like / Jour et heure souhaités",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "notes",
+          "label": "Allergies or notes / Allergies ou remarques"
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "description": "A neighbourhood café and table, open for breakfast, lunch and dinner. A fictional example site.",
+      "blocks": [
+        {
+          "blockType": "hero",
+          "heading": "Good food, slowly, on Linden Street",
+          "subheading": "A neighbourhood café and table. Breakfast till three, dinner from half past five, and a terrace for every season.",
+          "image": "images/hero-cafe.svg",
+          "alt": "The front of the café at dusk: a striped awning, a lit window and a red door",
+          "ctaLabel": "Reserve a table",
+          "ctaHref": "/reservations"
+        },
+        {
+          "blockType": "featureGrid",
+          "heading": "Why people come back",
+          "features": [
+            {
+              "title": "Breakfast until three",
+              "description": "Eggs, soup, tartines and a very good coffee, for anyone who gets up late or works from the corner table."
+            },
+            {
+              "title": "Cooked from scratch",
+              "description": "The stock simmers all morning, the bread comes from the bakery across the road, and the menu follows the market."
+            },
+            {
+              "title": "A terrace for every season",
+              "description": "Fairy lights in summer, blankets and hot cider in autumn, and a heater that has seen things."
+            }
+          ]
+        },
+        {
+          "blockType": "gallery",
+          "heading": "From the kitchen",
+          "columns": 3,
+          "images": [
+            {
+              "image": "images/dish-soup.svg",
+              "alt": "A bowl of orange squash soup with a swirl of cream",
+              "caption": "Roasted squash soup"
+            },
+            {
+              "image": "images/dish-tart.svg",
+              "alt": "A round apple tart, glazed and golden",
+              "caption": "Tarte tatin, still warm"
+            },
+            {
+              "image": "images/dish-mussels.svg",
+              "alt": "A dark pot of mussels with parsley and a lemon wedge",
+              "caption": "Moules marinières"
+            }
+          ]
+        },
+        {
+          "blockType": "testimonials",
+          "heading": "What the neighbours say",
+          "items": [
+            {
+              "quote": "The soup is worth the walk in the rain, and they always seem to have a free table by the window.",
+              "name": "Marguerite L.",
+              "role": "Neighbour since 2019"
+            },
+            {
+              "quote": "We came for brunch and stayed for the afternoon. Nobody ever hurries you here.",
+              "name": "Tom & Priya",
+              "role": "Sunday regulars"
+            },
+            {
+              "quote": "The tarte tatin tastes exactly like the one my grandmother made, which I did not think was possible.",
+              "name": "Étienne B.",
+              "role": "Dessert enthusiast"
+            }
+          ]
+        },
+        {
+          "blockType": "hours-contact",
+          "heading": "Come and find us",
+          "hours": [
+            {
+              "days": "Tuesday - Friday",
+              "time": "8:00 - 22:00"
+            },
+            {
+              "days": "Saturday",
+              "time": "9:00 - 23:00"
+            },
+            {
+              "days": "Sunday",
+              "time": "9:00 - 17:00"
+            },
+            {
+              "days": "Monday",
+              "time": "Closed"
+            }
+          ],
+          "address": "14 Linden Street\nLilac Quarter",
+          "phone": "+1 555 010 0142",
+          "email": "bonjour@example.org",
+          "note": "The kitchen closes an hour before we do. The terrace is open whenever the weather is kind."
+        },
+        {
+          "blockType": "cta",
+          "heading": "Come hungry",
+          "text": "Tables for two to eight, booked a week ahead or found on the day.",
+          "buttonLabel": "Reserve a table",
+          "buttonHref": "/reservations",
+          "secondaryLabel": "See the menu",
+          "secondaryHref": "/menu"
+        }
+      ],
+      "translations": {
+        "fr": {
+          "title": "Accueil",
+          "description": "Un café et une table de quartier, ouvert pour le petit déjeuner, le déjeuner et le dîner. Un site d'exemple fictif.",
+          "blocks": [
+            {
+              "blockType": "hero",
+              "heading": "Une bonne table, sans se presser, rue des Tilleuls",
+              "subheading": "Un café et une table de quartier. Petit déjeuner jusqu'à quinze heures, dîner dès dix-sept heures trente, et une terrasse pour toutes les saisons.",
+              "image": "images/hero-cafe.svg",
+              "alt": "La façade du café au crépuscule : un auvent rayé, une fenêtre éclairée et une porte rouge",
+              "ctaLabel": "Réserver une table",
+              "ctaHref": "/reservations"
+            },
+            {
+              "blockType": "featureGrid",
+              "heading": "Pourquoi on revient",
+              "features": [
+                {
+                  "title": "Petit déjeuner jusqu'à quinze heures",
+                  "description": "Des œufs, de la soupe, des tartines et un très bon café, pour ceux qui se lèvent tard ou travaillent à la table du coin."
+                },
+                {
+                  "title": "Cuisiné maison",
+                  "description": "Le bouillon mijote toute la matinée, le pain vient de la boulangerie d'en face et la carte suit le marché."
+                },
+                {
+                  "title": "Une terrasse en toute saison",
+                  "description": "Des guirlandes en été, des plaids et du cidre chaud en automne, et un chauffage qui en a vu d'autres."
+                }
+              ]
+            },
+            {
+              "blockType": "gallery",
+              "heading": "De la cuisine",
+              "columns": 3,
+              "images": [
+                {
+                  "image": "images/dish-soup.svg",
+                  "alt": "Un bol de velouté de potimarron avec un filet de crème",
+                  "caption": "Velouté de potimarron"
+                },
+                {
+                  "image": "images/dish-tart.svg",
+                  "alt": "Une tarte aux pommes ronde, glacée et dorée",
+                  "caption": "Tarte tatin encore tiède"
+                },
+                {
+                  "image": "images/dish-mussels.svg",
+                  "alt": "Une marmite sombre de moules au persil avec un quartier de citron",
+                  "caption": "Moules marinières"
+                }
+              ]
+            },
+            {
+              "blockType": "testimonials",
+              "heading": "Ce que disent les voisins",
+              "items": [
+                {
+                  "quote": "Le velouté vaut bien la marche sous la pluie, et il y a toujours une table libre près de la fenêtre.",
+                  "name": "Marguerite L.",
+                  "role": "Voisine depuis 2019"
+                },
+                {
+                  "quote": "On est venus pour le brunch et on est restés tout l'après-midi. Ici, personne ne vous presse.",
+                  "name": "Tom & Priya",
+                  "role": "Habitués du dimanche"
+                },
+                {
+                  "quote": "La tarte tatin a exactement le goût de celle de ma grand-mère, ce que je croyais impossible.",
+                  "name": "Étienne B.",
+                  "role": "Passionné de desserts"
+                }
+              ]
+            },
+            {
+              "blockType": "hours-contact",
+              "heading": "Venez nous voir",
+              "hours": [
+                {
+                  "days": "Mardi - vendredi",
+                  "time": "8:00 - 22:00"
+                },
+                {
+                  "days": "Samedi",
+                  "time": "9:00 - 23:00"
+                },
+                {
+                  "days": "Dimanche",
+                  "time": "9:00 - 17:00"
+                },
+                {
+                  "days": "Lundi",
+                  "time": "Fermé"
+                }
+              ],
+              "address": "14, rue des Tilleuls\nQuartier des Lilas",
+              "phone": "+1 555 010 0142",
+              "email": "bonjour@example.org",
+              "note": "La cuisine ferme une heure avant nous. La terrasse est ouverte dès que le temps le permet."
+            },
+            {
+              "blockType": "cta",
+              "heading": "Venez avec de l'appétit",
+              "text": "Des tables de deux à huit personnes, réservées une semaine à l'avance ou trouvées sur place.",
+              "buttonLabel": "Réserver une table",
+              "buttonHref": "/reservations",
+              "secondaryLabel": "Voir le menu",
+              "secondaryHref": "/menu"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Menu",
+      "slug": "menu",
+      "description": "Starters, mains, desserts and drinks at Café Tilleul.",
+      "blocks": [
+        {
+          "blockType": "price-list",
+          "intro": "The menu follows the market and changes about every three weeks. Please tell us about any allergies when you order.",
+          "sections": [
+            {
+              "title": "Starters",
+              "items": [
+                {
+                  "name": "Roasted squash soup",
+                  "description": "Toasted seeds, crème fraîche",
+                  "price": "$9",
+                  "tag": "vegetarian"
+                },
+                {
+                  "name": "Warm goat's cheese salad",
+                  "description": "Honey, walnuts, endive",
+                  "price": "$12",
+                  "tag": "vegetarian"
+                },
+                {
+                  "name": "Smoked salmon rillettes",
+                  "description": "Pickled shallots, rye toast",
+                  "price": "$13"
+                },
+                {
+                  "name": "Soft-boiled egg mayonnaise",
+                  "description": "Chives, house pickles",
+                  "price": "$8",
+                  "tag": "vegetarian"
+                }
+              ]
+            },
+            {
+              "title": "Mains",
+              "items": [
+                {
+                  "name": "Thyme roast chicken",
+                  "description": "Potato gratin, pan juices",
+                  "price": "$24"
+                },
+                {
+                  "name": "Mussels in white wine",
+                  "description": "Shallot, parsley, a basket of fries",
+                  "price": "$22"
+                },
+                {
+                  "name": "Thin vegetable tart",
+                  "description": "Ricotta, basil, a green salad",
+                  "price": "$19",
+                  "tag": "vegetarian"
+                },
+                {
+                  "name": "Sunday beef stew",
+                  "description": "Red wine, carrots, buttered noodles",
+                  "price": "$26",
+                  "tag": "Sundays"
+                }
+              ]
+            },
+            {
+              "title": "Desserts",
+              "items": [
+                {
+                  "name": "Apple tarte tatin",
+                  "description": "Vanilla cream",
+                  "price": "$10",
+                  "tag": "house favourite"
+                },
+                {
+                  "name": "Dark chocolate mousse",
+                  "description": "Sea salt, olive oil",
+                  "price": "$9",
+                  "tag": "vegetarian"
+                },
+                {
+                  "name": "Lavender crème brûlée",
+                  "description": "Shortbread",
+                  "price": "$9"
+                },
+                {
+                  "name": "Fresh cheese with honey",
+                  "description": "Figs, toasted almonds",
+                  "price": "$8",
+                  "tag": "vegetarian"
+                }
+              ]
+            },
+            {
+              "title": "Drinks",
+              "items": [
+                {
+                  "name": "Espresso",
+                  "price": "$3.50"
+                },
+                {
+                  "name": "Café crème",
+                  "description": "Espresso with steamed milk",
+                  "price": "$4.50"
+                },
+                {
+                  "name": "Hot chocolate",
+                  "description": "Made with real chocolate",
+                  "price": "$5"
+                },
+                {
+                  "name": "Linden flower tea",
+                  "description": "Served by the pot",
+                  "price": "$4",
+                  "tag": "house"
+                },
+                {
+                  "name": "Glass of house wine",
+                  "description": "Red, white or rosé",
+                  "price": "$8"
+                },
+                {
+                  "name": "Dry cider",
+                  "description": "From a small orchard",
+                  "price": "$7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Hungry already?",
+          "text": "Book a table, or just walk in. We keep half of them free.",
+          "buttonLabel": "Reserve a table",
+          "buttonHref": "/reservations"
+        }
+      ],
+      "translations": {
+        "fr": {
+          "title": "Menu",
+          "description": "Entrées, plats, desserts et boissons au Café Tilleul.",
+          "blocks": [
+            {
+              "blockType": "price-list",
+              "intro": "La carte suit le marché et change environ toutes les trois semaines. Merci de nous signaler vos allergies à la commande.",
+              "sections": [
+                {
+                  "title": "Entrées",
+                  "items": [
+                    {
+                      "name": "Velouté de potimarron",
+                      "description": "Graines grillées, crème fraîche",
+                      "price": "$9",
+                      "tag": "végétarien"
+                    },
+                    {
+                      "name": "Salade de chèvre chaud",
+                      "description": "Miel, noix, endive",
+                      "price": "$12",
+                      "tag": "végétarien"
+                    },
+                    {
+                      "name": "Rillettes de saumon fumé",
+                      "description": "Échalotes au vinaigre, toast de seigle",
+                      "price": "$13"
+                    },
+                    {
+                      "name": "Œuf mayonnaise",
+                      "description": "Ciboulette, cornichons maison",
+                      "price": "$8",
+                      "tag": "végétarien"
+                    }
+                  ]
+                },
+                {
+                  "title": "Plats",
+                  "items": [
+                    {
+                      "name": "Poulet rôti au thym",
+                      "description": "Gratin de pommes de terre, jus de cuisson",
+                      "price": "$24"
+                    },
+                    {
+                      "name": "Moules marinières",
+                      "description": "Échalote, persil, une corbeille de frites",
+                      "price": "$22"
+                    },
+                    {
+                      "name": "Tarte fine aux légumes",
+                      "description": "Ricotta, basilic, salade verte",
+                      "price": "$19",
+                      "tag": "végétarien"
+                    },
+                    {
+                      "name": "Bœuf braisé du dimanche",
+                      "description": "Vin rouge, carottes, nouilles au beurre",
+                      "price": "$26",
+                      "tag": "Dimanche"
+                    }
+                  ]
+                },
+                {
+                  "title": "Desserts",
+                  "items": [
+                    {
+                      "name": "Tarte tatin aux pommes",
+                      "description": "Crème vanillée",
+                      "price": "$10",
+                      "tag": "coup de cœur"
+                    },
+                    {
+                      "name": "Mousse au chocolat noir",
+                      "description": "Fleur de sel, huile d'olive",
+                      "price": "$9",
+                      "tag": "végétarien"
+                    },
+                    {
+                      "name": "Crème brûlée à la lavande",
+                      "description": "Sablé breton",
+                      "price": "$9"
+                    },
+                    {
+                      "name": "Fromage blanc au miel",
+                      "description": "Figues, amandes grillées",
+                      "price": "$8",
+                      "tag": "végétarien"
+                    }
+                  ]
+                },
+                {
+                  "title": "Boissons",
+                  "items": [
+                    {
+                      "name": "Expresso",
+                      "price": "$3.50"
+                    },
+                    {
+                      "name": "Café crème",
+                      "description": "Expresso et lait mousseux",
+                      "price": "$4.50"
+                    },
+                    {
+                      "name": "Chocolat chaud",
+                      "description": "Fait avec du vrai chocolat",
+                      "price": "$5"
+                    },
+                    {
+                      "name": "Infusion de tilleul",
+                      "description": "Servie en théière",
+                      "price": "$4",
+                      "tag": "maison"
+                    },
+                    {
+                      "name": "Verre de vin de la maison",
+                      "description": "Rouge, blanc ou rosé",
+                      "price": "$8"
+                    },
+                    {
+                      "name": "Cidre brut",
+                      "description": "D'un petit verger",
+                      "price": "$7"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "blockType": "cta",
+              "heading": "Déjà faim ?",
+              "text": "Réservez une table, ou entrez simplement. Nous en gardons la moitié libres.",
+              "buttonLabel": "Réserver une table",
+              "buttonHref": "/reservations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Our story",
+      "slug": "our-story",
+      "description": "How a former bakery became a neighbourhood café.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "An oven, eight tables and a lot of soup",
+          "body": "Café Tilleul opened in 2015 in a former bakery on Linden Street, with eight tables, one oven and no sign. The sign came later, once the regulars had stopped giving directions by landmark.\n\nWe cook the food we like to eat: soup that has simmered, bread that arrived this morning, and desserts that taste of one thing at a time. Everything is made in the small kitchen at the back, and almost everything is made twice as well as it needs to be.\n\nThis is a *fictional* café, and every name, dish and picture on this site is an invented example."
+        },
+        {
+          "blockType": "timeline",
+          "heading": "Ten years, one oven",
+          "entries": [
+            {
+              "period": "2015",
+              "title": "The keys",
+              "subtitle": "A former bakery",
+              "description": "Eight tables, one oven, a chalkboard and a kettle."
+            },
+            {
+              "period": "2018",
+              "title": "The terrace",
+              "subtitle": "Fairy lights",
+              "description": "The first market menu, written on a Monday and changed every three weeks since."
+            },
+            {
+              "period": "2021",
+              "title": "Breakfast until three",
+              "subtitle": "Open all day",
+              "description": "Because the best hour to eat an egg is whenever you wake up."
+            },
+            {
+              "period": "2025",
+              "title": "Ten years",
+              "subtitle": "Same oven",
+              "description": "Fewer chairs than we need and more friends than we expected."
+            }
+          ]
+        },
+        {
+          "blockType": "team",
+          "heading": "The people in the kitchen",
+          "intro": "Three of the people you will meet.",
+          "members": [
+            {
+              "name": "Camille Aubert",
+              "role": "Chef and co-owner",
+              "bio": "Writes the menu on Mondays and tastes the soup at ten.",
+              "image": "images/team-1.svg",
+              "alt": "Illustrated portrait of a smiling cook with dark hair"
+            },
+            {
+              "name": "Daniel Okoye",
+              "role": "Bread and pastry",
+              "bio": "Up at four, home by two, and responsible for the tarte tatin.",
+              "image": "images/team-2.svg",
+              "alt": "Illustrated portrait of a baker with red hair and glasses"
+            },
+            {
+              "name": "Inès Marchetti",
+              "role": "Front of house",
+              "bio": "Knows your usual order and the name of your dog.",
+              "image": "images/team-3.svg",
+              "alt": "Illustrated portrait of a smiling host with a red headband"
+            }
+          ]
+        }
+      ],
+      "translations": {
+        "fr": {
+          "title": "Notre histoire",
+          "description": "Comment une ancienne boulangerie est devenue un café de quartier.",
+          "blocks": [
+            {
+              "blockType": "textBlock",
+              "heading": "Un four, huit tables et beaucoup de soupe",
+              "body": "Le Café Tilleul a ouvert en 2015 dans une ancienne boulangerie de la rue des Tilleuls, avec huit tables, un four et pas d'enseigne. L'enseigne est venue plus tard, quand les habitués ont cessé d'indiquer le chemin par des repères.\n\nNous cuisinons ce que nous aimons manger : une soupe qui a mijoté, un pain arrivé ce matin et des desserts qui ont le goût d'une seule chose à la fois. Tout est fait dans la petite cuisine du fond, et presque tout est fait deux fois mieux qu'il ne le faudrait.\n\nCe café est *fictif* : chaque nom, chaque plat et chaque image de ce site est un exemple inventé."
+            },
+            {
+              "blockType": "timeline",
+              "heading": "Dix ans, un seul four",
+              "entries": [
+                {
+                  "period": "2015",
+                  "title": "Les clés",
+                  "subtitle": "Une ancienne boulangerie",
+                  "description": "Huit tables, un four, une ardoise et une bouilloire."
+                },
+                {
+                  "period": "2018",
+                  "title": "La terrasse",
+                  "subtitle": "Des guirlandes",
+                  "description": "La première carte de saison, écrite un lundi et changée toutes les trois semaines depuis."
+                },
+                {
+                  "period": "2021",
+                  "title": "Petit déjeuner jusqu'à quinze heures",
+                  "subtitle": "Ouvert toute la journée",
+                  "description": "Parce que la meilleure heure pour manger un œuf est celle du réveil."
+                },
+                {
+                  "period": "2025",
+                  "title": "Dix ans",
+                  "subtitle": "Le même four",
+                  "description": "Moins de chaises qu'il n'en faut et plus d'amis que prévu."
+                }
+              ]
+            },
+            {
+              "blockType": "team",
+              "heading": "L'équipe de cuisine",
+              "intro": "Trois des personnes que vous rencontrerez.",
+              "members": [
+                {
+                  "name": "Camille Aubert",
+                  "role": "Cheffe et copropriétaire",
+                  "bio": "Écrit la carte le lundi et goûte la soupe à dix heures.",
+                  "image": "images/team-1.svg",
+                  "alt": "Portrait illustré d'une cuisinière souriante aux cheveux bruns"
+                },
+                {
+                  "name": "Daniel Okoye",
+                  "role": "Pain et pâtisserie",
+                  "bio": "Debout à quatre heures, rentré à quatorze, responsable de la tarte tatin.",
+                  "image": "images/team-2.svg",
+                  "alt": "Portrait illustré d'un boulanger roux à lunettes"
+                },
+                {
+                  "name": "Inès Marchetti",
+                  "role": "Responsable de salle",
+                  "bio": "Connaît votre commande habituelle et le nom de votre chien.",
+                  "image": "images/team-3.svg",
+                  "alt": "Portrait illustré d'une hôtesse souriante au bandeau rouge"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Gallery",
+      "slug": "gallery",
+      "description": "A few pictures of the food and the terrace.",
+      "blocks": [
+        {
+          "blockType": "gallery",
+          "columns": 3,
+          "images": [
+            {
+              "image": "images/dish-soup.svg",
+              "alt": "A bowl of orange squash soup with a swirl of cream",
+              "caption": "Roasted squash soup"
+            },
+            {
+              "image": "images/dish-tart.svg",
+              "alt": "A round apple tart, glazed and golden",
+              "caption": "Tarte tatin, still warm"
+            },
+            {
+              "image": "images/dish-mussels.svg",
+              "alt": "A dark pot of mussels with parsley and a lemon wedge",
+              "caption": "Moules marinières"
+            },
+            {
+              "image": "images/dish-coffee.svg",
+              "alt": "A cup of coffee with a heart in the milk foam, next to a croissant",
+              "caption": "Café crème and a croissant"
+            },
+            {
+              "image": "images/dish-bread.svg",
+              "alt": "Two baguettes on a wooden board",
+              "caption": "Bread from the bakery across the road"
+            },
+            {
+              "image": "images/dish-terrace.svg",
+              "alt": "The terrace with small round tables, a striped awning and fairy lights",
+              "caption": "The terrace, five o'clock"
+            }
+          ]
+        }
+      ],
+      "translations": {
+        "fr": {
+          "title": "Galerie",
+          "description": "Quelques images de la cuisine et de la terrasse.",
+          "blocks": [
+            {
+              "blockType": "gallery",
+              "columns": 3,
+              "images": [
+                {
+                  "image": "images/dish-soup.svg",
+                  "alt": "Un bol de velouté de potimarron avec un filet de crème",
+                  "caption": "Velouté de potimarron"
+                },
+                {
+                  "image": "images/dish-tart.svg",
+                  "alt": "Une tarte aux pommes ronde, glacée et dorée",
+                  "caption": "Tarte tatin encore tiède"
+                },
+                {
+                  "image": "images/dish-mussels.svg",
+                  "alt": "Une marmite sombre de moules au persil avec un quartier de citron",
+                  "caption": "Moules marinières"
+                },
+                {
+                  "image": "images/dish-coffee.svg",
+                  "alt": "Une tasse de café avec un cœur dans la mousse, à côté d'un croissant",
+                  "caption": "Café crème et croissant"
+                },
+                {
+                  "image": "images/dish-bread.svg",
+                  "alt": "Deux baguettes sur une planche en bois",
+                  "caption": "Le pain de la boulangerie d'en face"
+                },
+                {
+                  "image": "images/dish-terrace.svg",
+                  "alt": "La terrasse avec de petites tables rondes, un auvent rayé et des guirlandes",
+                  "caption": "La terrasse, cinq heures"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Reservations",
+      "slug": "reservations",
+      "description": "Request a table at Café Tilleul.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "Tell us when you would like to come and how many you will be. We confirm by email within a day. For parties of eight or more, or for a table the same evening, please telephone."
+        },
+        {
+          "blockType": "formEmbed",
+          "heading": "Request a table",
+          "form": "reservation"
+        },
+        {
+          "blockType": "hours-contact",
+          "heading": "Come and find us",
+          "hours": [
+            {
+              "days": "Tuesday - Friday",
+              "time": "8:00 - 22:00"
+            },
+            {
+              "days": "Saturday",
+              "time": "9:00 - 23:00"
+            },
+            {
+              "days": "Sunday",
+              "time": "9:00 - 17:00"
+            },
+            {
+              "days": "Monday",
+              "time": "Closed"
+            }
+          ],
+          "address": "14 Linden Street\nLilac Quarter",
+          "phone": "+1 555 010 0142",
+          "email": "bonjour@example.org",
+          "note": "The kitchen closes an hour before we do. The terrace is open whenever the weather is kind."
+        }
+      ],
+      "translations": {
+        "fr": {
+          "title": "Réservations",
+          "description": "Demandez une table au Café Tilleul.",
+          "blocks": [
+            {
+              "blockType": "textBlock",
+              "body": "Dites-nous quand vous souhaitez venir et combien vous serez. Nous confirmons par courriel dans la journée. Pour huit personnes ou plus, ou pour une table le soir même, merci de téléphoner."
+            },
+            {
+              "blockType": "formEmbed",
+              "heading": "Demander une table",
+              "form": "reservation"
+            },
+            {
+              "blockType": "hours-contact",
+              "heading": "Venez nous voir",
+              "hours": [
+                {
+                  "days": "Mardi - vendredi",
+                  "time": "8:00 - 22:00"
+                },
+                {
+                  "days": "Samedi",
+                  "time": "9:00 - 23:00"
+                },
+                {
+                  "days": "Dimanche",
+                  "time": "9:00 - 17:00"
+                },
+                {
+                  "days": "Lundi",
+                  "time": "Fermé"
+                }
+              ],
+              "address": "14, rue des Tilleuls\nQuartier des Lilas",
+              "phone": "+1 555 010 0142",
+              "email": "bonjour@example.org",
+              "note": "La cuisine ferme une heure avant nous. La terrasse est ouverte dès que le temps le permet."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Find us",
+      "slug": "find-us",
+      "description": "Opening hours, address and how to get to Café Tilleul.",
+      "blocks": [
+        {
+          "blockType": "hours-contact",
+          "heading": "Come and find us",
+          "hours": [
+            {
+              "days": "Tuesday - Friday",
+              "time": "8:00 - 22:00"
+            },
+            {
+              "days": "Saturday",
+              "time": "9:00 - 23:00"
+            },
+            {
+              "days": "Sunday",
+              "time": "9:00 - 17:00"
+            },
+            {
+              "days": "Monday",
+              "time": "Closed"
+            }
+          ],
+          "address": "14 Linden Street\nLilac Quarter",
+          "phone": "+1 555 010 0142",
+          "email": "bonjour@example.org",
+          "note": "The kitchen closes an hour before we do. The terrace is open whenever the weather is kind."
+        },
+        {
+          "blockType": "textBlock",
+          "heading": "Getting here",
+          "body": "We are on Linden Street, between the bakery and the little library. The 12 bus stops at the corner, and there are bicycle hoops outside the door.\n\nThe terrace has two steps; the dining room is level from the pavement, and we are happy to move a table if you need more room."
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Good to know",
+          "items": [
+            {
+              "question": "Do you take walk-ins?",
+              "answer": "Always. We keep about half the tables free each day."
+            },
+            {
+              "question": "Are dogs welcome?",
+              "answer": "On the terrace, yes, and they will be offered water."
+            },
+            {
+              "question": "Do you cater for vegetarians and allergies?",
+              "answer": "Yes. Vegetarian dishes are marked on the menu, and the kitchen is glad to adapt a dish if you tell us in advance."
+            },
+            {
+              "question": "Can I book the whole café?",
+              "answer": "On Monday evenings, for up to thirty people. Write to us."
+            }
+          ]
+        }
+      ],
+      "translations": {
+        "fr": {
+          "title": "Nous trouver",
+          "description": "Horaires, adresse et accès au Café Tilleul.",
+          "blocks": [
+            {
+              "blockType": "hours-contact",
+              "heading": "Venez nous voir",
+              "hours": [
+                {
+                  "days": "Mardi - vendredi",
+                  "time": "8:00 - 22:00"
+                },
+                {
+                  "days": "Samedi",
+                  "time": "9:00 - 23:00"
+                },
+                {
+                  "days": "Dimanche",
+                  "time": "9:00 - 17:00"
+                },
+                {
+                  "days": "Lundi",
+                  "time": "Fermé"
+                }
+              ],
+              "address": "14, rue des Tilleuls\nQuartier des Lilas",
+              "phone": "+1 555 010 0142",
+              "email": "bonjour@example.org",
+              "note": "La cuisine ferme une heure avant nous. La terrasse est ouverte dès que le temps le permet."
+            },
+            {
+              "blockType": "textBlock",
+              "heading": "Pour venir",
+              "body": "Nous sommes rue des Tilleuls, entre la boulangerie et la petite bibliothèque. Le bus 12 s'arrête au coin, et il y a des arceaux à vélos devant la porte.\n\nLa terrasse a deux marches ; la salle est de plain-pied avec le trottoir, et nous déplaçons volontiers une table si vous avez besoin de place."
+            },
+            {
+              "blockType": "faqAccordion",
+              "heading": "Bon à savoir",
+              "items": [
+                {
+                  "question": "Acceptez-vous les clients sans réservation ?",
+                  "answer": "Toujours. Nous gardons environ la moitié des tables libres chaque jour."
+                },
+                {
+                  "question": "Les chiens sont-ils acceptés ?",
+                  "answer": "Sur la terrasse, oui, et on leur apportera de l'eau."
+                },
+                {
+                  "question": "Proposez-vous des plats végétariens et adaptés aux allergies ?",
+                  "answer": "Oui. Les plats végétariens sont indiqués sur la carte, et la cuisine adapte volontiers un plat si vous nous prévenez."
+                },
+                {
+                  "question": "Puis-je réserver tout le café ?",
+                  "answer": "Le lundi soir, jusqu'à trente personnes. Écrivez-nous."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "label": "Resume (example)",
+  "description": "A personal CV site: one column on a sheet of paper, a timeline, skills and projects, and a print stylesheet that makes a clean one-page CV.",
+  "parent": "starter"
+}

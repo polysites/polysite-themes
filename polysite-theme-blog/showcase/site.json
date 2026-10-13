@@ -1,0 +1,499 @@
+{
+  "$schema": "../../docs/showcase.schema.json",
+  "slug": "blog",
+  "domainPrefix": "blog",
+  "name": "Small Hours",
+  "tagline": "Notes on walking, reading and making a pot of tea last longer.",
+  "theme": "blog",
+  "primaryColor": "#8c2f1b",
+  "secondaryColor": "#2f4a5a",
+  "showDonateButton": false,
+  "header": [
+    {
+      "label": "Journal",
+      "href": "/journal"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Now",
+      "href": "/now"
+    },
+    {
+      "label": "Letter",
+      "href": "/newsletter"
+    },
+    {
+      "label": "Write to me",
+      "href": "/contact"
+    }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "heading": "Read",
+        "links": [
+          {
+            "label": "All of the journal",
+            "href": "/journal"
+          },
+          {
+            "label": "Essays",
+            "href": "/journal/category/essays"
+          },
+          {
+            "label": "Notebook",
+            "href": "/journal/category/notebook"
+          },
+          {
+            "label": "Reading",
+            "href": "/journal/category/reading"
+          }
+        ]
+      },
+      {
+        "heading": "About",
+        "links": [
+          {
+            "label": "About this blog",
+            "href": "/about"
+          },
+          {
+            "label": "What I am doing now",
+            "href": "/now"
+          },
+          {
+            "label": "The monthly letter",
+            "href": "/newsletter"
+          },
+          {
+            "label": "Privacy",
+            "href": "/privacy"
+          }
+        ]
+      }
+    ]
+  },
+  "social": [
+    {
+      "platform": "instagram",
+      "url": "https://example.org/small-hours"
+    },
+    {
+      "platform": "x",
+      "url": "https://example.org/small-hours-notes"
+    }
+  ],
+  "privacy": {
+    "policyUrl": "/privacy",
+    "contactEmail": "hello@example.org"
+  },
+  "enabledModules": [
+    "pages",
+    "media",
+    "forms",
+    "posts"
+  ],
+  "search": true,
+  "share": {
+    "networks": [
+      "email",
+      "copy",
+      "x",
+      "facebook",
+      "native"
+    ],
+    "style": "text",
+    "contentTypes": [
+      "posts"
+    ]
+  },
+  "newsSettings": {
+    "label": "Journal",
+    "path": "journal",
+    "perPage": 6
+  },
+  "forms": [
+    {
+      "key": "letter",
+      "title": "Monthly letter",
+      "submitButtonLabel": "Subscribe",
+      "confirmationMessage": "Thank you. The next letter arrives on the first Sunday of the month. You can unsubscribe from any one of them.",
+      "purpose": "Your address is used to send the monthly letter, and for nothing else. It is never shared.",
+      "consentRequired": true,
+      "consentLabel": "Please send me the monthly letter.",
+      "retentionDays": 730,
+      "fields": [
+        {
+          "type": "email",
+          "name": "email",
+          "label": "Email address",
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "write-to-me",
+      "title": "Write to me",
+      "submitButtonLabel": "Send",
+      "confirmationMessage": "Thank you for writing. I read everything, and I answer as soon as I can, usually within a week.",
+      "purpose": "Your name and address are used to reply to you, and for nothing else.",
+      "consentRequired": true,
+      "consentLabel": "I agree that my message and address may be used to reply to me.",
+      "retentionDays": 365,
+      "fields": [
+        {
+          "type": "text",
+          "name": "name",
+          "label": "Your name",
+          "required": true
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "label": "Email address",
+          "required": true
+        },
+        {
+          "type": "select",
+          "name": "topic",
+          "label": "What is it about?",
+          "options": [
+            "A post",
+            "A book I should read",
+            "Something else"
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "message",
+          "label": "Your message",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "description": "Small Hours is a personal journal of essays, notebook pages and reading notes by Imogen Hale, a fictional writer.",
+      "blocks": [
+        {
+          "blockType": "hero",
+          "heading": "Small Hours",
+          "subheading": "A quiet journal of essays, notebook pages and reading notes. Written slowly, at a small table, by Imogen Hale.",
+          "image": "images/hero-desk.svg",
+          "alt": "A desk by a window at sunrise with a stack of books, a cup of tea and an open notebook",
+          "ctaLabel": "Read the journal",
+          "ctaHref": "/journal"
+        },
+        {
+          "blockType": "textBlock",
+          "heading": "Start here",
+          "body": "New to the blog? These three are a good way in.\n\n- [The slow walk home](/journal/the-slow-walk-home): what an extra eleven minutes did to the word ordinary.\n- [Small notes from a small table](/journal/small-notes-from-a-small-table): the whole studio, and how it folds away.\n- [Rereading the same book at forty](/journal/rereading-the-same-book-at-forty): going back to a novel, and finding the traveller changed."
+        },
+        {
+          "blockType": "featureGrid",
+          "heading": "What you will find here",
+          "features": [
+            {
+              "title": "Essays",
+              "description": "Long, unhurried pieces about attention, weather and ordinary days, usually written on the way home."
+            },
+            {
+              "title": "Notebook",
+              "description": "Shorter notes on how the work gets done: pencils, lists, margins and a small folding table."
+            },
+            {
+              "title": "Reading",
+              "description": "Letters to books, and to the libraries that lend them. No stars, no rankings, no hurry."
+            }
+          ]
+        },
+        {
+          "blockType": "signupForm",
+          "heading": "One letter a month",
+          "subheading": "The month's best sentences, a few things I read and a photograph of whatever is on the table. Nothing else.",
+          "form": "letter",
+          "ctaLabel": "Subscribe"
+        }
+      ]
+    },
+    {
+      "title": "About",
+      "slug": "about",
+      "description": "About Imogen Hale and the journal Small Hours.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "Small Hours is a personal blog by **Imogen Hale**, an invented writer who lives in an invented town with a very real kettle. It began as a way to keep the notebook honest and has become the best part of the week.\n\nThe pieces here are slow on purpose. They do not argue for anything much. They pay attention to one thing at a time, and then stop.\n\n## How it is made\n\nThe journal is written in pencil first, typed second and edited in the mornings. It has no advertising and no tracking beyond what a plain web server keeps. Everything on this site, including the name, the writer and the pictures, is a made-up example for showing what the Polysite blog theme can do."
+        },
+        {
+          "blockType": "timeline",
+          "heading": "A short history of the notebook",
+          "entries": [
+            {
+              "period": "2009",
+              "title": "The first notebook",
+              "subtitle": "A green one, squared paper",
+              "description": "Bought for a train journey and filled with lists of things seen from the window."
+            },
+            {
+              "period": "2014",
+              "title": "The folding table",
+              "subtitle": "A charity shop",
+              "description": "Sixty centimetres wide, wobbly, and still in use."
+            },
+            {
+              "period": "2021",
+              "title": "The journal goes online",
+              "subtitle": "A single page",
+              "description": "Four people read it. Two were related to me."
+            },
+            {
+              "period": "2026",
+              "title": "Small Hours",
+              "subtitle": "This site",
+              "description": "Nine pieces so far, a monthly letter and a lot of walking home the long way."
+            }
+          ]
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Questions people ask",
+          "items": [
+            {
+              "question": "How often do you post?",
+              "answer": "Roughly every three weeks. The letter goes out on the first Sunday of the month."
+            },
+            {
+              "question": "Can I quote a post?",
+              "answer": "Please do, with a link back. The writing is a fictional example, so there is nothing to protect, but it is polite."
+            },
+            {
+              "question": "Do you take guest posts?",
+              "answer": "Not at the moment. Write to me if you have a book I should read instead."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Now",
+      "slug": "now",
+      "description": "What Imogen Hale is doing at the moment.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "This is a *now page*: a short note on what I am doing at the moment, kept up to date every few weeks instead of buried in the archive.\n\n- **Reading** a long novel about a lighthouse, for the second time, one chapter a night.\n- **Writing** a piece about handwriting, which keeps turning into a piece about my grandmother's shopping lists.\n- **Walking** the long way home, and starting to wonder about a third route.\n- **Drinking** far too much tea and thinking about a smaller teapot."
+        },
+        {
+          "blockType": "stats",
+          "heading": "The year so far",
+          "items": [
+            {
+              "value": "41",
+              "label": "books read"
+            },
+            {
+              "value": "612 km",
+              "label": "walked since January"
+            },
+            {
+              "value": "3",
+              "label": "drafts abandoned on purpose"
+            },
+            {
+              "value": "9",
+              "label": "pieces published"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The monthly letter",
+      "slug": "newsletter",
+      "description": "One short email a month from Small Hours.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "Once a month, on the first Sunday, I send a short letter. It contains the best sentences I found, a few things worth reading, and a photograph of whatever is on the table.\n\nIt never contains a sales pitch, a countdown timer or the word *unmissable*."
+        },
+        {
+          "blockType": "signupForm",
+          "heading": "Join the letter",
+          "subheading": "Free, short, and easy to leave.",
+          "form": "letter",
+          "ctaLabel": "Subscribe"
+        },
+        {
+          "blockType": "faqAccordion",
+          "items": [
+            {
+              "question": "How long is each letter?",
+              "answer": "About five hundred words and one photograph. You can read it with your tea."
+            },
+            {
+              "question": "Do you share my address?",
+              "answer": "No. It is used to send the letter and nothing else, and you can leave with one click."
+            },
+            {
+              "question": "Is this a real newsletter?",
+              "answer": "No: this whole site is a fictional example, so the form saves an entry for the demo and sends nothing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Write to me",
+      "slug": "contact",
+      "description": "Send Imogen Hale a note about a post or a book.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "I like getting letters, and I answer most of them, usually within a week. If a post made you think of a book, tell me which one."
+        },
+        {
+          "blockType": "formEmbed",
+          "heading": "Your note",
+          "form": "write-to-me"
+        }
+      ]
+    },
+    {
+      "title": "Privacy",
+      "slug": "privacy",
+      "description": "What this fictional example site does with the details you send.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "This is a fictional example site, so nothing you type into a form here is used for anything real. The text below shows the kind of plain statement a small blog can give.\n\n## What is stored\n\nThe two forms on this site keep the details you type (an email address, and for the contact form a name and a message) until the retention period shown beside the form has passed. Nobody reads them.\n\n## What is not\n\nThere are no advertising scripts and no third-party trackers. The site sets no cookies for visitors.\n\n## Questions\n\nWrite to hello@example.org, an address that does not exist."
+        }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "title": "The slow walk home",
+      "slug": "the-slow-walk-home",
+      "date": "2026-09-27",
+      "categories": [
+        "Essays"
+      ],
+      "image": "images/cover-slow-walk.svg",
+      "alt": "Rolling hills at sunrise with a few birds in a peach sky",
+      "excerpt": "For a year I took the long way home from the station. It added eleven minutes and changed how I think about the word ordinary.",
+      "body": "For a year I have taken the long way home from the station. It adds eleven minutes. I did not set out to make a habit of it: one evening a fallen tree closed the usual street, and I went round by the allotments instead, and then I kept going round by the allotments.\n\nThe usual route is efficient in the way a sentence with no adjectives is efficient. You know what it contains before you start. The long way contains a fence somebody has painted a different colour every spring, a bench with a brass plate for a person I will never meet, and a stretch of path where, at about ten past six in late September, the light comes in low enough to make every spider's web in the hedge visible at once.\n\n## Ordinary is a verdict, not a place\n\nI used to think the ordinary was a kind of territory, the grey country between the interesting days. Now I think it is a verdict we pass on a street after we have stopped looking at it. Nothing about the street changes. We simply stop paying the rent of attention, and the landlord of the world, who is not unkind, lets us stay on without it.\n\nA slow walk is a way of paying a little back. It does not have to be beautiful, and it does not need a destination that justifies it. It needs only that you go at the speed at which things can be noticed, which turns out to be roughly the speed at which you can still hold a conversation.\n\n> The shortest way home is the one you have already finished thinking about.\n\n## What I have noticed\n\nHere, for the record, is the whole of my findings after a year:\n\n- Nobody is in a hurry at the allotments, and it is catching.\n- Dogs know the route better than their owners do.\n- The eleven minutes are not lost. They are the only part of the day with no screen in it, and a surprising share of this blog was first sentenced to paper in my head somewhere between the bench and the painted fence.\n- Rain is much better on the long way. There is a lime tree that keeps a dry patch under it for exactly one person.\n\nI am aware that this is a small discovery, and that people have been making it since the first person left the path to see what was behind a wall. I do not mind. Small discoveries are the kind that survive being told over tea.\n\nIf you try it, try it once without a podcast and see what the first five minutes feel like. They are usually the worst. Somewhere around the second corner the noise in your head runs out of things to say, and the street, which has been waiting very politely, begins.",
+      "byline": "Imogen Hale"
+    },
+    {
+      "title": "What the weather does to a sentence",
+      "slug": "what-the-weather-does-to-a-sentence",
+      "date": "2026-08-30",
+      "categories": [
+        "Essays"
+      ],
+      "image": "images/cover-weather.svg",
+      "alt": "Blue hills under a pale moon and a few high birds",
+      "excerpt": "Fog shortens my sentences, a heatwave lengthens them, and a clear cold morning produces nothing but verbs. A small theory of writing by barometer.",
+      "body": "I keep a very unscientific log. At the top of each page in my working notebook I write the date, and next to it a word for the weather: fog, bright, sulk, thunder. It began as a way of finding things again. It has turned into evidence for a theory I cannot quite prove: the weather writes about a third of what I write.\n\n## Fog\n\nFog makes me short. On foggy days I produce sentences of six or seven words, flat and declarative, each one standing a little apart from the next like lamps along a road. *The house was quiet. The kettle was cold. Nobody had come.* If I am drafting an argument on a foggy day, it advances by small, careful, rather suspicious steps. It rarely makes mistakes. It also rarely makes anyone laugh.\n\n## Heat\n\nA hot spell does the opposite. Sentences lengthen and acquire clauses, then clauses acquire clauses, and by the third afternoon I am writing a paragraph that sets out for a point at the top of the page and arrives, hours later, somewhere near the bottom, sunburnt and carrying a subordinate thought it picked up on the way and cannot put down.\n\nI used to think this was a fault to be edited out. I now think it is a season, and that the editing is the winter.\n\n## A clear cold morning\n\nThe best days, for me, are the clear cold ones in early spring: high pale sky, frost on the car, light that makes the whole street look newly typeset. On those mornings I write almost nothing but verbs. People *climb*, *carry*, *knock*, *forget*. There are no feelings in these paragraphs. The feelings are in what the verbs choose to do.\n\n> Weather is the one collaborator who never asks for a credit.\n\n## A practical conclusion\n\nI have stopped fighting this and begun to schedule around it. Fog days are for the tidy, structural work: contents pages, footnotes, the argument that needs to be airtight. Heat is for first drafts, written fast and without shame. The clear cold mornings I protect like a bank holiday, and I put nothing in them except the scene that has been refusing to move.\n\nYou may find that your own weather works differently. Perhaps rain makes you generous, or wind makes you terse. The experiment costs one column in a notebook and a little honesty. If nothing else, you will end the year with a record of every day, which is more than most of us can say, and a good deal more than the forecast ever kept.",
+      "byline": "Imogen Hale"
+    },
+    {
+      "title": "Notes toward a long evening",
+      "slug": "notes-toward-a-long-evening",
+      "date": "2026-07-26",
+      "categories": [
+        "Essays"
+      ],
+      "image": "images/cover-long-evening.svg",
+      "alt": "A pale sun over dusky purple hills",
+      "excerpt": "In July the light goes on until almost ten. What do you do with an evening that refuses to end? A short list of answers, none of them productive.",
+      "body": "In July the light goes on until almost ten, and the evenings acquire a strange, expansive quality, like a long train platform you did not expect to still be walking along. The day's work is done and the day, apparently, is not. The question, which I am never prepared for, is what to do with all that gold.\n\nMy first instinct is to spend it, which is to say, to schedule it. I could finally tidy the shelves. I could write the letter I owe. The light is, after all, perfect for tasks. But I have noticed over the years that the evenings I spend this way are the ones I forget, while the ones that I let go slack stay with me for a very long time. So here are my notes, collected over several Julys, toward a long evening that does nothing at all.\n\n## Things that work\n\n1. **Sit on a step.** Any step. Front step, back step, the bottom step of the stairs near an open door. A step is a seat that makes no promises.\n2. **Eat late, and badly.** Bread, a tomato, whatever cheese is left. Food assembled rather than cooked tastes better in the half-light, and there is no washing-up worth the name.\n3. **Water the plants slowly.** This is the one chore that looks the same as contemplation from the outside. Take a long time. Say nothing.\n4. **Listen to the street sort itself out.** Doors, a distant radio, children being called in one by one with a different tone for each. It is the best unwritten novel in the neighbourhood.\n\n## Things that do not\n\nAnything with a notification. Any plan that begins with the words \"while we have the light\". Any attempt to photograph the colour of the sky, which is always a little disappointing in the photograph and a little unfair to the sky.\n\n## The longest minute\n\nThere is a moment, usually around nine, when the light goes from gold to rose to a blue that is almost not a colour, and you realise the evening has been getting shorter the whole time you were admiring how long it was. I find that moment slightly sad and entirely worth it. It is the evening's way of reminding you that the long ones are rationed.\n\nI do not want to turn this into a rule, because the moment it becomes a rule I will start failing at it. But if one warm night this month you find yourself with nothing urgent and a step nearby, consider it an invitation. The whole thing takes about two hours, and the only thing you lose is the sense that you needed to be anywhere else.",
+      "byline": "Imogen Hale"
+    },
+    {
+      "title": "Small notes from a small table",
+      "slug": "small-notes-from-a-small-table",
+      "date": "2026-06-21",
+      "categories": [
+        "Notebook"
+      ],
+      "image": "images/cover-small-notes.svg",
+      "alt": "An open notebook with handwriting and a pencil on a tan table",
+      "excerpt": "A table barely large enough for a notebook, a mug and a pencil turns out to be all the studio a writer needs. Notes on working small.",
+      "body": "My desk is a folding table from a charity shop. It is sixty centimetres wide and it wobbles unless I fold a postcard under one leg. For years I thought of it as a temporary arrangement, the kind of thing you put up with until the real study materialises. The real study never did, and I have slowly understood that I would not know what to do with it if it did.\n\nA small table has rules that a large one does not. There is room for the notebook, the mug, the pencil, and exactly one other object. Today that object is a pebble. I picked it up on the beach last month because it was the colour of a very old piano key, and it sits at the edge of the page where my left hand rests, keeping me company without making any demands.\n\n## Why small works\n\nA large surface invites accumulation. Papers, mail, three half-finished projects and a plant that needs moving all gradually colonise it, and soon the work is happening in the one bare patch left, which is, in effect, a small table inside a large one. It is more honest to start with the small one.\n\nThe constraint also makes choices for me. I cannot spread out, so I do one thing at a time. I cannot keep every reference open, so I write the sentence first and look it up afterwards, which is, I have found, a far better order. And when the page is full I have to turn it, which is a satisfying little ceremony that no screen has ever offered me.\n\n## The kit\n\nFor anyone who likes lists (I am one of them), here is the entire studio:\n\n- One notebook with a plain cover and squared paper.\n- One pencil, usually sharpened with a knife that is much too good for it.\n- One mug, which is washed when it is empty and not before.\n- One object that changes with the week.\n\nI do not use the table for anything else. It folds flat behind the wardrobe when guests come, and returns the next morning as if nothing happened. That, too, I have come to like: the idea that a writing life can be folded up and put away at the end of the day, and unfolded again by anyone brave enough to sit down.\n\nIf your own desk is too big, or too full, or not yet the desk of your dreams, try borrowing a smaller one for a week. See what the page does when it has less room to hide.",
+      "byline": "Imogen Hale"
+    },
+    {
+      "title": "The case for the unfinished list",
+      "slug": "the-case-for-the-unfinished-list",
+      "date": "2026-05-17",
+      "categories": [
+        "Notebook"
+      ],
+      "image": "images/cover-lists.svg",
+      "alt": "A notebook page with a list and a wavy line beside a pencil, on a green desk",
+      "excerpt": "Every list I have ever finished has been a list I did not need. A defence of the long, ragged, never-completed to-do list.",
+      "body": "I have a rule that I broke on purpose this month: I did not finish the list. For the first time in years I let the last three items carry over to the next page, and the next, and I felt a faint and entirely unfamiliar calm. It seems that I have been treating an ordinary piece of paper as a verdict on my character.\n\nThe idea that a list should be completed is a recent one, as these things go. It comes, I think, from a sensible instinct about shopping and a rather less sensible one about life. A shopping list *is* finished when the bag is full. A life list is not finished when the day is, and to pretend otherwise is to build a small daily failure into the structure of your evenings.\n\n## Three kinds of list\n\nIt helps me to sort them.\n\n1. **The closed list.** Eggs, stamps, the library book. These are finite and should be crossed off with some ceremony.\n2. **The open list.** Things I would like to do some time. Books to read, towns to see, a letter to somebody I have lost touch with. These should *grow*. Their natural length is somewhere above one hundred.\n3. **The weather list.** Things that depend on a mood, a season or a lucky day. Paint the fence. Learn that song. These are not tasks at all, but a sort of larder.\n\nMy mistake for a long time was writing all three on the same page, in the same pen, in the same urgent column, and then wondering why I felt behind.\n\n## What I do now\n\nI keep the closed list on a scrap of paper that I throw away. The open list lives at the back of the notebook, where it can sprawl, and I read it over about once a month for the pleasure of the reading, not the reduction. The weather list I copy out each Sunday, but only the items that suit the sky.\n\n> A list is a conversation with a future self. It should be allowed to ramble.\n\nI will admit it took some nerve. The first week I felt like a person leaving the house with the iron on. By the third, I noticed that the things I had stopped forcing were getting done anyway, in the odd gaps between other things, and with a good deal more care. The unfinished list, it turns out, is not a failure of nerve. It is simply a list that still has somewhere to go.",
+      "byline": "Imogen Hale"
+    },
+    {
+      "title": "Writing in the margins",
+      "slug": "writing-in-the-margins",
+      "date": "2026-04-12",
+      "categories": [
+        "Notebook"
+      ],
+      "image": "images/cover-margins.svg",
+      "alt": "A notebook page with ruled lines and a teal squiggle, with a brown pencil, on a pink desk",
+      "excerpt": "Most of what I know, I learned in a margin. A short essay on pencils, arguments with the page and why you should be rude to your books.",
+      "body": "I was taught, as many of us were, that you do not write in books. It is a rule of such overwhelming force that I obeyed it for thirty years, and the day I broke it, with a soft pencil, in the margin of a second-hand novel, I felt as if I had walked on a lawn.\n\nI have not stopped since. I now think that a book without notes in it is a little like a house nobody has lived in: clean, correct and not very interesting to visit.\n\n## What goes in a margin\n\nThe margin is the cheapest conversation you can have. A question mark where an argument skips a step. A single exclamation where a sentence is just very good. *No!* *Yes, but.* *See p. 41.* The notes need not be clever, and the best ones almost never are. Their value lies in the act of answering back, which turns a long and one-sided speech into an exchange.\n\nOver the years I have developed a small private vocabulary of marks:\n\n- A vertical line beside a passage means *I want to come back to this.*\n- A wavy line means *I do not believe you yet.*\n- A small circle around a word means *I had to look this up, and it was worth it.*\n- A tiny arrow pointing at the next page means *keep going, it gets better.*\n\n## Pencil, always\n\nI use a pencil for two reasons. The first is humility: I may be wrong tomorrow, and I would like to be able to rub out the proof. The second is the sound, which is a dry, quiet, scratching sound that the library has never once objected to, since I only ever do this to books I own or, on occasion, to books I have bought for a very good reason.\n\nA word on borrowed books: do not. The page that tempts you will still be there when you have a copy of your own, and it will be more yours for the wait.\n\n## A returned favour\n\nThe best part of this habit arrives years later. You open an old book and find yourself in the margins, a younger and slightly more certain version of you, disagreeing with the author in a handwriting you barely recognise. You may feel the urge to correct her. I recommend resisting it. Add a new note beside the old one, in a different pencil, and let the page become the record of a long argument between two people who are, rather conveniently, both you.",
+      "byline": "Imogen Hale"
+    },
+    {
+      "title": "Rereading the same book at forty",
+      "slug": "rereading-the-same-book-at-forty",
+      "date": "2026-03-22",
+      "categories": [
+        "Reading"
+      ],
+      "image": "images/cover-reread.svg",
+      "alt": "A small shelf of books lit by a warm lamp against a blue-grey wall",
+      "excerpt": "I reread a favourite novel after twenty years and found it had changed completely. It was, of course, me. Notes on going back.",
+      "body": "There is a novel I read at nineteen and loved so much that I pressed it on three separate friends. I will not name it, partly because it is very obscure and partly because I want to protect the book from my own enthusiasm. It concerns a family who run a failing lighthouse on an island that is slowly being redrawn on maps, and it is, I believed, the saddest and most beautiful thing I had ever read.\n\nLast month, at forty, I read it again. I took it slowly, one chapter a night, and I will tell you the truth: it is a completely different book.\n\n## What changed\n\nThe first thing I noticed was the father. At nineteen he was a minor and rather tiresome figure, standing in the doorway of scenes that belonged to the young lighthouse keeper, who was brave and doomed and very interesting to me. At forty the father is the heart of the book. He is the one doing the quiet arithmetic of the whole thing: the oil, the winter, the children's boots. I found myself reading every one of his paragraphs twice, in the manner of someone checking a bill.\n\nThe prose, too, has altered. I remembered it as lush. It is actually rather plain, and the lushness was something I brought to it, a coat of colour applied by a teenager who needed the world to be larger than it was. The book never asked for it. It simply allowed it, which is, I now think, the mark of a good one.\n\n## What stayed\n\nThe ending is just as sad as I remembered. This surprised me. I had expected my older, more sensible self to find it sentimental, and instead I put the book down for a good ten minutes and looked at the wall.\n\n## A rule of thumb\n\nI have come up with a rule, which I offer for what it is worth. Reread any book that mattered to you at roughly twenty-year intervals, and do not read the introduction first. The book will not have changed, or it will have changed only in the way a landmark does when you return from a long journey. What you are measuring is the traveller.\n\n> A book is a fixed point, and a reader is a moving one. Rereading is how you find out how far you have gone.\n\nI already have a note in my diary for 2046. It says: lighthouse, again. Bring tissues, and perhaps a better coat.",
+      "byline": "Imogen Hale"
+    },
+    {
+      "title": "A library card is a small contract",
+      "slug": "a-library-card-is-a-small-contract",
+      "date": "2026-02-15",
+      "categories": [
+        "Reading"
+      ],
+      "image": "images/cover-library.svg",
+      "alt": "Colourful books on a shelf beneath a golden lamp against a plum wall",
+      "excerpt": "Of all the pieces of plastic in my wallet, only one lets me borrow the wisdom of centuries for three weeks. A love letter to the library.",
+      "body": "Of all the cards in my wallet, one is the oldest and by far the most extraordinary. It is soft at the corners, the barcode is slightly rubbed, and it entitles me to walk into a building and borrow, free of charge, almost any book that anyone has ever thought worth keeping. I think we should talk about it more.\n\nA library card is a contract, and it is one of the best I have ever signed. The terms, as I understand them, are these. You may take what you like. You will give it back. In between, you will treat it a little better than it deserves, and the person after you will do the same. That is the whole arrangement. No fee, no fine print, no renewal sequence in which a cheerful voice offers me a premium tier. It is simply trust, extended to a stranger and indexed alphabetically.\n\n## What the building teaches\n\nI have learned an astonishing amount in libraries that had nothing to do with their books. The reference desk taught me that a good question is more valuable than a quick answer. The hush of the reading room taught me that silence, in company, is a kind of friendship. The shelves, which are arranged by a system older than any of us, taught me that I am rarely the first person to wonder about anything.\n\nThere is also the beautiful accident of the neighbouring spine. You go in for one title and your hand, travelling a few centimetres to the left, finds another you did not know you needed. No algorithm has yet matched that. The shelf does not know you, and so it cannot flatter you, and the books you find there are the ones that surprise.\n\n## A small field guide\n\nIf it has been a while, here is how to return:\n\n- Go on a weekday afternoon, when the building belongs to students, retirees and the lucky.\n- Ask someone at the desk what they are reading. They will always have an answer, and it will be better than any list.\n- Borrow one book you intend to read and one you do not. The second is the one that matters.\n- Return things on time. It is the only part of the contract that is truly yours to keep.\n\nI take my card with me when I travel, and I like to think of it as a very small passport to a country with no borders, where the national language is the sound of a page being turned and the only currency is how often you come back.",
+      "byline": "Imogen Hale"
+    },
+    {
+      "title": "On borrowing books and returning them late",
+      "slug": "on-borrowing-books-and-returning-them-late",
+      "date": "2026-01-18",
+      "categories": [
+        "Reading"
+      ],
+      "image": "images/cover-borrowed.svg",
+      "alt": "A row of books on a dark green shelf lit by a lamp",
+      "excerpt": "A confession, with a short taxonomy of the late return, and a modest proposal for those of us who always mean well.",
+      "body": "I should begin with a confession. I am a person who returns books late. Not by much, and never out of ill will, but reliably, in the way that some people are reliably five minutes behind and arrive full of apology and a little breathless. The librarians at my branch know me. They are kind about it, which is much worse.\n\nOver the years I have come to think of lateness as a genre, and to recognise its main varieties.\n\n## A taxonomy of the late return\n\n**The honest delay.** You are halfway through. The book is excellent. You pay the fine, you renew the loan, you carry on. Nobody was hurt.\n\n**The shelf ghost.** The book was finished weeks ago, but it has migrated to the pile beside the bed, where it sits among a flock of others and acquires, over time, the protective colouring of furniture. You will find it when you look for something else.\n\n**The panic return.** A single email arrives at six in the morning, with a due date in the subject line, and you cross the town at a run with a novel under your arm and the lanyard of your coat still half on. This is, I admit, my most common variety, and I have come to enjoy it a little, in the way one enjoys a very short chase.\n\n**The silent fine.** You return the book, and the nice person at the desk looks at the screen and says, gently, \"there's a small balance.\" You nod gravely and pay. There is no sentence, anywhere, so full of unspoken understanding.\n\n## A modest proposal\n\nI do not wish to defend lateness. It is an inconvenience to the next reader, who may be standing at the shelf with an empty hand and a hopeful face. But I would like to suggest a gentler way of thinking about it, for those of us who will never be punctual.\n\nBorrow fewer books. Borrow them in smaller piles. Put a due date on a sticky note on the front door, where it will catch you on the way out. And when you fail, as you will, return the book with a short note on the flyleaf: *thank you, sorry, it was worth it*. I have done this twice, and both times someone wrote *yes* underneath.\n\nA library runs on a kind of everyday forgiveness. The least I can do is deserve a little of it, and bring the books back, eventually, in good order, with the corners straight and the pages unspoiled.",
+      "byline": "Imogen Hale"
+    }
+  ]
+}

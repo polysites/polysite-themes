@@ -1,0 +1,554 @@
+{
+  "$schema": "../../docs/showcase.schema.json",
+  "slug": "portfolio",
+  "domainPrefix": "portfolio",
+  "name": "Juno Fairweather",
+  "tagline": "Let's make something worth looking at.",
+  "theme": "portfolio",
+  "primaryColor": "#c8350f",
+  "secondaryColor": "#121212",
+  "showDonateButton": false,
+  "header": [
+    {
+      "label": "Work",
+      "href": "/work"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "heading": "Index",
+        "links": [
+          {
+            "label": "Selected work",
+            "href": "/work"
+          },
+          {
+            "label": "Harbour Light",
+            "href": "/work/harbour-light"
+          },
+          {
+            "label": "Small Hours",
+            "href": "/work/small-hours"
+          },
+          {
+            "label": "About",
+            "href": "/about"
+          }
+        ]
+      },
+      {
+        "heading": "Say hello",
+        "links": [
+          {
+            "label": "Start a project",
+            "href": "/contact"
+          }
+        ]
+      }
+    ],
+    "copyright": "Juno Fairweather is a fictional photographer, made up for this demonstration."
+  },
+  "social": [
+    {
+      "platform": "instagram",
+      "url": "#"
+    },
+    {
+      "platform": "linkedin",
+      "url": "#"
+    }
+  ],
+  "privacy": {
+    "policyUrl": "/about",
+    "contactEmail": "studio@junofairweather.example"
+  },
+  "search": true,
+  "share": {
+    "networks": [
+      "email",
+      "copy",
+      "linkedin"
+    ],
+    "contentTypes": [
+      "pages"
+    ]
+  },
+  "forms": [
+    {
+      "key": "enquiry",
+      "title": "Project enquiry",
+      "submitButtonLabel": "Send enquiry",
+      "confirmationMessage": "Thank you. This is a demonstration site, so nothing was sent.",
+      "purpose": "Your details would be used only to reply to this enquiry. This is a demonstration site: nothing you type is kept or read.",
+      "consentRequired": true,
+      "consentLabel": "I agree to be contacted about this enquiry.",
+      "fields": [
+        {
+          "type": "text",
+          "name": "name",
+          "label": "Name",
+          "required": true
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "label": "Email",
+          "required": true
+        },
+        {
+          "type": "select",
+          "name": "kind",
+          "label": "What is it?",
+          "options": [
+            "Photography",
+            "Art direction",
+            "A book or catalogue",
+            "Something else"
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "message",
+          "label": "Tell me about it",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "description": "Juno Fairweather is a fictional photographer and art director: quiet, strong pictures for books, studios and small institutions.",
+      "blocks": [
+        {
+          "blockType": "hero",
+          "heading": "Photography and art direction, made slowly.",
+          "subheading": "Based in Marlow Bay. Working with studios, publishers and small institutions on pictures that last longer than the season.",
+          "ctaLabel": "See the work",
+          "ctaHref": "/work"
+        },
+        {
+          "blockType": "gallery",
+          "heading": "Selected work",
+          "columns": 3,
+          "images": [
+            {
+              "image": "images/harbour-light.svg",
+              "alt": "A sun setting over a harbour with a lighthouse",
+              "caption": "Harbour Light, 2026"
+            },
+            {
+              "image": "images/small-hours.svg",
+              "alt": "A dark apartment block with a few lit windows",
+              "caption": "Small Hours, 2026"
+            },
+            {
+              "image": "images/field-notes.svg",
+              "alt": "Contour lines of a hill, one in red",
+              "caption": "Field Notes, 2025"
+            },
+            {
+              "image": "images/salt-and-stone.svg",
+              "alt": "Abstract shapes: a red circle, a black block and an arch",
+              "caption": "Salt and Stone, 2025"
+            },
+            {
+              "image": "images/paper-moon.svg",
+              "alt": "A pale moon above folded dark hills",
+              "caption": "Paper Moon, 2025"
+            },
+            {
+              "image": "images/tide-tables.svg",
+              "alt": "Layered blue waves",
+              "caption": "Tide Tables, 2024"
+            }
+          ]
+        },
+        {
+          "blockType": "featureGrid",
+          "heading": "What I do",
+          "features": [
+            {
+              "title": "Photography",
+              "description": "Editorial, architecture and place: usually one location, usually in good light, never in a hurry."
+            },
+            {
+              "title": "Art direction",
+              "description": "Identity, books and exhibitions, from the first sketch to the printer's proof."
+            },
+            {
+              "title": "Editing and sequencing",
+              "description": "Turning two thousand frames into forty that belong together."
+            }
+          ]
+        },
+        {
+          "blockType": "logos",
+          "heading": "Worked with",
+          "items": [
+            {
+              "name": "Salt Row Council"
+            },
+            {
+              "name": "Harlow & Pine"
+            },
+            {
+              "name": "The Quiet Press"
+            },
+            {
+              "name": "Orrin Museum of Objects"
+            },
+            {
+              "name": "Fenwick Studio"
+            },
+            {
+              "name": "Lantern Books"
+            }
+          ]
+        },
+        {
+          "blockType": "testimonials",
+          "heading": "Kind words",
+          "items": [
+            {
+              "quote": "Juno finds the picture the rest of us walked past. The book is better for every one of her edits.",
+              "name": "Elsie Marchetti",
+              "role": "Publisher, The Quiet Press"
+            }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Have a project in mind?",
+          "text": "I take on a few commissions a season. Tell me what you are making.",
+          "buttonLabel": "Start a conversation",
+          "buttonHref": "/contact"
+        }
+      ]
+    },
+    {
+      "title": "Work",
+      "slug": "work",
+      "description": "Selected photography and art direction by Juno Fairweather, 2023 to 2026.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "Index",
+          "body": "Eleven projects from the last four years. Two are written up in full: [Harbour Light](/work/harbour-light) and [Small Hours](/work/small-hours)."
+        },
+        {
+          "blockType": "gallery",
+          "columns": 3,
+          "images": [
+            {
+              "image": "images/harbour-light.svg",
+              "alt": "A sun setting over a harbour with a lighthouse",
+              "caption": "Harbour Light, 2026"
+            },
+            {
+              "image": "images/small-hours.svg",
+              "alt": "A dark apartment block with a few lit windows",
+              "caption": "Small Hours, 2026"
+            },
+            {
+              "image": "images/field-notes.svg",
+              "alt": "Contour lines of a hill, one in red",
+              "caption": "Field Notes, 2025"
+            },
+            {
+              "image": "images/salt-and-stone.svg",
+              "alt": "Abstract shapes: a red circle, a black block and an arch",
+              "caption": "Salt and Stone, 2025"
+            },
+            {
+              "image": "images/paper-moon.svg",
+              "alt": "A pale moon above folded dark hills",
+              "caption": "Paper Moon, 2025"
+            },
+            {
+              "image": "images/tide-tables.svg",
+              "alt": "Layered blue waves",
+              "caption": "Tide Tables, 2024"
+            },
+            {
+              "image": "images/greenhouse.svg",
+              "alt": "A grid of green leaves on a pink ground",
+              "caption": "Greenhouse, 2024"
+            },
+            {
+              "image": "images/night-market.svg",
+              "alt": "Soft colourful lights in the dark",
+              "caption": "Night Market, 2024"
+            },
+            {
+              "image": "images/quiet-machines.svg",
+              "alt": "A row of coloured towers",
+              "caption": "Quiet Machines, 2023"
+            },
+            {
+              "image": "images/atlas.svg",
+              "alt": "A dotted map with a red route",
+              "caption": "Atlas, 2023"
+            },
+            {
+              "image": "images/ferry.svg",
+              "alt": "A ferry crossing at sunset",
+              "caption": "Ferry, 2023"
+            }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Want to see more?",
+          "text": "A longer portfolio is available on request.",
+          "buttonLabel": "Get in touch",
+          "buttonHref": "/contact"
+        }
+      ]
+    },
+    {
+      "title": "Harbour Light",
+      "slug": "work/harbour-light",
+      "description": "A year photographing a working harbour at dusk, for a book by The Quiet Press.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "The brief",
+          "body": "A small publisher asked for one picture of the harbour at the hour when the lights come on. I went back every week for a year.\n\nThe book, with its warm-grey paper and a single red thread in the binding, was designed alongside the photographs so each spread could breathe."
+        },
+        {
+          "blockType": "stats",
+          "items": [
+            {
+              "value": "2026",
+              "label": "Year"
+            },
+            {
+              "value": "The Quiet Press",
+              "label": "Client"
+            },
+            {
+              "value": "Photography, design",
+              "label": "Role"
+            },
+            {
+              "value": "52 weeks",
+              "label": "On location"
+            }
+          ]
+        },
+        {
+          "blockType": "gallery",
+          "columns": 2,
+          "images": [
+            {
+              "image": "images/harbour-light.svg",
+              "alt": "A sun setting over a harbour with a lighthouse",
+              "caption": "Harbour Light, 2026"
+            },
+            {
+              "image": "images/ferry.svg",
+              "alt": "A ferry crossing at sunset",
+              "caption": "Ferry, 2023"
+            },
+            {
+              "image": "images/tide-tables.svg",
+              "alt": "Layered blue waves",
+              "caption": "Tide Tables, 2024"
+            },
+            {
+              "image": "images/atlas.svg",
+              "alt": "A dotted map with a red route",
+              "caption": "Atlas, 2023"
+            }
+          ]
+        },
+        {
+          "blockType": "testimonials",
+          "items": [
+            {
+              "quote": "We asked for one picture and received a whole year of evenings.",
+              "name": "Elsie Marchetti",
+              "role": "Publisher, The Quiet Press"
+            }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Next: Small Hours",
+          "text": "A series about the windows that stay lit.",
+          "buttonLabel": "See the project",
+          "buttonHref": "/work/small-hours"
+        }
+      ]
+    },
+    {
+      "title": "Small Hours",
+      "slug": "work/small-hours",
+      "description": "A night-time series about the windows that stay lit, shown at the Orrin Museum of Objects.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "The brief",
+          "body": "A museum wanted a quiet exhibition about the city after midnight.\n\nI photographed one apartment block from the same spot for ninety nights and let the lit windows tell the story: shift workers, new parents, a student with a lamp."
+        },
+        {
+          "blockType": "stats",
+          "items": [
+            {
+              "value": "2026",
+              "label": "Year"
+            },
+            {
+              "value": "Orrin Museum of Objects",
+              "label": "Client"
+            },
+            {
+              "value": "Photography, sequencing",
+              "label": "Role"
+            },
+            {
+              "value": "90 nights",
+              "label": "From one window"
+            }
+          ]
+        },
+        {
+          "blockType": "gallery",
+          "columns": 2,
+          "images": [
+            {
+              "image": "images/small-hours.svg",
+              "alt": "A dark apartment block with a few lit windows",
+              "caption": "Small Hours, 2026"
+            },
+            {
+              "image": "images/night-market.svg",
+              "alt": "Soft colourful lights in the dark",
+              "caption": "Night Market, 2024"
+            },
+            {
+              "image": "images/paper-moon.svg",
+              "alt": "A pale moon above folded dark hills",
+              "caption": "Paper Moon, 2025"
+            },
+            {
+              "image": "images/quiet-machines.svg",
+              "alt": "A row of coloured towers",
+              "caption": "Quiet Machines, 2023"
+            }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Back to the index",
+          "buttonLabel": "All work",
+          "buttonHref": "/work"
+        }
+      ]
+    },
+    {
+      "title": "About",
+      "slug": "about",
+      "description": "About Juno Fairweather, a fictional photographer and art director.",
+      "blocks": [
+        {
+          "blockType": "team",
+          "members": [
+            {
+              "name": "Juno Fairweather",
+              "role": "Photographer and art director",
+              "bio": "I make pictures for books, studios and small institutions. I trained in graphic design, fell for photography on a long ferry ride, and have been trying to do both well ever since.\n\nI work alone, on a few projects a season, so each one gets the time it needs.",
+              "image": "images/portrait.svg",
+              "alt": "Illustrated portrait of Juno, with round glasses"
+            }
+          ]
+        },
+        {
+          "blockType": "timeline",
+          "heading": "Selected exhibitions and awards",
+          "entries": [
+            {
+              "period": "2026",
+              "title": "Small Hours",
+              "subtitle": "Orrin Museum of Objects",
+              "description": "Solo exhibition, ninety photographs."
+            },
+            {
+              "period": "2025",
+              "title": "Quiet Pictures Award",
+              "subtitle": "Marlow Bay Photography Prize",
+              "description": "Shortlisted for Field Notes."
+            },
+            {
+              "period": "2024",
+              "title": "Tide Tables",
+              "subtitle": "Fenwick Studio",
+              "description": "Group show on coastal work."
+            },
+            {
+              "period": "2022",
+              "title": "First book",
+              "subtitle": "Lantern Books",
+              "description": "Art direction and photography."
+            }
+          ]
+        },
+        {
+          "blockType": "stats",
+          "heading": "In numbers",
+          "items": [
+            {
+              "value": "11",
+              "label": "projects in the index"
+            },
+            {
+              "value": "4",
+              "label": "books"
+            },
+            {
+              "value": "2",
+              "label": "solo shows"
+            }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Let's talk",
+          "buttonLabel": "Contact",
+          "buttonHref": "/contact"
+        }
+      ]
+    },
+    {
+      "title": "Contact",
+      "slug": "contact",
+      "description": "How to reach Juno Fairweather and a project enquiry form.",
+      "blocks": [
+        {
+          "blockType": "hours-contact",
+          "heading": "Studio",
+          "address": "Studio 4, 22 Salt Row\nMarlow Bay",
+          "email": "studio@junofairweather.example",
+          "phone": "(555) 010-0178",
+          "note": "Visits by appointment. I reply to every enquiry within three working days."
+        },
+        {
+          "blockType": "formEmbed",
+          "heading": "Start a project",
+          "form": "enquiry"
+        }
+      ]
+    }
+  ]
+}

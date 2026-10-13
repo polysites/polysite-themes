@@ -1,0 +1,339 @@
+{
+  "$schema": "../../docs/showcase.schema.json",
+  "slug": "shop",
+  "domainPrefix": "shop",
+  "name": "Tuppence & Thistle",
+  "tagline": "An independent shop for everyday good things",
+  "theme": "shop",
+  "primaryColor": "#b4472b",
+  "secondaryColor": "#2f5d3a",
+  "showDonateButton": false,
+  "header": [
+    { "label": "The shelves", "href": "/shop" },
+    { "label": "Gift cards", "href": "/gift-cards" },
+    { "label": "Our story", "href": "/our-story" },
+    { "label": "Visit us", "href": "/visit" }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "heading": "Browse",
+        "links": [
+          { "label": "The shelves", "href": "/shop" },
+          { "label": "Gift cards", "href": "/gift-cards" }
+        ]
+      },
+      {
+        "heading": "Find us",
+        "links": [
+          { "label": "Opening hours and map", "href": "/visit" },
+          { "label": "Send an enquiry", "href": "/visit" },
+          { "label": "Our story", "href": "/our-story" }
+        ]
+      }
+    ]
+  },
+  "social": [
+    { "platform": "instagram", "url": "#" },
+    { "platform": "facebook", "url": "#" }
+  ],
+  "privacy": { "policyUrl": "/visit", "contactEmail": "hello@tuppenceandthistle.example" },
+  "search": true,
+  "share": true,
+  "forms": [
+    {
+      "key": "enquiry",
+      "title": "Shop enquiry",
+      "submitButtonLabel": "Send enquiry",
+      "confirmationMessage": "Thank you. We will reply within a day or two, and we will keep anything you ask about to one side. (A demo form: nothing leaves this test site.)",
+      "purpose": "We use these details only to answer you. This is a fictional demo shop.",
+      "consentRequired": true,
+      "consentLabel": "I agree that the shop may email me about this enquiry.",
+      "retentionDays": 30,
+      "fields": [
+        { "type": "text", "name": "name", "label": "Your name", "required": true },
+        { "type": "email", "name": "email", "label": "Email address", "required": true },
+        { "type": "text", "name": "item", "label": "What are you looking for?" },
+        {
+          "type": "select",
+          "name": "how",
+          "label": "How would you like to get it?",
+          "options": ["I will collect it from the shop", "Please post it to me", "Not sure yet"]
+        },
+        { "type": "textarea", "name": "message", "label": "Anything else we should know?", "required": true }
+      ]
+    },
+    {
+      "key": "gift-card",
+      "title": "Gift card enquiry",
+      "submitButtonLabel": "Ask for a gift card",
+      "confirmationMessage": "Thank you. We will write the card by hand and let you know when it is ready. (A demo form: nothing leaves this test site.)",
+      "purpose": "We use these details only to prepare your gift card. This is a fictional demo shop.",
+      "consentRequired": true,
+      "consentLabel": "I agree that the shop may email me about this gift card.",
+      "retentionDays": 30,
+      "fields": [
+        { "type": "text", "name": "name", "label": "Your name", "required": true },
+        { "type": "email", "name": "email", "label": "Email address", "required": true },
+        { "type": "select", "name": "amount", "label": "Amount", "required": true, "options": ["$10", "$25", "$50", "$100", "Another amount (tell us below)"] },
+        { "type": "text", "name": "recipient", "label": "Who is it for?" },
+        { "type": "textarea", "name": "message", "label": "A few words for the card" },
+        { "type": "select", "name": "how", "label": "Collect or post?", "options": ["I will collect it", "Please post it"] }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "description": "Tuppence & Thistle is a fictional independent shop used to demonstrate the Polysite shop theme. No online checkout: visit or send an enquiry.",
+      "blocks": [
+        {
+          "blockType": "hero",
+          "heading": "Everyday good things, chosen by hand.",
+          "subheading": "A small shop on the high street. Come in, have a look, stay for a cup of tea. There is no online checkout: visit us, or send an enquiry and we will put something aside for you.",
+          "image": "images/shopfront.svg",
+          "alt": "An illustrated village shop front with a striped awning, a window of goods and an open sign",
+          "ctaLabel": "Plan your visit",
+          "ctaHref": "/visit"
+        },
+        {
+          "blockType": "gallery",
+          "heading": "On the shelves this season",
+          "columns": 4,
+          "images": [
+            { "image": "images/product-mug.svg", "alt": "A speckled ceramic mug", "caption": "Speckled mug, $14" },
+            { "image": "images/product-candle.svg", "alt": "A beeswax candle in a glass jar", "caption": "Beeswax candle, $18" },
+            { "image": "images/product-jam.svg", "alt": "A jar of plum jam with a gingham lid", "caption": "Plum jam, $8" },
+            { "image": "images/product-scarf.svg", "alt": "A chunky knitted scarf", "caption": "Wool scarf, $38" }
+          ]
+        },
+        {
+          "blockType": "textBlock",
+          "heading": "A shop you can walk around",
+          "body": "We sell things we would happily own ourselves: mugs from a potter down the road, honey from a hive behind the library, notebooks sewn by hand.\n\nWe do not run an online shop. The best way to buy is to visit. If you cannot, send an enquiry about anything you spot here and we will set it aside, or post it to you."
+        },
+        {
+          "blockType": "price-list",
+          "heading": "A few favourites",
+          "sections": [
+            {
+              "title": "For the kitchen",
+              "items": [
+                { "name": "Speckled mug", "description": "Made twelve miles away.", "price": "$14", "tag": "local" },
+                { "name": "Olive wood spoon", "description": "Three sizes, each one a little different.", "price": "$11" },
+                { "name": "Plum jam", "description": "Small batch, from the allotment behind the library.", "price": "$8", "tag": "seasonal" }
+              ]
+            },
+            {
+              "title": "For the desk",
+              "items": [
+                { "name": "Stitched notebook", "description": "Plain paper, kraft cover.", "price": "$9" },
+                { "name": "Beeswax candle", "description": "Burns for about forty hours.", "price": "$18", "tag": "gift" }
+              ]
+            }
+          ]
+        },
+        {
+          "blockType": "hours-contact",
+          "heading": "Come and say hello",
+          "hours": [
+            { "days": "Tuesday to Friday", "time": "10:00 - 17:30" },
+            { "days": "Saturday", "time": "9:30 - 16:00" },
+            { "days": "Sunday and Monday", "time": "Closed" }
+          ],
+          "address": "14 High Street\nSampletown, EX2 7AB",
+          "phone": "+1 555 010 0177",
+          "email": "hello@tuppenceandthistle.example",
+          "note": "Invented address, number and email for demonstration. Open late on the first Friday of December."
+        },
+        {
+          "blockType": "cta",
+          "heading": "Looking for something particular?",
+          "text": "Tell us what you have in mind and we will see what we can find.",
+          "buttonLabel": "Send an enquiry",
+          "buttonHref": "/visit",
+          "secondaryLabel": "Browse the shelves",
+          "secondaryHref": "/shop"
+        }
+      ]
+    },
+    {
+      "title": "The shelves",
+      "slug": "shop",
+      "description": "Everything on the shelves at Tuppence & Thistle, with prices. No online checkout.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "What is on the shelves",
+          "body": "Prices are what you will pay in the shop, and stock changes week to week. To ask about something, send an enquiry or give us a ring and we will put it aside.\n\n**No online checkout.** Visit us, or send an enquiry and we will reply with how to collect or post it."
+        },
+        {
+          "blockType": "gallery",
+          "columns": 4,
+          "images": [
+            { "image": "images/product-mug.svg", "alt": "A speckled ceramic mug", "caption": "Speckled mug, $14" },
+            { "image": "images/product-candle.svg", "alt": "A beeswax candle in a glass jar", "caption": "Beeswax candle, $18" },
+            { "image": "images/product-notebook.svg", "alt": "A stitched notebook with a kraft cover", "caption": "Stitched notebook, $9" },
+            { "image": "images/product-tote.svg", "alt": "A canvas tote bag with a printed thistle", "caption": "Canvas tote, $16" },
+            { "image": "images/product-planter.svg", "alt": "A terracotta planter with a succulent", "caption": "Planter with succulent, $22" },
+            { "image": "images/product-soap.svg", "alt": "Two bars of oat and honey soap", "caption": "Oat and honey soap, $7" },
+            { "image": "images/product-tea.svg", "alt": "A round tea tin with a leaf label", "caption": "Loose leaf tea tin, $12" },
+            { "image": "images/product-spoons.svg", "alt": "Three olive wood spoons", "caption": "Olive wood spoon, $11" }
+          ]
+        },
+        {
+          "blockType": "price-list",
+          "heading": "The full price list",
+          "intro": "A snapshot of the shelves. Some things are one-offs.",
+          "sections": [
+            {
+              "title": "Kitchen and table",
+              "items": [
+                { "name": "Speckled mug", "description": "Made twelve miles away, dishwasher safe.", "price": "$14", "tag": "local" },
+                { "name": "Olive wood spoon", "description": "Small, medium or large.", "price": "$11" },
+                { "name": "Linen tea towel", "description": "Red stripe, gets softer every wash.", "price": "$13" },
+                { "name": "Plum jam", "description": "Small batch, from the allotment.", "price": "$8", "tag": "seasonal" },
+                { "name": "Loose leaf tea tin", "description": "Smoky black tea, 100 grams.", "price": "$12" }
+              ]
+            },
+            {
+              "title": "Desk and shelf",
+              "items": [
+                { "name": "Stitched notebook", "description": "A5, plain pages.", "price": "$9" },
+                { "name": "Beeswax candle", "description": "In a reusable glass jar.", "price": "$18", "tag": "gift" },
+                { "name": "Canvas tote", "description": "Printed by hand with a thistle.", "price": "$16", "tag": "new" }
+              ]
+            },
+            {
+              "title": "Garden",
+              "items": [
+                { "name": "Terracotta planter with succulent", "description": "Small enough for a windowsill.", "price": "$22" },
+                { "name": "Seed packets, set of five", "description": "Sweet peas, nasturtiums and three kinds of beans.", "price": "$10", "tag": "seasonal" }
+              ]
+            },
+            {
+              "title": "Gifts and treats",
+              "items": [
+                { "name": "Oat and honey soap", "description": "Two bars tied with string.", "price": "$7" },
+                { "name": "Wool scarf", "description": "Chunky, in mustard and sage.", "price": "$38", "tag": "gift" },
+                { "name": "Gift card", "description": "Any amount, written by hand.", "price": "from $10" }
+              ]
+            }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "See something you like?",
+          "text": "Send an enquiry and we will put it aside for you.",
+          "buttonLabel": "Send an enquiry",
+          "buttonHref": "/visit"
+        }
+      ]
+    },
+    {
+      "title": "Gift cards",
+      "slug": "gift-cards",
+      "description": "Ask the shop for a hand-written gift card.",
+      "blocks": [
+        {
+          "blockType": "hero",
+          "heading": "A little something, for someone.",
+          "subheading": "Gift cards are written by hand, for any amount from $10. Ask below and collect it in the shop, or have it posted.",
+          "image": "images/giftcard.svg",
+          "alt": "A terracotta gift card tied up with a note that reads: a little something, for someone"
+        },
+        {
+          "blockType": "textBlock",
+          "heading": "How it works",
+          "body": "1. Fill in the form below with who it is for and how much.\n2. We write the card and get in touch to arrange payment in the shop or by phone.\n3. You collect it, or we post it for the price of a stamp.\n\nCards do not expire, and they can be spent on anything in the shop."
+        },
+        {
+          "blockType": "formEmbed",
+          "heading": "Ask for a gift card",
+          "form": "gift-card"
+        }
+      ]
+    },
+    {
+      "title": "Our story",
+      "slug": "our-story",
+      "description": "How a spare room of jars became a shop.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "From a spare room to a high street",
+          "body": "Bea started with a table at the village fair and a box of jam jars. People kept asking where the rest of it came from, so she began to buy from the people who made it: the potter, the knitters, the beekeeper behind the library.\n\nWalter joined to help with the lifting and stayed for the tea. The shop opened on a rainy Tuesday and has been open on most Tuesdays since."
+        },
+        {
+          "blockType": "gallery",
+          "columns": 2,
+          "images": [
+            { "image": "images/storeroom.svg", "alt": "Shelves of jars, tins and boxes in the shop's back room", "caption": "The back room, where everything is packed by hand" },
+            { "image": "images/season-autumn.svg", "alt": "Scattered autumn leaves in terracotta, mustard and green", "caption": "The first Friday of every season, we change the window" }
+          ]
+        },
+        {
+          "blockType": "timeline",
+          "heading": "A short history",
+          "entries": [
+            { "period": "2014", "title": "A table at the fair", "description": "One folding table, one box of jam jars." },
+            { "period": "2018", "title": "The shop opens", "description": "A rainy Tuesday, fourteen customers and a lot of tea." },
+            { "period": "2022", "title": "The back room", "description": "We knocked through to the old stable for more shelves." },
+            { "period": "2026", "title": "Still here", "description": "Same counter, same kettle, a few more mugs." }
+          ]
+        },
+        {
+          "blockType": "team",
+          "heading": "Behind the counter",
+          "members": [
+            { "name": "Bea Thistlewood", "role": "Owner and chooser of things", "bio": "Will tell you the name of the person who made almost everything here.", "image": "images/person-bea.svg", "alt": "Illustrated portrait of Bea Thistlewood" },
+            { "name": "Walter Pennock", "role": "Packing, lifting and tea", "bio": "Has strong opinions about string.", "image": "images/person-walter.svg", "alt": "Illustrated portrait of Walter Pennock" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Visit us",
+      "slug": "visit",
+      "description": "Opening hours, the map and a form to send the shop an enquiry.",
+      "blocks": [
+        {
+          "blockType": "hours-contact",
+          "heading": "Opening hours and where to find us",
+          "hours": [
+            { "days": "Tuesday to Friday", "time": "10:00 - 17:30" },
+            { "days": "Saturday", "time": "9:30 - 16:00" },
+            { "days": "Sunday and Monday", "time": "Closed" }
+          ],
+          "address": "14 High Street\nSampletown, EX2 7AB",
+          "phone": "+1 555 010 0177",
+          "email": "hello@tuppenceandthistle.example",
+          "note": "Invented address, number and email for demonstration."
+        },
+        {
+          "blockType": "gallery",
+          "columns": 2,
+          "images": [
+            { "image": "images/streetmap.svg", "alt": "A hand-drawn street map: the shop sits on the high street between the library and the pond", "caption": "Between the library and the pond. Look for the striped awning." }
+          ]
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Before you come",
+          "items": [
+            { "question": "Is the shop step-free?", "answer": "Yes. There is a ramp at the door and the aisles are wide enough for a pushchair or a wheelchair." },
+            { "question": "Can I bring my dog?", "answer": "Well-behaved dogs are very welcome. There is a water bowl by the till." },
+            { "question": "Do you take cards?", "answer": "Yes, and cash, and the occasional jar of honey in exchange." },
+            { "question": "Can I buy online?", "answer": "No. We deliberately have no online checkout. Send an enquiry and we will set things aside or post them." }
+          ]
+        },
+        {
+          "blockType": "formEmbed",
+          "heading": "Send us an enquiry",
+          "form": "enquiry"
+        }
+      ]
+    }
+  ]
+}

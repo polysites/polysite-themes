@@ -1,0 +1,271 @@
+{
+  "$schema": "../../docs/showcase.schema.json",
+  "slug": "nonprofit",
+  "domainPrefix": "nonprofit",
+  "name": "Brookside Neighbours",
+  "tagline": "Neighbours helping neighbours since 2011",
+  "theme": "nonprofit",
+  "primaryColor": "#0f6b6e",
+  "secondaryColor": "#f2b134",
+  "showDonateButton": true,
+  "header": [
+    { "label": "Our work", "href": "/our-work" },
+    { "label": "Get involved", "href": "/get-involved" },
+    { "label": "About us", "href": "/about" }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "heading": "What we do",
+        "links": [
+          { "label": "Our work", "href": "/our-work" },
+          { "label": "About us", "href": "/about" }
+        ]
+      },
+      {
+        "heading": "Help out",
+        "links": [
+          { "label": "Volunteer", "href": "/get-involved" },
+          { "label": "Donate", "href": "/donate" }
+        ]
+      }
+    ]
+  },
+  "social": [
+    { "platform": "facebook", "url": "#" },
+    { "platform": "instagram", "url": "#" },
+    { "platform": "youtube", "url": "#" }
+  ],
+  "privacy": { "policyUrl": "/about", "contactEmail": "hello@brookside.example" },
+  "search": true,
+  "share": true,
+  "forms": [
+    {
+      "key": "volunteer",
+      "title": "Volunteer sign-up",
+      "submitButtonLabel": "Count me in",
+      "confirmationMessage": "Thank you! Someone from the volunteer team will be in touch this week. (A demo form: nothing leaves this test site.)",
+      "purpose": "We use these details only to organise volunteers. This is a fictional demo charity.",
+      "consentRequired": true,
+      "consentLabel": "I agree that Brookside Neighbours may contact me about volunteering.",
+      "retentionDays": 180,
+      "fields": [
+        { "type": "text", "name": "name", "label": "Your name", "required": true },
+        { "type": "email", "name": "email", "label": "Email address", "required": true },
+        {
+          "type": "select",
+          "name": "area",
+          "label": "Where would you like to help?",
+          "required": true,
+          "options": ["The food share", "The community garden", "The repair cafe", "Shared lunches", "Wherever I am needed"]
+        },
+        { "type": "select", "name": "when", "label": "When are you free?", "options": ["Weekday mornings", "Weekday evenings", "Saturdays", "Sundays"] },
+        { "type": "textarea", "name": "about", "label": "Anything you would like us to know?" }
+      ]
+    },
+    {
+      "key": "newsletter",
+      "title": "Neighbours newsletter",
+      "submitButtonLabel": "Keep me posted",
+      "confirmationMessage": "Thank you, you are on the list. (Demo form: nothing is stored beyond this test site.)",
+      "purpose": "One short email a month about what happened and what is coming up.",
+      "consentRequired": true,
+      "consentLabel": "Send me the monthly email.",
+      "fields": [{ "type": "email", "name": "email", "label": "Email address", "required": true }]
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "description": "Brookside Neighbours is a fictional community charity used to demonstrate the Polysite nonprofit theme.",
+      "blocks": [
+        {
+          "blockType": "hero",
+          "heading": "A street is only as strong as the neighbours on it.",
+          "subheading": "We run a food share, a community garden, a repair cafe and shared lunches, all by and for the people who live here.",
+          "image": "images/hero-community.svg",
+          "alt": "An illustrated street of houses with a community garden of raised beds, a tree and neighbours standing together",
+          "ctaLabel": "Give what you can",
+          "ctaHref": "/donate"
+        },
+        {
+          "blockType": "stats",
+          "heading": "Last year, together",
+          "items": [
+            { "value": "14,200", "label": "meals shared" },
+            { "value": "310", "label": "volunteers" },
+            { "value": "1,150", "label": "things repaired" },
+            { "value": "62", "label": "garden beds" }
+          ]
+        },
+        {
+          "blockType": "commitmentsGrid",
+          "heading": "What we do, every week",
+          "items": [
+            { "heading": "The food share", "body": "Fresh and tinned food, free to anyone who needs it, no questions asked. Open three mornings a week.", "ctaLabel": "How it works", "ctaHref": "/our-work" },
+            { "heading": "The community garden", "body": "Sixty-two raised beds, tended by neighbours of every age. Half of what grows goes to the food share.", "ctaLabel": "Grow with us", "ctaHref": "/get-involved" },
+            { "heading": "The repair cafe", "body": "Bring a broken lamp, toaster or jumper. Volunteers fix it with you, and teach you how.", "ctaLabel": "Next session", "ctaHref": "/our-work" },
+            { "heading": "Shared lunches", "body": "A long table, a hot meal and company, every Thursday. Come on your own and leave with friends." },
+            { "heading": "Homework club", "body": "After-school help for children aged 7 to 14, run by retired teachers and keen teenagers." },
+            { "heading": "Neighbour check-ins", "body": "A friendly phone call or visit for people who live alone, from someone who lives nearby." }
+          ]
+        },
+        {
+          "blockType": "leaderSpotlight",
+          "photo": "images/person-marguerite.svg",
+          "alt": "Illustrated portrait of Marguerite Osei",
+          "name": "Marguerite Osei",
+          "title": "Founder and director (a fictional person)",
+          "quote": "It started with one pot of soup on a Thursday. What keeps it going is that everybody gives a little, and nobody has to give a lot.",
+          "ctaLabel": "Read our story",
+          "ctaHref": "/about"
+        },
+        {
+          "blockType": "testimonials",
+          "heading": "In neighbours' words",
+          "items": [
+            { "quote": "I came for the food share and stayed for the Thursday lunch. I have not eaten alone on a Thursday since.", "name": "Ruth Adair", "role": "Neighbour (fictional)", "image": "images/person-ruth.svg", "alt": "Illustrated portrait of Ruth Adair" },
+            { "quote": "I fixed my first toaster here. Now I run the Saturday bench.", "name": "Mo Hussein", "role": "Repair cafe volunteer (fictional)", "image": "images/person-mo.svg", "alt": "Illustrated portrait of Mo Hussein" },
+            { "quote": "My grandchildren know the names of every vegetable in the garden. So do I, now.", "name": "Pearl Dunmore", "role": "Gardener (fictional)", "image": "images/person-pearl.svg", "alt": "Illustrated portrait of Pearl Dunmore" }
+          ]
+        },
+        {
+          "blockType": "donationTiers",
+          "heading": "Choose a gift",
+          "amounts": [{ "amount": 10 }, { "amount": 25 }, { "amount": 50 }, { "amount": 100 }],
+          "donateHref": "/donate"
+        },
+        {
+          "blockType": "signupForm",
+          "heading": "Hear what the street has been up to",
+          "subheading": "One short email a month. No spam, ever.",
+          "form": "newsletter",
+          "ctaLabel": "Keep me posted"
+        }
+      ]
+    },
+    {
+      "title": "Our work",
+      "slug": "our-work",
+      "description": "The food share, the garden, the repair cafe and shared lunches.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "Four things, done with care",
+          "body": "Everything we do is run by volunteers and paid for by small gifts. Nothing has a waiting list, a form to prove need, or a fee."
+        },
+        {
+          "blockType": "gallery",
+          "columns": 2,
+          "images": [
+            { "image": "images/scene-foodshare.svg", "alt": "Shelves of tins, bread and fruit crates at a community pantry", "caption": "The food share: Tuesday, Thursday and Saturday mornings" },
+            { "image": "images/scene-garden.svg", "alt": "Raised vegetable beds with watering cans and sunflowers", "caption": "The community garden: open all day, every day" },
+            { "image": "images/scene-repair.svg", "alt": "A workbench with a lamp, a toaster being mended and a row of tools", "caption": "The repair cafe: the first Saturday of the month" },
+            { "image": "images/scene-lunch.svg", "alt": "A long table set for a shared lunch with bowls and jugs", "caption": "Shared lunches: every Thursday at noon" }
+          ]
+        },
+        {
+          "blockType": "hours-contact",
+          "heading": "When and where",
+          "hours": [
+            { "days": "Food share (Tue, Thu, Sat)", "time": "9:00 - 12:00" },
+            { "days": "Shared lunch (Thursday)", "time": "12:00 - 14:00" },
+            { "days": "Repair cafe (first Saturday)", "time": "10:00 - 15:00" }
+          ],
+          "address": "The Old School Hall\nBrookside Lane\nSampletown, EX3 5BR",
+          "phone": "+1 555 010 0123",
+          "email": "hello@brookside.example",
+          "note": "Invented address, number and email for demonstration."
+        }
+      ]
+    },
+    {
+      "title": "Get involved",
+      "slug": "get-involved",
+      "description": "Volunteer with Brookside Neighbours: sign up here.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "An hour a week changes a lot",
+          "body": "You do not need experience, only a bit of time. We will pair you with someone who has done the job before and make sure you always know who to ask.\n\nMost volunteers come once a week for two hours. Some come once a month. Both are welcome."
+        },
+        {
+          "blockType": "formEmbed",
+          "heading": "Volunteer sign-up",
+          "form": "volunteer"
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Questions volunteers ask",
+          "items": [
+            { "question": "Do I need a background check?", "answer": "Only for the homework club and neighbour check-ins. We arrange it and pay for it." },
+            { "question": "Can I bring my teenager?", "answer": "Yes. Under-16s come with an adult, and older teenagers are some of our best volunteers." },
+            { "question": "What if I can only help occasionally?", "answer": "That is fine. Tell us in the form and we will call you for one-off jobs like garden days and big lunches." }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Donate",
+      "slug": "donate",
+      "description": "Give to Brookside Neighbours. A demonstration page: no payment is taken.",
+      "blocks": [
+        {
+          "blockType": "donationTiers",
+          "heading": "Give what you can",
+          "amounts": [{ "amount": 10 }, { "amount": 25 }, { "amount": 50 }, { "amount": 100 }, { "amount": 250 }],
+          "donateHref": "/donate"
+        },
+        {
+          "blockType": "textBlock",
+          "heading": "Where your gift goes",
+          "body": "This is a demonstration site, so no payment is taken here. On a real charity's site this page would link to its payment provider.\n\nFor the story: $10 buys 25 meals for the food share, $25 stocks a repair bench for a month, $50 plants and waters a garden bed for a year and $100 hosts a shared lunch for forty people."
+        },
+        {
+          "blockType": "commitmentsGrid",
+          "heading": "Our promises",
+          "items": [
+            { "heading": "Nine in every ten dollars goes to the work", "body": "The rest keeps the lights on and the books honest." },
+            { "heading": "We publish our accounts", "body": "Every spring, in plain language, on this site." },
+            { "heading": "You can stop at any time", "body": "Change or cancel a regular gift with one email." }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "About us",
+      "slug": "about",
+      "description": "The story and the people of Brookside Neighbours (all fictional).",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "How it started",
+          "body": "In the winter of 2011 Marguerite put a pot of soup on a table outside the old school hall and told a few people. Twelve came the first week.\n\nToday three hundred volunteers keep four projects running. We are still based in the same hall, and the soup is still on the first Thursday of every month."
+        },
+        {
+          "blockType": "timeline",
+          "heading": "A decade and a bit",
+          "entries": [
+            { "period": "2011", "title": "The first pot of soup", "description": "Twelve people, one table." },
+            { "period": "2014", "title": "The food share opens", "description": "A single shelf, then a whole room." },
+            { "period": "2018", "title": "The garden and the repair cafe", "description": "Sixty beds and a workbench for the price of a lease." },
+            { "period": "2024", "title": "A new roof", "description": "Paid for by four hundred small gifts." }
+          ]
+        },
+        {
+          "blockType": "team",
+          "heading": "The small paid team",
+          "intro": "Four part-time staff and three hundred volunteers. All of the people here are invented.",
+          "members": [
+            { "name": "Marguerite Osei", "role": "Director", "bio": "Founder, soup maker, relentless emailer.", "image": "images/person-marguerite.svg", "alt": "Illustrated portrait of Marguerite Osei" },
+            { "name": "Tomas Reyes", "role": "Food share lead", "bio": "Knows where every tin is and why.", "image": "images/person-tomas.svg", "alt": "Illustrated portrait of Tomas Reyes" },
+            { "name": "Aisha Karim", "role": "Garden coordinator", "bio": "Has never met a weed she could not name.", "image": "images/person-aisha.svg", "alt": "Illustrated portrait of Aisha Karim" },
+            { "name": "Joel Brennan", "role": "Repair cafe organiser", "bio": "Believes most things can be fixed with patience and a spare screw.", "image": "images/person-joel.svg", "alt": "Illustrated portrait of Joel Brennan" },
+            { "name": "Nia Calloway", "role": "Volunteer coordinator", "bio": "Matches people to jobs they end up loving.", "image": "images/person-nia.svg", "alt": "Illustrated portrait of Nia Calloway" }
+          ]
+        }
+      ]
+    }
+  ]
+}

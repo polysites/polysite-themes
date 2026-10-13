@@ -1,0 +1,431 @@
+{
+  "$schema": "../../docs/showcase.schema.json",
+  "slug": "agency",
+  "domainPrefix": "agency",
+  "name": "Fernlight Studio",
+  "tagline": "Product strategy and design for teams that ship",
+  "theme": "agency",
+  "primaryColor": "#5a3df0",
+  "secondaryColor": "#d6336c",
+  "showDonateButton": false,
+  "header": [
+    { "label": "Services", "href": "/services" },
+    { "label": "Work", "href": "/work" },
+    { "label": "About", "href": "/about" },
+    { "label": "Insights", "href": "/insights" },
+    { "label": "Start a project", "href": "/contact" }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "heading": "Studio",
+        "links": [
+          { "label": "About us", "href": "/about" },
+          { "label": "Selected work", "href": "/work" },
+          { "label": "Contact", "href": "/contact" }
+        ]
+      },
+      {
+        "heading": "What we do",
+        "links": [
+          { "label": "Discovery sprints", "href": "/services" },
+          { "label": "Product design", "href": "/services" },
+          { "label": "Build partnerships", "href": "/services" }
+        ]
+      },
+      {
+        "heading": "Read",
+        "links": [
+          { "label": "Insights", "href": "/insights" }
+        ]
+      }
+    ]
+  },
+  "social": [
+    { "platform": "linkedin", "url": "#" },
+    { "platform": "x", "url": "#" },
+    { "platform": "youtube", "url": "#" }
+  ],
+  "privacy": { "policyUrl": "/contact", "contactEmail": "hello@fernlight.example" },
+  "search": true,
+  "share": true,
+  "newsSettings": { "label": "Insights", "path": "insights", "perPage": 6 },
+  "forms": [
+    {
+      "key": "project-enquiry",
+      "title": "Project enquiry",
+      "submitButtonLabel": "Send the brief",
+      "confirmationMessage": "Thanks. Someone from the studio will reply within two working days. This is a demo form: nothing leaves this site.",
+      "purpose": "We use these details only to answer your enquiry. This is a fictional demo site.",
+      "consentRequired": true,
+      "consentLabel": "I agree that Fernlight Studio may contact me about this enquiry.",
+      "retentionDays": 90,
+      "fields": [
+        { "type": "text", "name": "name", "label": "Your name", "required": true },
+        { "type": "email", "name": "email", "label": "Work email", "required": true },
+        { "type": "text", "name": "company", "label": "Company" },
+        {
+          "type": "select",
+          "name": "topic",
+          "label": "What do you need?",
+          "required": true,
+          "options": ["A discovery sprint", "A product redesign", "An ongoing build partner", "Something else"]
+        },
+        { "type": "textarea", "name": "message", "label": "Tell us about the project", "required": true }
+      ]
+    },
+    {
+      "key": "newsletter",
+      "title": "Insights newsletter",
+      "submitButtonLabel": "Subscribe",
+      "confirmationMessage": "You are on the list. (Demo form: nothing is stored beyond this test site.)",
+      "purpose": "One email a month with our latest article. Unsubscribe in one click.",
+      "consentRequired": true,
+      "consentLabel": "Send me the monthly email.",
+      "fields": [{ "type": "email", "name": "email", "label": "Email address", "required": true }]
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "description": "Fernlight Studio is a fictional product studio used to demonstrate the Polysite agency theme.",
+      "blocks": [
+        {
+          "blockType": "hero",
+          "heading": "Products people understand on the first try.",
+          "subheading": "We help small, fast teams find the right thing to build, design it with care and ship it without drama.",
+          "image": "images/hero-dashboard.svg",
+          "alt": "A made-up analytics dashboard with stat cards, a bar chart and a line chart",
+          "ctaLabel": "Book a free intro call",
+          "ctaHref": "/contact"
+        },
+        {
+          "blockType": "logos",
+          "heading": "Trusted by teams you have not heard of (yet)",
+          "items": [
+            { "name": "Brightloop", "image": "images/logo-brightloop.svg", "alt": "Brightloop" },
+            { "name": "Kestrel Labs", "image": "images/logo-kestrel.svg", "alt": "Kestrel Labs" },
+            { "name": "Mossgrove", "image": "images/logo-mossgrove.svg", "alt": "Mossgrove" },
+            { "name": "Paperboat", "image": "images/logo-paperboat.svg", "alt": "Paperboat" },
+            { "name": "Quillstone", "image": "images/logo-quillstone.svg", "alt": "Quillstone" },
+            { "name": "Tandem & Rye", "image": "images/logo-tandem-rye.svg", "alt": "Tandem and Rye" }
+          ]
+        },
+        {
+          "blockType": "featureGrid",
+          "heading": "One small team, the whole path from idea to launch",
+          "features": [
+            { "title": "Discovery that ends in a decision", "description": "Two weeks of interviews, prototypes and numbers, and a plain-language recommendation at the end of them." },
+            { "title": "Design that survives contact with code", "description": "Interfaces drawn with real components, real content and real edge cases, so engineering is not guessing." },
+            { "title": "Build partners, not handoffs", "description": "We pair with your engineers and ship in small, reviewable slices every week." },
+            { "title": "Analytics you will actually read", "description": "One page of measures per product, agreed up front and reported in words as well as charts." },
+            { "title": "Research on a budget", "description": "Five conversations beat fifty survey answers. We recruit, run and summarise them for you." },
+            { "title": "Calm launches", "description": "Checklists, rollbacks and a quiet pager. Launch day should be the least eventful day of the project." }
+          ]
+        },
+        {
+          "blockType": "stats",
+          "heading": "A few numbers we are proud of",
+          "items": [
+            { "value": "140+", "label": "products launched" },
+            { "value": "9 years", "label": "of shipping together" },
+            { "value": "92%", "label": "of clients come back" },
+            { "value": "4.9 / 5", "label": "average project rating" }
+          ]
+        },
+        {
+          "blockType": "testimonials",
+          "heading": "Kind words from clients",
+          "items": [
+            {
+              "quote": "They cut our roadmap in half and our revenue still doubled. The discovery sprint paid for itself in the first month.",
+              "name": "Dana Whitcombe",
+              "role": "COO, Brightloop (fictional)",
+              "image": "images/person-dana.svg",
+              "alt": "Illustrated portrait of Dana Whitcombe"
+            },
+            {
+              "quote": "Fernlight never handed us a deck and walked away. They sat in our standups and made the team better.",
+              "name": "Samir Haddad",
+              "role": "Head of Engineering, Kestrel Labs (fictional)",
+              "image": "images/person-samir.svg",
+              "alt": "Illustrated portrait of Samir Haddad"
+            },
+            {
+              "quote": "The calmest launch we have ever had. We went home on time and nobody noticed anything had happened.",
+              "name": "Ingrid Holm",
+              "role": "Founder, Paperboat (fictional)",
+              "image": "images/person-ingrid.svg",
+              "alt": "Illustrated portrait of Ingrid Holm"
+            }
+          ]
+        },
+        {
+          "blockType": "pricing",
+          "heading": "Simple, fixed-price engagements",
+          "intro": "Every project starts with a free thirty-minute call. Prices are examples for this demo site.",
+          "plans": [
+            {
+              "name": "Discovery sprint",
+              "price": "$6,500",
+              "period": "one-off, two weeks",
+              "description": "For teams deciding what to build next.",
+              "features": [{ "text": "Five user conversations" }, { "text": "Clickable prototype" }, { "text": "Written recommendation" }, { "text": "Readout with your team" }],
+              "buttonLabel": "Book a sprint",
+              "buttonHref": "/contact"
+            },
+            {
+              "name": "Build partner",
+              "price": "$18,000",
+              "period": "per month",
+              "description": "For teams that need design and delivery help now.",
+              "features": [{ "text": "A senior designer and product lead" }, { "text": "Weekly shipped releases" }, { "text": "Pairing with your engineers" }, { "text": "Monthly outcomes report" }],
+              "buttonLabel": "Start a partnership",
+              "buttonHref": "/contact",
+              "highlighted": true
+            },
+            {
+              "name": "Embedded team",
+              "price": "Custom",
+              "period": "quoted per project",
+              "description": "For larger launches and multi-product programmes.",
+              "features": [{ "text": "A dedicated cross-functional team" }, { "text": "Quarterly planning with leadership" }, { "text": "Hand-over and training" }],
+              "buttonLabel": "Talk to us",
+              "buttonHref": "/contact"
+            }
+          ]
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Questions we hear a lot",
+          "items": [
+            { "question": "How soon can you start?", "answer": "Usually within three weeks. Discovery sprints are the quickest to schedule because they are short and self-contained." },
+            { "question": "Do you work with our engineers or replace them?", "answer": "With them. We prefer to pair with your team so that the knowledge stays with you after we leave." },
+            { "question": "What if the sprint says we should not build the thing?", "answer": "Then you saved the cost of building it. We would rather give you a clear no than a polished yes." },
+            { "question": "Do you sign NDAs?", "answer": "Yes, on request, before we talk about anything confidential." }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Have something worth shipping?",
+          "text": "Tell us about it. You will hear back from a person, not a form letter.",
+          "buttonLabel": "Start a project",
+          "buttonHref": "/contact",
+          "secondaryLabel": "See our work",
+          "secondaryHref": "/work"
+        }
+      ]
+    },
+    {
+      "title": "Services",
+      "slug": "services",
+      "description": "How a Fernlight engagement works, step by step, with example prices.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "Three ways to work with us",
+          "body": "We work in short, fixed-price engagements so you always know what you are buying.\n\nMost clients start with a **discovery sprint**, then move to a build partnership once the plan is clear. Some bring us in only for the sprint, and that is fine too."
+        },
+        {
+          "blockType": "timeline",
+          "heading": "How a project runs",
+          "entries": [
+            { "period": "Week 1", "title": "Listen", "subtitle": "Interviews and data", "description": "We talk to your customers and your team and read what you already know." },
+            { "period": "Week 2", "title": "Prototype", "subtitle": "Make it tangible", "description": "A clickable prototype you can put in front of real people within days." },
+            { "period": "Week 3", "title": "Decide", "subtitle": "A written recommendation", "description": "What to build, what to skip and what it will cost, in plain language." },
+            { "period": "Week 4 onwards", "title": "Build", "subtitle": "Small weekly releases", "description": "We ship in thin slices with your engineers and report on outcomes, not hours." }
+          ]
+        },
+        {
+          "blockType": "pricing",
+          "heading": "What it costs",
+          "plans": [
+            {
+              "name": "Discovery sprint",
+              "price": "$6,500",
+              "period": "one-off",
+              "features": [{ "text": "Two weeks" }, { "text": "Written recommendation" }],
+              "buttonLabel": "Ask about a sprint",
+              "buttonHref": "/contact"
+            },
+            {
+              "name": "Build partner",
+              "price": "$18,000",
+              "period": "per month",
+              "features": [{ "text": "Senior designer plus product lead" }, { "text": "Cancel with 30 days' notice" }],
+              "buttonLabel": "Ask about a partnership",
+              "buttonHref": "/contact",
+              "highlighted": true
+            }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Not sure which fits?",
+          "text": "A free intro call is the cheapest way to find out.",
+          "buttonLabel": "Book an intro call",
+          "buttonHref": "/contact"
+        }
+      ]
+    },
+    {
+      "title": "Work",
+      "slug": "work",
+      "description": "Selected projects from the studio, shown as illustrations.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "Selected work",
+          "body": "A few engagements, shown here as abstract illustrations because every client on this demo site is made up."
+        },
+        {
+          "blockType": "gallery",
+          "columns": 2,
+          "images": [
+            { "image": "images/cover-signal.svg", "alt": "Overlapping circles and arcs in violet, pink and amber", "caption": "Brightloop: a customer signal dashboard, from idea to launch in nine weeks" },
+            { "image": "images/cover-ledger.svg", "alt": "Rising bars and a line in teal and violet", "caption": "Kestrel Labs: invoicing redesign that cut support tickets by a third" },
+            { "image": "images/cover-handoff.svg", "alt": "Tilted rounded shapes moving left to right", "caption": "Paperboat: a calmer onboarding flow for first-time sellers" },
+            { "image": "images/cover-quiet.svg", "alt": "A grid of dots that fades out", "caption": "Mossgrove: a quiet mobile app for people who forget to water things" }
+          ]
+        },
+        {
+          "blockType": "testimonials",
+          "heading": "From the people we worked with",
+          "items": [
+            {
+              "quote": "The prototype made the decision for us. We stopped arguing and started building.",
+              "name": "Dana Whitcombe",
+              "role": "COO, Brightloop (fictional)",
+              "image": "images/person-dana.svg",
+              "alt": "Illustrated portrait of Dana Whitcombe"
+            },
+            {
+              "quote": "Clear writing, honest estimates, no surprises.",
+              "name": "Samir Haddad",
+              "role": "Head of Engineering, Kestrel Labs (fictional)",
+              "image": "images/person-samir.svg",
+              "alt": "Illustrated portrait of Samir Haddad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "About",
+      "slug": "about",
+      "description": "Who is behind Fernlight Studio (all of them invented).",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "A small studio on purpose",
+          "body": "Fernlight started in a spare room in 2017 with two people and a whiteboard. We are still small, because small teams talk to each other and big ones talk to calendars.\n\nWe turn down more work than we take. That is how we keep the senior people on your project, from the first call to the last release."
+        },
+        {
+          "blockType": "team",
+          "heading": "The people",
+          "intro": "Illustrated portraits of invented people.",
+          "members": [
+            { "name": "Mara Okafor", "role": "Founder and product lead", "bio": "Twenty years in product, half of them wishing meetings were shorter.", "image": "images/person-mara.svg", "alt": "Illustrated portrait of Mara Okafor" },
+            { "name": "Jonas Lindqvist", "role": "Design director", "bio": "Draws with real content first and pretty second.", "image": "images/person-jonas.svg", "alt": "Illustrated portrait of Jonas Lindqvist" },
+            { "name": "Priya Raman", "role": "Engineering lead", "bio": "Believes the best code review is a conversation over a prototype.", "image": "images/person-priya.svg", "alt": "Illustrated portrait of Priya Raman" },
+            { "name": "Theo Vasquez", "role": "Research and strategy", "bio": "Has asked 'why' roughly four thousand times and counting.", "image": "images/person-theo.svg", "alt": "Illustrated portrait of Theo Vasquez" }
+          ]
+        },
+        {
+          "blockType": "timeline",
+          "heading": "A short history",
+          "entries": [
+            { "period": "2017", "title": "Two people and a whiteboard", "description": "First client, first invoice, first mistake." },
+            { "period": "2020", "title": "Remote by default", "description": "The studio moves online and never moves back." },
+            { "period": "2023", "title": "The hundredth launch", "description": "A quiet Tuesday release, as planned." },
+            { "period": "2026", "title": "Still small", "description": "Eleven people, one dog, no plans to grow much bigger." }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Contact",
+      "slug": "contact",
+      "description": "Tell Fernlight Studio about your project (a demo form).",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "Tell us about your project",
+          "body": "The short version is fine. We will reply within two working days.\n\nThis is a demonstration site: the form works, but nothing you send leaves this test installation."
+        },
+        {
+          "blockType": "formEmbed",
+          "heading": "Project brief",
+          "form": "project-enquiry"
+        },
+        {
+          "blockType": "hours-contact",
+          "heading": "Prefer to talk first?",
+          "hours": [
+            { "days": "Monday to Thursday", "time": "9:00 - 17:00" },
+            { "days": "Friday", "time": "9:00 - 13:00" },
+            { "days": "Weekend", "time": "Closed" }
+          ],
+          "address": "12 Example Lane\nSampletown, EX1 2MP",
+          "phone": "+1 555 010 0199",
+          "email": "hello@fernlight.example",
+          "note": "Invented address, number and email for demonstration."
+        },
+        {
+          "blockType": "signupForm",
+          "heading": "Get one useful email a month",
+          "subheading": "Our latest article, nothing else.",
+          "form": "newsletter",
+          "ctaLabel": "Subscribe"
+        }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "title": "Why your first prototype should be embarrassing",
+      "slug": "embarrassing-prototypes",
+      "excerpt": "A rough prototype gets honest feedback in a day. A polished one gets polite feedback in a month.",
+      "date": "2026-09-14",
+      "byline": "Mara Okafor",
+      "categories": ["Product"],
+      "image": "images/cover-signal.svg",
+      "alt": "Overlapping circles and arcs in violet, pink and amber",
+      "body": "People are kind to things that look finished. Show them a beautiful mock-up and they will say it looks great. Show them a scribble and they will tell you what is wrong with the idea.\n\n## Make it just real enough\n\nA good first prototype has three properties:\n\n- It takes under a day to make.\n- It has real words in it, not placeholder text.\n- Someone outside the team can click through it unaided.\n\n## Then watch, do not explain\n\nSit next to a person while they use it and say nothing. Every question they ask out loud is a gap in the design.\n\n> If you are not slightly embarrassed by the prototype, you spent too long on it."
+    },
+    {
+      "title": "The one-page measures sheet",
+      "slug": "one-page-measures",
+      "excerpt": "Five numbers, agreed before launch, written in words. Here is the template we use.",
+      "date": "2026-08-27",
+      "byline": "Theo Vasquez",
+      "categories": ["Analytics", "Product"],
+      "image": "images/cover-ledger.svg",
+      "alt": "Rising bars and a line in teal and violet",
+      "body": "Dashboards multiply. Decisions do not. The cure is a single page that lists the few measures a product lives or dies by.\n\n## What goes on the page\n\n1. The behaviour you want more of.\n2. The behaviour you want less of.\n3. A guardrail, so that you do not win one number by breaking another.\n\nWrite each measure as a sentence: *new customers who finish setup in their first week*. If you cannot write it as a sentence, you do not understand it yet.\n\n## Review it monthly\n\nOne meeting, one page, ten minutes of silence to read it first."
+    },
+    {
+      "title": "Handing off design without losing the plot",
+      "slug": "design-handoff",
+      "excerpt": "The handoff is not a file transfer. It is a conversation that starts on day one.",
+      "date": "2026-07-30",
+      "byline": "Jonas Lindqvist",
+      "categories": ["Design"],
+      "image": "images/cover-handoff.svg",
+      "alt": "Tilted rounded shapes moving left to right",
+      "body": "A design that arrives in engineering as a surprise is a design that will be rebuilt. Bring the engineers into the room early and the 'handoff' shrinks to a formality.\n\n## Three habits that help\n\n- Name components the way the code names them.\n- Draw the empty, loading and error states first.\n- Review the build against the design together, in the browser, not from screenshots."
+    },
+    {
+      "title": "Quiet software for loud days",
+      "slug": "quiet-software",
+      "excerpt": "Notes on designing for the moment someone is tired, distracted and holding a phone in one hand.",
+      "date": "2026-06-18",
+      "byline": "Priya Raman",
+      "categories": ["Design", "Mobile"],
+      "image": "images/cover-quiet.svg",
+      "alt": "A grid of dots that fades out",
+      "body": "Most interfaces are designed for the best version of the user: rested, attentive, two hands free. Most use happens at the worst version.\n\n## Design for the worst moment\n\n- Make the main action reachable with a thumb.\n- Never ask the same question twice.\n- Let people leave and come back exactly where they were.\n\nQuiet software does not mean boring software. It means software that does not demand attention it has not earned."
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+/* Salon (example): a soft, warm, elegant theme for a day spa or beauty parlour.
+ *
+ * Everything is scoped to `.theme-salon` (the layout's root element), because every installed theme is bundled into one build
+ * and serves a different site. Colours: the site's two brand colours arrive as --brand-primary (the accent: buttons, marks,
+ * links) and --brand-secondary (the footer and the call-to-action band: choose a dark one); the rest of the palette is here.
+ * Fonts are system stacks only, nothing is loaded from another website.
+ */
+.theme-salon {
+  --s-bg: #fbf5ef;
+  --s-card: #fffdfa;
+  --s-tint: #f5e6de;
+  --s-sage: #e4ebe0;
+  --s-hero-a: #f9eae1;
+  --s-hero-b: #f1d7cb;
+  --s-ink: #3a2a31;
+  --s-muted: #67545d;
+  --s-line: #e4d0c5;
+  --s-accent: var(--brand-primary, #9b4a63);
+  --s-accent-text: var(--brand-primary, #9b4a63);
+  --s-deep: var(--brand-secondary, #3e2a33);
+  --s-on-deep: #fbefe7;
+  --s-on-deep-muted: #dcc7bd;
+  --s-shadow: 0 1.25rem 2.5rem rgb(74 44 58 / 0.12);
+  --s-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --s-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* The blocks-pack blocks read these (see that plugin's README): one place recolours them all. */
+  --poly-accent: var(--s-accent);
+  --poly-text: var(--s-ink);
+  --poly-muted: var(--s-muted);
+  --poly-surface: var(--s-tint);
+  --poly-border: var(--s-line);
+  --poly-radius: 1.25rem;
+  --poly-gap: 1.5rem;
+
+  min-height: 100vh;
+  background: var(--s-bg);
+  color: var(--s-ink);
+  font-family: var(--s-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-salon {
+    --s-bg: #1c1418;
+    --s-card: #261c21;
+    --s-tint: #2e2227;
+    --s-sage: #202820;
+    --s-hero-a: #271b21;
+    --s-hero-b: #33232b;
+    --s-ink: #f6ebe4;
+    --s-muted: #d3bfb7;
+    --s-line: #4a3841;
+    --s-accent-text: color-mix(in srgb, var(--brand-primary, #9b4a63) 40%, #fff);
+    --s-deep: #130d10;
+    --s-shadow: 0 1.25rem 2.5rem rgb(0 0 0 / 0.4);
+    color-scheme: dark;
+  }
+}
+
+.theme-salon a { color: var(--s-accent-text); text-underline-offset: 0.18em; }
+.theme-salon :focus-visible { outline: 3px solid var(--s-accent-text); outline-offset: 3px; border-radius: 3px; }
+.theme-salon #salon-main { outline: none; }
+.theme-salon h1,
+.theme-salon h2,
+.theme-salon h3 { font-family: var(--s-serif); font-weight: 500; letter-spacing: -0.005em; color: var(--s-ink); }
+
+/* ---------- skip link, top bar, header ---------- */
+.theme-salon .salon-skip { position: absolute; left: 0.75rem; top: -4rem; z-index: 50; padding: 0.6rem 1rem; border-radius: 999px; background: var(--s-ink); color: var(--s-bg); font-weight: 600; text-decoration: none; }
+.theme-salon .salon-skip:focus { top: 0.75rem; }
+
+.theme-salon .salon-topbar { background: var(--s-tint); border-bottom: 1px solid var(--s-line); font-size: 0.875rem; }
+.theme-salon .salon-topbar__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 1.25rem; max-width: 72rem; margin: 0 auto; padding: 0.4rem 1.25rem; }
+.theme-salon .salon-topbar__tagline { margin: 0 auto 0 0; font-family: var(--s-serif); font-style: italic; color: var(--s-muted); }
+.theme-salon .salon-search { display: flex; flex: 0 1 16rem; gap: 0.35rem; margin-left: auto; }
+.theme-salon .salon-search .poly-search-input { flex: 1 1 6rem; min-width: 0; padding: 0.25rem 0.85rem; border: 1px solid var(--s-line); border-radius: 999px; background: var(--s-card); color: var(--s-ink); font: inherit; font-size: 0.875rem; }
+.theme-salon .salon-search .poly-search-button { padding: 0.25rem 0.9rem; border: 1px solid var(--s-accent); border-radius: 999px; background: var(--s-accent); color: #fff; font: inherit; font-size: 0.8125rem; font-weight: 600; cursor: pointer; }
+.theme-salon .salon-languages { color: var(--s-muted); }
+.theme-salon .poly-language-switcher.salon-languages a { color: var(--s-ink); opacity: 1; }
+.theme-salon .salon-languages [aria-current="true"] { font-weight: 700; }
+
+.theme-salon .salon-header { background: color-mix(in srgb, var(--s-bg) 92%, transparent); border-bottom: 1px solid var(--s-line); }
+.theme-salon .salon-header__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 2rem; max-width: 72rem; margin: 0 auto; padding: 0.9rem 1.25rem; }
+.theme-salon .salon-brand { display: inline-flex; align-items: center; gap: 0.7rem; color: var(--s-ink); text-decoration: none; }
+.theme-salon .salon-brand__mark { width: 2.5rem; height: 2.5rem; border-radius: 50%; }
+.theme-salon .salon-brand__moon { width: 2.5rem; height: 2.5rem; border-radius: 50%; background: var(--s-accent); box-shadow: inset -0.7rem -0.3rem 0 0 var(--s-bg); }
+.theme-salon .salon-brand__name { font-family: var(--s-serif); font-size: 1.55rem; letter-spacing: 0.01em; line-height: 1; }
+
+.theme-salon .salon-menu-button { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid var(--s-line); border-radius: 999px; background: var(--s-card); color: var(--s-ink); font: inherit; font-size: 0.9375rem; font-weight: 600; cursor: pointer; }
+.theme-salon .salon-nav { display: none; flex-basis: 100%; flex-direction: column; align-items: stretch; gap: 1rem; padding: 0.5rem 0 1rem; }
+.theme-salon .salon-nav--open { display: flex; }
+.theme-salon .salon-nav__list { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.theme-salon .salon-nav__link { display: block; padding: 0.7rem 0.25rem; border-bottom: 1px solid var(--s-line); color: var(--s-ink); font-size: 1rem; letter-spacing: 0.04em; text-decoration: none; }
+.theme-salon .salon-nav__link[aria-current="page"] { color: var(--s-accent-text); font-weight: 700; }
+.theme-salon .salon-book,
+.theme-salon .salon-button,
+.theme-salon .salon-form .poly-submit { display: inline-block; padding: 0.8rem 1.8rem; border: 2px solid var(--s-accent); border-radius: 999px; background: var(--s-accent); color: #fff; font: inherit; font-size: 0.9375rem; font-weight: 700; letter-spacing: 0.04em; text-align: center; text-decoration: none; cursor: pointer; }
+.theme-salon .salon-book:hover,
+.theme-salon .salon-button:hover,
+.theme-salon .salon-form .poly-submit:hover:not(:disabled) { background: color-mix(in srgb, var(--s-accent) 82%, #000); border-color: color-mix(in srgb, var(--s-accent) 82%, #000); }
+.theme-salon .salon-form .poly-submit:disabled { opacity: 0.6; cursor: progress; }
+
+@media (min-width: 64rem) {
+  .theme-salon .salon-menu-button { display: none; }
+  .theme-salon .salon-nav { display: flex; flex: 1 1 auto; flex-direction: row; align-items: center; justify-content: flex-end; gap: 1.75rem; padding: 0; }
+  .theme-salon .salon-nav__list { flex-direction: row; gap: 1.75rem; }
+  .theme-salon .salon-nav__link { padding: 0.35rem 0; border-bottom: 2px solid transparent; font-size: 0.9375rem; }
+  .theme-salon .salon-nav__link:hover { border-bottom-color: var(--s-line); }
+  .theme-salon .salon-nav__link[aria-current="page"] { border-bottom-color: var(--s-accent); }
+}
+
+/* ---------- shared pieces ---------- */
+.theme-salon .salon-heading,
+.theme-salon .poly-block__heading { margin: 0 0 2rem; font-family: var(--s-serif); font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem); font-weight: 500; line-height: 1.2; text-align: center; }
+.theme-salon .salon-heading::after,
+.theme-salon .poly-block__heading::after { content: ""; display: block; width: 3rem; height: 2px; margin: 0.9rem auto 0; background: var(--s-accent); border-radius: 2px; }
+.theme-salon .salon-heading--left { text-align: left; }
+.theme-salon .salon-heading--left::after { margin-left: 0; }
+
+.theme-salon .salon-text,
+.theme-salon .salon-features,
+.theme-salon .salon-faq,
+.theme-salon .salon-form,
+.theme-salon .poly-block { padding: clamp(2.5rem, 5vw, 4.5rem) 1.25rem; }
+.theme-salon .salon-text__inner { max-width: 42rem; margin: 0 auto; }
+.theme-salon .salon-features__inner,
+.theme-salon .poly-block__inner { max-width: 72rem; margin: 0 auto; }
+.theme-salon .salon-faq__inner { max-width: 46rem; margin: 0 auto; }
+
+.theme-salon .salon-prose { font-size: 1.125rem; }
+.theme-salon .salon-prose > * + * { margin-top: 1.1em; }
+.theme-salon .salon-prose h2,
+.theme-salon .salon-prose h3 { margin-top: 1.6em; font-family: var(--s-serif); font-size: 1.5rem; }
+.theme-salon .salon-prose ul,
+.theme-salon .salon-prose ol { padding-left: 1.4rem; }
+.theme-salon .salon-prose ul { list-style: disc; }
+.theme-salon .salon-prose ol { list-style: decimal; }
+.theme-salon .salon-prose blockquote { padding-left: 1.25rem; border-left: 3px solid var(--s-accent); font-family: var(--s-serif); font-size: 1.3rem; font-style: italic; }
+
+/* An inner page's own title (the core draws it before the blocks). */
+.theme-salon main > h1 { margin: 0; padding: clamp(2.5rem, 6vw, 4rem) 1.25rem 0; font-family: var(--s-serif); font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.4rem); font-weight: 500; line-height: 1.15; text-align: center; }
+.theme-salon main > h1::after { content: ""; display: block; width: 3.5rem; height: 2px; margin: 1.1rem auto 0; background: var(--s-accent); border-radius: 2px; }
+
+/* ---------- hero ---------- */
+.theme-salon .salon-hero { padding: clamp(1.75rem, 4vw, 4rem) 1.25rem; background: linear-gradient(135deg, var(--s-hero-a), var(--s-hero-b)); overflow: hidden; }
+.theme-salon .salon-hero__inner { display: grid; gap: 2rem; align-items: center; max-width: 72rem; margin: 0 auto; }
+.theme-salon .salon-hero__art { order: -1; }
+.theme-salon .salon-hero__image { display: block; width: 100%; max-width: 21rem; margin: 0 auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 62% center; border-radius: 999px 999px 1.5rem 1.5rem; box-shadow: var(--s-shadow); }
+.theme-salon .salon-hero__heading { margin: 0; font-size: clamp(2.4rem, 1.6rem + 3.6vw, 4.4rem); line-height: 1.08; }
+.theme-salon .salon-hero__sub { max-width: 32rem; margin: 1.1rem 0 1.75rem; color: var(--s-muted); font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem); }
+.theme-salon .salon-hero--no-image .salon-hero__text { max-width: 40rem; margin: 0 auto; text-align: center; }
+.theme-salon .salon-hero--no-image .salon-hero__sub { margin-inline: auto; }
+@media (min-width: 56rem) {
+  .theme-salon .salon-hero__inner { grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; }
+  .theme-salon .salon-hero__art { order: 0; }
+  .theme-salon .salon-hero__image { max-width: 26rem; margin-left: auto; }
+}
+
+/* ---------- features ---------- */
+.theme-salon .salon-features { background: var(--s-sage); }
+.theme-salon .salon-features__list { display: grid; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+.theme-salon .salon-features__item { padding: 2rem 1.75rem; border: 1px solid var(--s-line); border-radius: 1.5rem; background: var(--s-card); text-align: center; }
+.theme-salon .salon-features__number { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--s-tint); color: var(--s-accent-text); font-family: var(--s-serif); font-size: 1.25rem; }
+.theme-salon .salon-features__title { margin: 1rem 0 0.5rem; font-size: 1.4rem; }
+.theme-salon .salon-features__text { margin: 0; color: var(--s-muted); }
+@media (min-width: 48rem) { .theme-salon .salon-features__list { grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); } }
+
+/* ---------- FAQ ---------- */
+.theme-salon .salon-faq__item { border-bottom: 1px solid var(--s-line); }
+.theme-salon .salon-faq__question { position: relative; padding: 1.1rem 2.5rem 1.1rem 0; font-family: var(--s-serif); font-size: 1.2rem; cursor: pointer; list-style: none; }
+.theme-salon .salon-faq__question::-webkit-details-marker { display: none; }
+.theme-salon .salon-faq__question::after { content: "+"; position: absolute; right: 0.25rem; top: 0.75rem; display: grid; place-items: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: var(--s-tint); color: var(--s-accent-text); font-family: var(--s-sans); font-size: 1.25rem; line-height: 1; }
+.theme-salon .salon-faq__item[open] .salon-faq__question::after { content: "\2212"; }
+.theme-salon .salon-faq__answer { margin: 0 0 1.25rem; max-width: 40rem; color: var(--s-muted); }
+
+/* ---------- forms ---------- */
+.theme-salon .salon-form__card { max-width: 38rem; margin: 0 auto; padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid var(--s-line); border-radius: 1.75rem; background: var(--s-card); box-shadow: var(--s-shadow); }
+.theme-salon .salon-form .poly-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.theme-salon .salon-form .poly-field { display: flex; flex-direction: column; gap: 0.35rem; }
+.theme-salon .salon-form .poly-label,
+.theme-salon .salon-form .poly-check { font-size: 0.9375rem; font-weight: 600; }
+.theme-salon .salon-form .poly-check { display: flex; align-items: center; gap: 0.6rem; font-weight: 500; }
+.theme-salon .salon-form .poly-radios { display: flex; flex-direction: column; gap: 0.4rem; }
+.theme-salon .salon-form input:not([type="checkbox"]):not([type="radio"]),
+.theme-salon .salon-form select,
+.theme-salon .salon-form textarea { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--s-line); border-radius: 1rem; background: var(--s-bg); color: var(--s-ink); font: inherit; }
+.theme-salon .salon-form textarea { min-height: 7rem; }
+.theme-salon .salon-form [aria-invalid="true"] { border-color: #b3261e; }
+.theme-salon .salon-form .poly-required,
+.theme-salon .salon-form .poly-error { color: #b3261e; }
+.theme-salon .salon-form .poly-error { margin: 0; font-size: 0.875rem; }
+.theme-salon .salon-form .poly-purpose { margin: 0; color: var(--s-muted); font-size: 0.875rem; }
+.theme-salon .salon-form .poly-submit { align-self: flex-start; }
+.theme-salon .salon-form .poly-confirmation { padding: 1.25rem; border-radius: 1rem; background: var(--s-sage); }
+.theme-salon .salon-form .poly-form-message { margin: 0; }
+
+/* ---------- plugin slots ---------- */
+.theme-salon .salon-share { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1.25rem; border-top: 1px solid var(--s-line); --poly-share-radius: 999px; }
+
+/* ---------- footer ---------- */
+.theme-salon .salon-footer { margin-top: 2rem; background: var(--s-deep); color: var(--s-on-deep); }
+.theme-salon .salon-footer a { color: var(--s-on-deep); }
+.theme-salon .salon-footer__inner { display: flex; flex-wrap: wrap; gap: 2rem 3rem; max-width: 72rem; margin: 0 auto; padding: 3rem 1.25rem 1.5rem; }
+.theme-salon .salon-footer__name { margin: 0; font-family: var(--s-serif); font-size: 1.7rem; }
+.theme-salon .salon-footer__tagline { margin: 0.4rem 0 0; color: var(--s-on-deep-muted); font-family: var(--s-serif); font-style: italic; }
+.theme-salon .salon-footer__social { display: flex; gap: 0.6rem; margin: 1.1rem 0 0; padding: 0; list-style: none; }
+.theme-salon .salon-footer__social-link { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border: 1px solid rgb(251 239 231 / 0.45); border-radius: 50%; }
+.theme-salon .salon-footer__social-link:hover { background: rgb(251 239 231 / 0.14); }
+.theme-salon .salon-footer__heading { margin: 0 0 0.8rem; color: var(--s-on-deep-muted); font-family: var(--s-sans); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.theme-salon .salon-footer__column ul { display: grid; gap: 0.45rem; margin: 0; padding: 0; list-style: none; }
+.theme-salon .salon-footer__legal { max-width: 72rem; margin: 0 auto; padding: 1.25rem; border-top: 1px solid rgb(251 239 231 / 0.18); color: var(--s-on-deep-muted); font-size: 0.875rem; }
+.theme-salon .salon-footer__tracking { margin-left: 1rem; }
+.theme-salon .salon-footer__about { flex: 1 1 16rem; }
+.theme-salon .salon-footer__column { flex: 1 1 9rem; }
+
+/* ---------- blocks-pack blocks ---------- */
+.theme-salon .poly-block { --pb-strong: var(--s-accent-text); --pb-text: var(--s-ink); --pb-muted: var(--s-muted); --pb-surface: var(--s-tint); --pb-border: var(--s-line); font-size: 1.0625rem; }
+.theme-salon .poly-block a { color: var(--s-accent-text); }
+.theme-salon .poly-block a.poly-block__button { background: var(--s-accent); border-color: var(--s-accent); color: #fff; letter-spacing: 0.04em; }
+.theme-salon .poly-block a.poly-block__button:hover { background: color-mix(in srgb, var(--s-accent) 82%, #000); border-color: color-mix(in srgb, var(--s-accent) 82%, #000); }
+.theme-salon .poly-block a.poly-block__button--quiet { background: transparent; color: var(--s-accent-text); }
+.theme-salon .poly-block__intro { margin-inline: auto; text-align: center; }
+.theme-salon .poly-block__item-title,
+.theme-salon .poly-block__sub-title { font-family: var(--s-serif); font-weight: 500; }
+
+/* Gallery */
+.theme-salon .poly-gallery__image { aspect-ratio: 4 / 3; border-radius: 1.25rem; box-shadow: var(--s-shadow); }
+.theme-salon .poly-gallery__caption { text-align: center; font-family: var(--s-serif); font-style: italic; }
+
+/* Price list: each group is a card, with dotted leaders from name to price. */
+.theme-salon .poly-price-list__sections { gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); }
+.theme-salon .poly-policy-link,
+.theme-salon .poly-purpose a { text-decoration: underline; }
+.theme-salon .poly-price-list__section { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--s-line); border-radius: 1.5rem; background: var(--s-card); }
+.theme-salon .poly-price-list__title { border-bottom: 0; margin-bottom: 1rem; padding-bottom: 0; font-size: 1.5rem; color: var(--s-accent-text); }
+.theme-salon .poly-price-list__name { font-family: var(--s-serif); font-size: 1.15rem; font-weight: 500; }
+.theme-salon .poly-price-list__price { font-family: var(--s-serif); font-size: 1.15rem; color: var(--s-ink); }
+.theme-salon .poly-price-list__tag { background: var(--s-sage); color: var(--s-ink); }
+
+/* Pricing: the recommended plan is plum. */
+.theme-salon .poly-pricing__item { background: var(--s-card); border-color: var(--s-line); border-radius: 1.5rem; text-align: center; align-items: center; }
+.theme-salon .poly-pricing__item .poly-block__item-title { font-size: 1.5rem; }
+.theme-salon .poly-pricing__amount { font-family: var(--s-serif); font-weight: 500; color: var(--s-ink); }
+.theme-salon .poly-pricing__features { text-align: left; }
+.theme-salon .poly-pricing__item--highlighted { background: var(--s-deep); border: 0; color: var(--s-on-deep); box-shadow: var(--s-shadow); }
+.theme-salon .poly-pricing__item--highlighted .poly-block__item-title,
+.theme-salon .poly-pricing__item--highlighted .poly-pricing__amount { color: var(--s-on-deep); }
+.theme-salon .poly-pricing__item--highlighted .poly-pricing__period,
+.theme-salon .poly-pricing__item--highlighted .poly-pricing__description { color: var(--s-on-deep-muted); }
+.theme-salon .poly-pricing__item--highlighted .poly-pricing__feature::before { border-color: #f1c4d3; }
+.theme-salon .poly-pricing__item--highlighted .poly-pricing__badge { background: #f1c4d3; color: #3a2a31; }
+.theme-salon .poly-pricing__item--highlighted a.poly-block__button { background: #fbefe7; border-color: #fbefe7; color: #3a2a31; }
+
+/* Testimonials: large italic quotes. */
+.theme-salon .poly-testimonials__item { border: 0; border-radius: 1.5rem; background: var(--s-card); box-shadow: var(--s-shadow); text-align: center; align-items: center; }
+.theme-salon .poly-testimonials__item::before { content: "\201C"; display: block; height: 2.2rem; color: var(--s-accent-text); font-family: var(--s-serif); font-size: 4rem; line-height: 1; }
+.theme-salon .poly-testimonials__quote { font-family: var(--s-serif); font-size: 1.2rem; font-style: italic; line-height: 1.55; }
+.theme-salon .poly-testimonials__author { flex-direction: column; gap: 0.25rem; }
+.theme-salon .poly-testimonials__name { font-family: var(--s-sans); font-size: 0.9375rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Team: round portraits. */
+.theme-salon .poly-team__item { align-items: center; text-align: center; }
+.theme-salon .poly-team__image { width: min(100%, 12rem); border-radius: 50%; box-shadow: var(--s-shadow); }
+.theme-salon .poly-team__role { color: var(--s-accent-text); font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Call to action: a plum band. */
+.theme-salon .poly-block--cta { background: var(--s-deep); color: var(--s-on-deep); text-align: center; }
+.theme-salon .poly-cta__text { margin-inline: auto; }
+.theme-salon .poly-block--cta .poly-block__heading { color: var(--s-on-deep); }
+.theme-salon .poly-block--cta .poly-block__heading::after { background: #f1c4d3; }
+.theme-salon .poly-cta__text { color: var(--s-on-deep-muted); }
+.theme-salon .poly-block--cta a.poly-block__button { background: #fbefe7; border-color: #fbefe7; color: #3a2a31; }
+.theme-salon .poly-block--cta a.poly-block__button:hover { background: #fff; border-color: #fff; }
+.theme-salon .poly-block--cta a.poly-block__button--quiet { background: transparent; border-color: #fbefe7; color: #fbefe7; }
+.theme-salon .poly-block--cta a:focus-visible { outline-color: #fbefe7; }
+
+/* Opening hours and contact: a tinted card. */
+.theme-salon .poly-block--hours-contact .poly-block__inner { padding: clamp(1.5rem, 4vw, 3rem); border-radius: 1.75rem; background: var(--s-tint); }
+.theme-salon .poly-hours-contact__row { border-bottom-color: var(--s-line); }
+
+/* Key figures */
+.theme-salon .poly-stats__item { border-top: 0; border-radius: 1.5rem; background: var(--s-card); border: 1px solid var(--s-line); }
+.theme-salon .poly-stats__value { font-family: var(--s-serif); font-weight: 500; color: var(--s-accent-text); }
+
+/* Timeline and schedule, if a salon uses them (a course timetable, say). */
+.theme-salon .poly-timeline__item::before { background: var(--s-bg); }
+.theme-salon .poly-schedule__label,
+.theme-salon .poly-timeline__list { border-color: var(--s-line); }
+.theme-salon .poly-logos__name { font-family: var(--s-serif); }
+
+/* ---------- news (posts plugin): the journal ---------- */
+.theme-salon .poly-posts,
+.theme-salon .poly-post { max-width: 72rem; margin: 0 auto; padding: clamp(2rem, 5vw, 4rem) 1.25rem; }
+.theme-salon .poly-post { max-width: 44rem; }
+.theme-salon .poly-posts-header h1,
+.theme-salon .poly-post-header h1 { font-family: var(--s-serif); font-size: clamp(2rem, 1.5rem + 2.5vw, 3.2rem); font-weight: 500; line-height: 1.15; }
+.theme-salon .poly-posts-categories { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 2rem; padding: 0; list-style: none; }
+.theme-salon .poly-posts-category { display: inline-block; padding: 0.3rem 0.9rem; border: 1px solid var(--s-line); border-radius: 999px; color: var(--s-ink); text-decoration: none; }
+.theme-salon .poly-posts-category--active { border-color: var(--s-accent); background: var(--s-accent); color: #fff; }
+.theme-salon .poly-posts-list { display: grid; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+@media (min-width: 48rem) { .theme-salon .poly-posts-list { grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); } }
+.theme-salon .poly-post-card { overflow: hidden; border: 1px solid var(--s-line); border-radius: 1.5rem; background: var(--s-card); }
+.theme-salon .poly-post-card-image { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.theme-salon .poly-post-card-meta { color: var(--s-muted); font-size: 0.875rem; }
+.theme-salon .poly-post-card-title { font-family: var(--s-serif); font-size: 1.35rem; }
+.theme-salon .poly-post-card-excerpt { color: var(--s-muted); }
+.theme-salon .poly-post-hero { width: 100%; border-radius: 1.5rem; }
+.theme-salon .poly-post-meta,
+.theme-salon .poly-post-byline { color: var(--s-muted); }
+.theme-salon .poly-post-body { font-size: 1.125rem; }
+.theme-salon .poly-pagination a,
+.theme-salon .poly-pagination span { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 999px; }
+.theme-salon .poly-pagination-page--active { background: var(--s-accent); color: #fff; }
+
+/* ---------- search results page ---------- */
+.theme-salon .poly-search { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem; }
+.theme-salon .poly-search-item { padding: 1rem 0; border-bottom: 1px solid var(--s-line); }
+.theme-salon .poly-search mark { background: color-mix(in srgb, var(--s-accent) 22%, transparent); color: inherit; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-salon .salon-book,
+  .theme-salon .salon-button,
+  .theme-salon .salon-nav__link { transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-salon * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+.theme-salon .salon-prose a,
+.theme-salon .poly-post-body a { text-decoration: underline; }

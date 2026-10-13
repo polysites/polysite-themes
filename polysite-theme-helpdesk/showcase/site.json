@@ -1,0 +1,513 @@
+{
+  "$schema": "../../docs/showcase.schema.json",
+  "slug": "helpdesk",
+  "domainPrefix": "helpdesk",
+  "name": "Fernleaf",
+  "tagline": "Help Centre",
+  "theme": "helpdesk",
+  "primaryColor": "#1d4fc4",
+  "secondaryColor": "#0f2a4a",
+  "logo": "images/logo.svg",
+  "logoAlt": "Fernleaf",
+  "showDonateButton": false,
+  "header": [
+    {
+      "label": "Getting started",
+      "href": "/getting-started"
+    },
+    {
+      "label": "Account and billing",
+      "href": "/account-billing"
+    },
+    {
+      "label": "Integrations",
+      "href": "/integrations"
+    },
+    {
+      "label": "Troubleshooting",
+      "href": "/troubleshooting"
+    },
+    {
+      "label": "Contact support",
+      "href": "/contact"
+    }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "heading": "Help topics",
+        "links": [
+          {
+            "label": "Getting started",
+            "href": "/getting-started"
+          },
+          {
+            "label": "Account and billing",
+            "href": "/account-billing"
+          },
+          {
+            "label": "Integrations",
+            "href": "/integrations"
+          },
+          {
+            "label": "Troubleshooting",
+            "href": "/troubleshooting"
+          }
+        ]
+      },
+      {
+        "heading": "Need more help?",
+        "links": [
+          {
+            "label": "Contact support",
+            "href": "/contact"
+          },
+          {
+            "label": "All topics",
+            "href": "/"
+          }
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "contactEmail": "support@example.org"
+  },
+  "search": true,
+  "share": false,
+  "forms": [
+    {
+      "key": "support",
+      "title": "Support request",
+      "submitButtonLabel": "Send message",
+      "confirmationMessage": "Thank you. We have your message and will reply by email, usually within two working hours.",
+      "purpose": "We use your name and email address to reply to your request, and for nothing else.",
+      "consentRequired": true,
+      "consentLabel": "I agree that my message may be used to answer my request.",
+      "retentionDays": 365,
+      "fields": [
+        {
+          "type": "text",
+          "name": "name",
+          "label": "Your name",
+          "required": true
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "label": "Email address",
+          "required": true
+        },
+        {
+          "type": "select",
+          "name": "topic",
+          "label": "Topic",
+          "options": [
+            "Getting started",
+            "Account and billing",
+            "Integrations",
+            "Troubleshooting",
+            "Something else"
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "message",
+          "label": "How can we help?",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "description": "The Fernleaf help centre: guides, answers and a way to reach support. A fictional example site.",
+      "blocks": [
+        {
+          "blockType": "hero",
+          "heading": "How can we help?",
+          "subheading": "Search the Fernleaf help centre, or pick a topic below.",
+          "image": "images/hero-ferns.svg",
+          "alt": "Pale fern fronds on a navy background"
+        },
+        {
+          "blockType": "commitmentsGrid",
+          "heading": "Browse by topic",
+          "items": [
+            {
+              "heading": "Getting started",
+              "body": "Create a workspace, invite your team and finish your first plan in about ten minutes.",
+              "ctaLabel": "Read the guides",
+              "ctaHref": "/getting-started"
+            },
+            {
+              "heading": "Account and billing",
+              "body": "Plans, invoices, payment methods, and how to change or cancel a subscription.",
+              "ctaLabel": "Read the guides",
+              "ctaHref": "/account-billing"
+            },
+            {
+              "heading": "Integrations",
+              "body": "Connect Fernleaf to your calendar, mail and chat, and keep everything in step.",
+              "ctaLabel": "Read the guides",
+              "ctaHref": "/integrations"
+            },
+            {
+              "heading": "Troubleshooting",
+              "body": "Cannot sign in, notifications missing, sync is slow: quick fixes for the common ones.",
+              "ctaLabel": "Read the guides",
+              "ctaHref": "/troubleshooting"
+            }
+          ]
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Popular questions",
+          "items": [
+            {
+              "question": "How do I reset my password?",
+              "answer": "On the sign-in page choose Forgot password and enter your email address. The link in the message we send is valid for one hour."
+            },
+            {
+              "question": "Can I use Fernleaf offline?",
+              "answer": "Yes. Changes made offline are kept on your device and sync automatically the next time you are connected."
+            },
+            {
+              "question": "How do I add someone to my workspace?",
+              "answer": "Open Settings, then People, choose Invite and enter their email address. They get a link that works for seven days."
+            },
+            {
+              "question": "Where can I find my invoices?",
+              "answer": "Under Settings, then Billing. Every invoice since you subscribed is there as a PDF."
+            },
+            {
+              "question": "Is my data backed up?",
+              "answer": "Workspaces are backed up every night and kept for thirty days. Deleted items stay in the trash for thirty days as well."
+            }
+          ]
+        },
+        {
+          "blockType": "stats",
+          "heading": "System status",
+          "items": [
+            {
+              "value": "Operational",
+              "label": "App, sync and API"
+            },
+            {
+              "value": "99.98%",
+              "label": "Uptime, last 90 days"
+            },
+            {
+              "value": "1 h 40 min",
+              "label": "Median first reply"
+            },
+            {
+              "value": "Mon - Fri",
+              "label": "Live chat, 9:00 - 17:00"
+            }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Cannot find what you need?",
+          "text": "Our support team reads every message and usually replies within two working hours.",
+          "buttonLabel": "Contact support",
+          "buttonHref": "/contact",
+          "secondaryLabel": "Start with the basics",
+          "secondaryHref": "/getting-started"
+        }
+      ]
+    },
+    {
+      "title": "Getting started",
+      "slug": "getting-started",
+      "description": "Create a Fernleaf workspace, invite your team and plan your first week.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "Welcome to Fernleaf. This guide takes about ten minutes and ends with a workspace your whole team can use.\n\n## Create your workspace\n\n1. Go to the sign-up page and enter your work email address.\n2. Choose a name for the workspace. Most teams use the team or company name; you can change it later.\n3. Confirm your address with the code we email you.\n4. Pick a starting template, or choose **Blank** to begin from scratch.\n\n> Tip: you can belong to several workspaces with one email address. Switch between them from the menu at the top left.\n\n## Invite your team\n\nOpen **Settings**, then **People**, and choose **Invite**. Enter one address per line. People you invite can see only the plans you share with them."
+        },
+        {
+          "blockType": "featureGrid",
+          "heading": "Your first week",
+          "features": [
+            {
+              "title": "Day 1: one plan",
+              "description": "Write down what the team is working on this week. Keep it short; you can always add more."
+            },
+            {
+              "title": "Day 2: assign owners",
+              "description": "Give every task one person responsible for it, even if several people help."
+            },
+            {
+              "title": "Day 5: look back",
+              "description": "Open the weekly summary and move whatever is unfinished into next week."
+            }
+          ]
+        },
+        {
+          "blockType": "textBlock",
+          "body": "## Keyboard shortcuts\n\n- **N** creates a new task.\n- **/** moves the cursor to the search box.\n- **E** edits the selected task.\n- **Shift + ?** shows every shortcut."
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Common questions",
+          "items": [
+            {
+              "question": "Do I need a credit card to start?",
+              "answer": "No. The Free plan needs only an email address, and you can stay on it as long as you like."
+            },
+            {
+              "question": "Can I import my tasks from another tool?",
+              "answer": "Yes. Under Settings, then Import, upload a CSV file or connect one of the apps listed under Integrations."
+            },
+            {
+              "question": "How many people can join a workspace?",
+              "answer": "The Free plan allows up to five people. Team and Business plans have no limit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Account and billing",
+      "slug": "account-billing",
+      "description": "Plans, invoices, payment methods and cancelling a Fernleaf subscription.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "Everything about your subscription lives under **Settings**, then **Billing**. Only workspace owners can see it.\n\n## Changing your plan\n\nChoose a new plan from the list below and confirm. An upgrade takes effect at once and you pay only for the days that remain in the month. A downgrade takes effect at the end of the current period, so nothing you paid for is lost."
+        },
+        {
+          "blockType": "pricing",
+          "heading": "Plans at a glance",
+          "plans": [
+            {
+              "name": "Free",
+              "price": "$0",
+              "period": "forever",
+              "description": "For a small group trying things out.",
+              "features": [
+                {
+                  "text": "Up to 5 people"
+                },
+                {
+                  "text": "3 plans per workspace"
+                },
+                {
+                  "text": "30 days of history"
+                }
+              ],
+              "highlighted": false
+            },
+            {
+              "name": "Team",
+              "price": "$6",
+              "period": "per person, per month",
+              "description": "For teams that plan together every week.",
+              "features": [
+                {
+                  "text": "Unlimited people and plans"
+                },
+                {
+                  "text": "All integrations"
+                },
+                {
+                  "text": "Weekly summaries"
+                }
+              ],
+              "buttonLabel": "Upgrade",
+              "buttonHref": "/contact",
+              "highlighted": true
+            },
+            {
+              "name": "Business",
+              "price": "$12",
+              "period": "per person, per month",
+              "description": "For larger organisations.",
+              "features": [
+                {
+                  "text": "Everything in Team"
+                },
+                {
+                  "text": "Single sign-on"
+                },
+                {
+                  "text": "Priority support"
+                }
+              ],
+              "buttonLabel": "Talk to us",
+              "buttonHref": "/contact",
+              "highlighted": false
+            }
+          ]
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Billing questions",
+          "items": [
+            {
+              "question": "Where do I find my invoices?",
+              "answer": "Under Settings, then Billing, then Invoices. Each one can be downloaded as a PDF, and a copy is emailed to the workspace owner."
+            },
+            {
+              "question": "How do I change my payment method?",
+              "answer": "Choose Payment method, then Update, and enter the new details. The next payment uses the new method."
+            },
+            {
+              "question": "Can I get a refund?",
+              "answer": "If you cancel within fourteen days of a first payment we refund it in full. Write to support and mention your workspace name."
+            },
+            {
+              "question": "How do I cancel?",
+              "answer": "Choose Cancel subscription under Billing. You keep your paid features until the end of the period, then the workspace moves to the Free plan. Nothing is deleted."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Integrations",
+      "slug": "integrations",
+      "description": "Connect Fernleaf to the calendar, mail and chat tools your team already uses.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "Integrations bring tasks, dates and messages into Fernleaf from other tools, and send updates back. They are available on the Team and Business plans."
+        },
+        {
+          "blockType": "logos",
+          "heading": "Works with",
+          "items": [
+            {
+              "name": "Calendar Bridge"
+            },
+            {
+              "name": "Postbox Mail"
+            },
+            {
+              "name": "Chatterly"
+            },
+            {
+              "name": "Driveway Files"
+            },
+            {
+              "name": "Hookline"
+            },
+            {
+              "name": "Sheetwork"
+            }
+          ]
+        },
+        {
+          "blockType": "textBlock",
+          "body": "## Connect an app\n\n1. Open **Settings**, then **Integrations**.\n2. Choose the app and select **Connect**.\n3. Sign in to the other app when asked and approve the permissions listed.\n4. Choose what to share: tasks, dates, or both.\n\nYou can disconnect at any time from the same page. Disconnecting stops new data flowing; it does not delete what has already arrived."
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Integration questions",
+          "items": [
+            {
+              "question": "Which permissions does an integration ask for?",
+              "answer": "Only what it needs, and the list is shown before you approve. Calendar Bridge, for example, asks to read and write events, never your mail."
+            },
+            {
+              "question": "Why are my calendar events late to appear?",
+              "answer": "Calendar events sync every five minutes. If one is missing after ten, disconnect and reconnect the calendar."
+            },
+            {
+              "question": "Can I build my own integration?",
+              "answer": "Yes. Business workspaces can create access tokens under Settings, then Developers."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Troubleshooting",
+      "slug": "troubleshooting",
+      "description": "Quick fixes for sign-in problems, slow sync and missing notifications.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "Most problems clear up with one of the steps below. If yours does not, the last section tells you what to send us so we can help quickly.\n\n## First, try this\n\n1. Sign out and sign back in.\n2. Reload the page, or restart the app.\n3. Check the **System status** panel on the home page."
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "I cannot sign in",
+          "items": [
+            {
+              "question": "I forgot my password",
+              "answer": "Choose Forgot password on the sign-in page. If no email arrives within five minutes, check your spam folder and that you used the right address."
+            },
+            {
+              "question": "The code from my authenticator app is rejected",
+              "answer": "Check that the clock on your phone is set automatically. A few seconds of drift is enough to make a code fail."
+            },
+            {
+              "question": "My account is locked",
+              "answer": "After five wrong passwords an account is locked for fifteen minutes. Wait, then try again, or reset your password."
+            }
+          ]
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Sync and notifications",
+          "items": [
+            {
+              "question": "My changes are not showing on another device",
+              "answer": "Both devices need to be online at least once. Pull down on the task list to sync now."
+            },
+            {
+              "question": "I do not receive notifications",
+              "answer": "Open Settings, then Notifications, and check that the type you expect is switched on. Then check your device's own notification settings for Fernleaf."
+            },
+            {
+              "question": "The app is slow with a large workspace",
+              "answer": "Archive finished plans from Settings, then Archive. Archived plans stay searchable but are not loaded each time."
+            }
+          ]
+        },
+        {
+          "blockType": "textBlock",
+          "body": "## Still stuck?\n\n[Contact support](/contact) and include your workspace name, what you expected to happen and what happened instead. A screenshot helps. We never ask for your password."
+        }
+      ]
+    },
+    {
+      "title": "Contact support",
+      "slug": "contact",
+      "description": "Write to the Fernleaf support team.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "body": "Tell us what is going on and we will reply by email, usually within two working hours. Please include your workspace name and, if it helps, what you were doing when the problem began."
+        },
+        {
+          "blockType": "formEmbed",
+          "heading": "Send a message",
+          "form": "support"
+        },
+        {
+          "blockType": "hours-contact",
+          "heading": "Support hours",
+          "hours": [
+            {
+              "days": "Monday - Friday",
+              "time": "9:00 - 17:00"
+            },
+            {
+              "days": "Saturday and Sunday",
+              "time": "Email only"
+            }
+          ],
+          "email": "support@example.org",
+          "note": "Messages sent outside these hours are answered the next working day."
+        }
+      ]
+    }
+  ]
+}

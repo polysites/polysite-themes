@@ -1,0 +1,167 @@
+{
+  "$schema": "../../docs/showcase.schema.json",
+  "slug": "resume",
+  "domainPrefix": "resume",
+  "name": "Mira Castellane",
+  "tagline": "Staff software engineer and technical writer",
+  "theme": "resume",
+  "primaryColor": "#0f5f7a",
+  "secondaryColor": "#12485c",
+  "logo": "images/mark.svg",
+  "logoAlt": "A document icon",
+  "showDonateButton": false,
+  "header": [
+    { "label": "CV", "href": "/" },
+    { "label": "Projects", "href": "/projects" },
+    { "label": "Writing and talks", "href": "/writing" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "footer": {
+    "columns": [
+      { "heading": "Pages", "links": [{ "label": "CV", "href": "/" }, { "label": "Projects", "href": "/projects" }, { "label": "Writing and talks", "href": "/writing" }, { "label": "Contact", "href": "/contact" }] }
+    ],
+    "copyright": "Mira Castellane is a fictional person, made up for this demonstration."
+  },
+  "social": [
+    { "platform": "linkedin", "url": "#" },
+    { "platform": "other", "url": "#" }
+  ],
+  "privacy": { "policyUrl": "/contact", "contactEmail": "mira@castellane.example" },
+  "search": true,
+  "share": { "networks": ["email", "copy", "linkedin"], "contentTypes": ["pages"] },
+  "forms": [
+    {
+      "key": "contact",
+      "title": "Contact Mira",
+      "submitButtonLabel": "Send message",
+      "confirmationMessage": "Thank you. This is a demonstration site, so nothing was sent.",
+      "purpose": "Your details would be used only to reply to this message. This is a demonstration site: nothing you type is kept or read.",
+      "consentRequired": true,
+      "consentLabel": "I agree to be contacted about this message.",
+      "fields": [
+        { "type": "text", "name": "name", "label": "Your name", "required": true },
+        { "type": "email", "name": "email", "label": "Email address", "required": true },
+        { "type": "select", "name": "about", "label": "What is it about?", "options": ["A role", "A talk or workshop", "Writing", "Something else"] },
+        { "type": "textarea", "name": "message", "label": "Message", "required": true }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "title": "CV",
+      "slug": "home",
+      "description": "The CV of Mira Castellane, a fictional staff software engineer and technical writer: experience, skills and education.",
+      "blocks": [
+        {
+          "blockType": "leaderSpotlight",
+          "photo": "images/avatar.svg",
+          "alt": "Illustrated portrait of Mira, with dark hair and a white collar",
+          "name": "Mira Castellane",
+          "title": "Staff software engineer and technical writer, Marlow Bay",
+          "quote": "Twelve years building reliable data products for health and logistics teams, and explaining them in plain language. I like small, well-tested systems, clear documentation and teams that review each other's work kindly."
+        },
+        {
+          "blockType": "featureGrid",
+          "heading": "Skills",
+          "features": [
+            { "title": "Languages", "description": "TypeScript, Go, Python, SQL" },
+            { "title": "Systems", "description": "Event pipelines, PostgreSQL, queues, observability, cost-aware cloud design" },
+            { "title": "Practice", "description": "Design reviews, mentoring, incident response, technical writing" },
+            { "title": "Interests", "description": "Accessible interfaces, documentation as a product, data ethics" }
+          ]
+        },
+        {
+          "blockType": "timeline",
+          "heading": "Experience",
+          "entries": [
+            { "period": "2022 - now", "title": "Staff software engineer", "subtitle": "Brightwater Systems", "description": "Lead the platform team behind a patient-scheduling product used by 140 clinics. Cut p95 page load from 4.1 s to 1.2 s and wrote the company's first engineering handbook." },
+            { "period": "2019 - 2022", "title": "Senior software engineer", "subtitle": "Foxglove Labs", "description": "Built an event pipeline that processes 30 million messages a day. Mentored six engineers, two of whom are now tech leads." },
+            { "period": "2015 - 2019", "title": "Software engineer", "subtitle": "Northgate Analytics", "description": "Delivered dashboards and APIs for logistics customers; introduced contract testing across four services." },
+            { "period": "2013 - 2015", "title": "Junior developer", "subtitle": "Larkspur Health", "description": "Maintained a clinic booking site and learned what happens when a database migration goes wrong on a Friday." }
+          ]
+        },
+        {
+          "blockType": "timeline",
+          "heading": "Education",
+          "entries": [
+            { "period": "2009 - 2013", "title": "BSc Computer Science", "subtitle": "University of Marlow Bay", "description": "First-class honours; dissertation on schedule optimisation." },
+            { "period": "2021", "title": "Certificate in technical communication", "subtitle": "Open Writing School", "description": "Evening course on documentation, structure and plain language." }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Projects",
+      "slug": "projects",
+      "description": "Selected projects by Mira Castellane: scheduling, pipelines, documentation and open source.",
+      "blocks": [
+        {
+          "blockType": "commitmentsGrid",
+          "heading": "Selected projects",
+          "items": [
+            { "heading": "Clinic scheduler (Brightwater Systems)", "body": "A booking platform for 140 clinics. Rebuilt the availability engine, cutting double bookings to almost zero and page loads by two thirds.", "ctaLabel": "Read the write-up", "ctaHref": "/writing" },
+            { "heading": "Event pipeline (Foxglove Labs)", "body": "A fault-tolerant pipeline for 30 million events a day, with replay, schema checks and a dashboard anyone on call can read.", "ctaLabel": "Talk: Boring pipelines", "ctaHref": "/writing" },
+            { "heading": "Plainspoken (open source)", "body": "A small linter that flags jargon and very long sentences in documentation. About 900 stars and a very friendly issue tracker.", "ctaLabel": "Ask about it", "ctaHref": "/contact" },
+            { "heading": "The handbook (Brightwater Systems)", "body": "An engineering handbook of 60 short pages: how we review, release, respond to incidents and say thank you.", "ctaLabel": "Read the article", "ctaHref": "/writing" }
+          ]
+        },
+        {
+          "blockType": "stats",
+          "heading": "At a glance",
+          "items": [
+            { "value": "12 years", "label": "in software" },
+            { "value": "140", "label": "clinics on the scheduler" },
+            { "value": "30M", "label": "events a day, handled" },
+            { "value": "900", "label": "stars on Plainspoken" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Writing and talks",
+      "slug": "writing",
+      "description": "Articles and conference talks by Mira Castellane.",
+      "blocks": [
+        {
+          "blockType": "timeline",
+          "heading": "Talks",
+          "entries": [
+            { "period": "2026", "title": "Boring pipelines", "subtitle": "Marlow Bay Data Days", "description": "Why the best event pipelines are the ones nobody talks about." },
+            { "period": "2025", "title": "Docs are a product", "subtitle": "Plain Words Conference", "description": "Treating documentation like something with users, a roadmap and a changelog." },
+            { "period": "2023", "title": "Reviewing kindly", "subtitle": "Lantern Engineering Meetup", "description": "A practical guide to code review comments people are glad to receive." }
+          ]
+        },
+        {
+          "blockType": "timeline",
+          "heading": "Articles",
+          "entries": [
+            { "period": "2026", "title": "Twelve months of an engineering handbook", "subtitle": "Brightwater Engineering blog", "description": "What we wrote down, what we cut and what we would do differently." },
+            { "period": "2024", "title": "Three queries that explain your database", "subtitle": "Personal site", "description": "A short tour of the slow-query log for people who dread it." },
+            { "period": "2022", "title": "On being the first writer on the team", "subtitle": "Personal site", "description": "Notes from my first year as the person who writes things down." }
+          ]
+        },
+        {
+          "blockType": "textBlock",
+          "heading": "Invite me",
+          "body": "I give talks and run workshops on documentation, pipelines and kind code review. Write to me through the [contact page](/contact) with the date, the audience and the length you have in mind."
+        }
+      ]
+    },
+    {
+      "title": "Contact",
+      "slug": "contact",
+      "description": "How to contact Mira Castellane.",
+      "blocks": [
+        {
+          "blockType": "hours-contact",
+          "heading": "Get in touch",
+          "address": "Marlow Bay, working remotely",
+          "email": "mira@castellane.example",
+          "phone": "(555) 010-0163",
+          "note": "I reply within a few working days. For roles, a short description of the team and the problem helps most. A PDF of this CV is a click away: use Save as PDF at the top of any page."
+        },
+        { "blockType": "formEmbed", "heading": "Send a message", "form": "contact" }
+      ]
+    }
+  ]
+}

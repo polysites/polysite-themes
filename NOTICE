@@ -1,0 +1,10 @@
+Polysite themes: third-party notices
+====================================
+
+The themes in this repository are distributed under the terms in LICENSE.md. They bundle no third-party code, fonts or images: the
+starter theme is plain Vue components and CSS that run inside the core's Nuxt build and depend on `nuxt`, which the core installs
+(see the core repository's NOTICE for the packages the build uses). The developer guide under docs/ uses development-only
+tooling (VitePress and its dependencies) that is never part of a theme or a built site.
+
+A theme that sets its own fonts should note them here. A site that loads fonts from Google Fonts does so at the site operator's choice
+(see the core's privacy guide); no font is bundled by the starter theme.

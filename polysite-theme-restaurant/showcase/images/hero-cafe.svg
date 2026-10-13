@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720"><defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7b0"/><stop offset="1" stop-color="#f7c978"/></linearGradient></defs>
+<rect width="960" height="720" fill="#2f3d22"/>
+<rect x="60" y="150" width="840" height="470" fill="#f4e3c3" stroke="#1f2916" stroke-width="10"/>
+<rect x="110" y="270" width="360" height="270" fill="url(#w)" stroke="#1f2916" stroke-width="10"/><path d="M290 270v270M110 405h360" stroke="#1f2916" stroke-width="8"/>
+<g fill="#8a4a1e"><rect x="130" y="470" width="80" height="60" rx="8"/><rect x="230" y="500" width="100" height="30" rx="8"/><rect x="350" y="450" width="90" height="80" rx="8"/></g><g fill="#fff3d3"><circle cx="170" cy="420" r="26"/><circle cx="395" cy="410" r="22"/></g>
+<rect x="540" y="270" width="190" height="350" fill="#b5482a" stroke="#1f2916" stroke-width="10"/><rect x="570" y="300" width="130" height="190" fill="#fbe9c0"/><circle cx="635" cy="420" r="10" fill="#1f2916"/>
+<rect x="760" y="300" width="100" height="120" fill="#fbe9c0" stroke="#1f2916" stroke-width="8"/><path d="M780 340h60M780 365h60M780 390h40" stroke="#b5482a" stroke-width="7" stroke-linecap="round"/>
+<path d="M30 130h900l-60 150H90z" fill="#b5482a"/><g fill="#fbf1dc"><path d="M90 280l-30-150h60zM210 280l-20-150h60l20 150zM330 280l-10-150h60l10 150zM450 280l0-150h60l0 150zM570 280l10-150h60l-10 150zM690 280l20-150h60l-20 150zM810 280l30-150h60l-30 150z"/></g><path d="M90 280q50 40 100 0t100 0t100 0t100 0t100 0t100 0t100 0t100 0v-20H90z" fill="#8f3720"/>
+<g fill="#ffd77a"><circle cx="150" cy="320" r="7"/><circle cx="280" cy="326" r="7"/><circle cx="420" cy="320" r="7"/></g>
+<rect x="0" y="620" width="960" height="100" fill="#8a6244"/><g fill="#3f5a24"><rect x="70" y="560" width="80" height="60" rx="6" fill="#b5482a"/><circle cx="110" cy="545" r="40"/><circle cx="85" cy="565" r="25"/><circle cx="140" cy="565" r="25"/></g>
+<ellipse cx="800" cy="650" rx="70" ry="16" fill="#5a3a22"/><rect x="796" y="650" width="8" height="60" fill="#3a2515"/>
+</svg>

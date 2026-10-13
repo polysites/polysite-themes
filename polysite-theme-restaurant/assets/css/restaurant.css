@@ -1,0 +1,904 @@
+/* "Restaurant (example)": warm, appetising and colour-led. Cream paper, terracotta and olive, a serif in italics for the voice and a
+ * humanist sans for the details. Scoped to .theme-restaurant (every installed theme shares one stylesheet). The site's two brand
+ * colours are the terracotta (--brand-primary) and the olive (--brand-secondary); everything else is this theme's own. No web
+ * fonts: system stacks only. Dark variant for prefers-color-scheme: dark.
+ */
+.theme-restaurant {
+  --rest-paper: #fbf3e4;
+  --rest-paper-2: #f3e5c9;
+  --rest-ink: #2b2118;
+  --rest-muted: #5e4f40;
+  --rest-rule: #dcc9a3;
+  --rest-accent: var(--brand-primary, #a33f20);
+  --rest-link: var(--brand-primary, #a33f20);
+  --rest-olive: var(--brand-secondary, #3f4a22);
+  --rest-on-olive: #fbf3e4;
+  --rest-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+  --rest-sans: "Avenir Next", Avenir, "Segoe UI", Candara, "Gill Sans", "Gill Sans MT", Calibri, ui-sans-serif, system-ui, sans-serif;
+  --rest-wide: 68rem;
+  --font-heading: var(--rest-serif);
+
+  background: var(--rest-paper);
+  color: var(--rest-ink);
+  min-height: 100vh;
+}
+@media (prefers-color-scheme: dark) {
+  .theme-restaurant {
+    --rest-paper: #1b150f;
+    --rest-paper-2: #271f16;
+    --rest-ink: #f6ead3;
+    --rest-muted: #d1c2a8;
+    --rest-rule: #43372a;
+    --rest-link: color-mix(in srgb, var(--brand-primary, #a33f20) 40%, #ffffff);
+    --rest-olive: color-mix(in srgb, var(--brand-secondary, #3f4a22) 65%, #000000);
+  }
+}
+.theme-restaurant *,
+.theme-restaurant *::before,
+.theme-restaurant *::after {
+  box-sizing: border-box;
+}
+.theme-restaurant .rest-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--rest-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.theme-restaurant .rest-content {
+  flex: 1 0 auto;
+  outline: none;
+}
+.theme-restaurant a:where(:not(.poly-block__button, .rest-button)) {
+  color: var(--rest-link);
+  text-underline-offset: 0.18em;
+}
+.theme-restaurant :focus-visible {
+  outline: 3px solid var(--rest-link);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.theme-restaurant h1,
+.theme-restaurant h2,
+.theme-restaurant h3,
+.theme-restaurant h4 {
+  font-family: var(--rest-serif);
+  color: var(--rest-ink);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.theme-restaurant .rest-skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 60;
+  padding: 0.5rem 1rem;
+  background: var(--rest-ink);
+  color: var(--rest-paper);
+}
+.theme-restaurant .rest-skip:focus {
+  top: 1rem;
+}
+
+/* ---------- Buttons ---------- */
+.theme-restaurant .rest-button,
+.theme-restaurant a.rest-button {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  border: 2px solid var(--rest-accent);
+  border-radius: 9999px;
+  background: var(--rest-accent);
+  color: #fff;
+  font-family: var(--rest-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.theme-restaurant a.rest-button:hover {
+  background: color-mix(in srgb, var(--rest-accent) 80%, #000);
+  border-color: color-mix(in srgb, var(--rest-accent) 80%, #000);
+}
+.theme-restaurant a.rest-button--light {
+  background: var(--rest-paper);
+  border-color: var(--rest-paper);
+  color: #3a2f12;
+}
+.theme-restaurant a.rest-button--light:hover {
+  background: var(--rest-paper-2);
+  border-color: var(--rest-paper-2);
+}
+
+/* ---------- Header ---------- */
+.theme-restaurant .rest-header {
+  position: relative;
+  z-index: 20;
+  background: var(--rest-paper);
+  border-bottom: 1px solid var(--rest-rule);
+}
+.theme-restaurant .rest-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  max-width: var(--rest-wide);
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+}
+.theme-restaurant .rest-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--rest-accent);
+  text-decoration: none;
+}
+.theme-restaurant .rest-brand__logo {
+  max-height: 2.75rem;
+  width: auto;
+}
+.theme-restaurant .rest-brand__text {
+  display: grid;
+  line-height: 1.1;
+}
+.theme-restaurant .rest-brand__name {
+  color: var(--rest-ink);
+  font-family: var(--rest-serif);
+  font-size: 1.65rem;
+  font-style: italic;
+  font-weight: 600;
+}
+.theme-restaurant .rest-brand__tag {
+  margin-top: 0.15rem;
+  color: var(--rest-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.theme-restaurant .rest-brand__mark {
+  color: var(--rest-link);
+  flex: none;
+}
+.theme-restaurant .rest-burger {
+  padding: 0.5rem 1.1rem;
+  border: 2px solid var(--rest-ink);
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--rest-ink);
+  font: 700 0.8125rem/1 var(--rest-sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.theme-restaurant .rest-navwrap {
+  display: none;
+  flex-basis: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem 0 0.75rem;
+}
+.theme-restaurant .rest-navwrap.is-open {
+  display: flex;
+}
+.theme-restaurant .rest-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.theme-restaurant .rest-nav a:not(.rest-button) {
+  display: inline-block;
+  padding: 0.35rem 0;
+  border-bottom: 2px solid transparent;
+  color: var(--rest-ink);
+  text-decoration: none;
+}
+.theme-restaurant .rest-nav a:not(.rest-button):hover,
+.theme-restaurant .rest-nav a[aria-current="page"]:not(.rest-button) {
+  border-bottom-color: var(--rest-accent);
+}
+.theme-restaurant .rest-lang.poly-language-switcher ul {
+  display: inline-flex;
+  gap: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+.theme-restaurant .rest-lang.poly-language-switcher a {
+  display: block;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--rest-ink);
+  color: var(--rest-ink);
+  opacity: 1;
+  text-decoration: none;
+}
+.theme-restaurant .rest-lang.poly-language-switcher li:first-child a {
+  border-radius: 9999px 0 0 9999px;
+}
+.theme-restaurant .rest-lang.poly-language-switcher li:last-child a {
+  border-radius: 0 9999px 9999px 0;
+  border-left-width: 0;
+}
+.theme-restaurant .rest-lang.poly-language-switcher a[aria-current="true"] {
+  background: var(--rest-ink);
+  color: var(--rest-paper);
+  text-decoration: none;
+}
+.theme-restaurant .rest-lang.poly-language-switcher a:hover {
+  text-decoration: underline;
+}
+@media (min-width: 56rem) {
+  .theme-restaurant .rest-burger {
+    display: none;
+  }
+  .theme-restaurant .rest-navwrap,
+  .theme-restaurant .rest-navwrap.is-open {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    padding: 0;
+  }
+  .theme-restaurant .rest-nav {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+/* ---------- Page titles (ordinary pages) ---------- */
+.theme-restaurant main > h1 {
+  max-width: var(--rest-wide);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 0.5rem;
+  text-align: center;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-style: italic;
+  font-weight: 600;
+}
+.theme-restaurant main > h1::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 1.1rem;
+  margin: 0.75rem auto 0;
+  background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 18'%3E%3Cpath d='M0 9h26M46 9h26' stroke='%23a33f20' stroke-width='1.5'/%3E%3Cpath d='M36 17C28 12 26 7 28 4c2-3 6-2 8 1c2-3 6-4 8-1c2 3 0 8-8 13z' fill='%23a33f20'/%3E%3C/svg%3E");
+}
+.theme-restaurant main > h1:has(+ .rest-hero) {
+  display: none;
+}
+
+/* ---------- Blocks of the core ---------- */
+.theme-restaurant .rest-section {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+.theme-restaurant .rest-section--wide {
+  max-width: var(--rest-wide);
+}
+.theme-restaurant .rest-section > h2 {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-style: italic;
+  font-weight: 600;
+}
+.theme-restaurant .rest-prose__body p,
+.theme-restaurant .rest-prose__body ul,
+.theme-restaurant .rest-prose__body ol {
+  margin: 0 0 1.1em;
+}
+.theme-restaurant .rest-prose__body ul,
+.theme-restaurant .rest-prose__body ol {
+  padding-left: 1.4rem;
+}
+.theme-restaurant .rest-prose__body ul {
+  list-style: disc;
+}
+.theme-restaurant .rest-prose__body ol {
+  list-style: decimal;
+}
+.theme-restaurant .rest-prose__body h2,
+.theme-restaurant .rest-prose__body h3 {
+  margin: 1.5em 0 0.4em;
+  font-style: italic;
+}
+.theme-restaurant .rest-prose__body blockquote {
+  margin: 1.4em 0;
+  padding-left: 1.2rem;
+  border-left: 3px solid var(--rest-accent);
+  font-family: var(--rest-serif);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.theme-restaurant .rest-hero {
+  display: grid;
+  background: var(--rest-olive);
+  color: var(--rest-on-olive);
+}
+.theme-restaurant .rest-hero__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 3.5rem 1.5rem;
+}
+.theme-restaurant .rest-hero h1 {
+  margin: 0;
+  max-width: 14ch;
+  color: var(--rest-on-olive);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.theme-restaurant .rest-hero__lede {
+  margin: 0;
+  max-width: 30rem;
+  color: var(--rest-on-olive);
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+.theme-restaurant .rest-hero__art {
+  margin: 0;
+  min-height: 16rem;
+}
+.theme-restaurant .rest-hero__art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 34rem;
+  object-fit: cover;
+}
+@media (min-width: 56rem) {
+  .theme-restaurant .rest-hero {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    min-height: 32rem;
+  }
+  .theme-restaurant .rest-hero__panel {
+    padding: 4rem max(1.5rem, calc((100vw - var(--rest-wide)) / 2)) 4rem 3rem;
+    padding-left: max(1.5rem, calc((100vw - var(--rest-wide)) / 2 + 1.25rem));
+  }
+  .theme-restaurant .rest-hero__art img {
+    max-height: none;
+  }
+}
+
+.theme-restaurant .rest-highlights ul {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: hl;
+}
+@media (min-width: 48rem) {
+  .theme-restaurant .rest-highlights ul {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  }
+}
+.theme-restaurant .rest-highlights li {
+  counter-increment: hl;
+  position: relative;
+  padding: 2.75rem 1.5rem 1.5rem;
+  border-top: 4px solid var(--rest-accent);
+  border-radius: 0 0 1rem 1rem;
+  background: var(--rest-paper-2);
+}
+.theme-restaurant .rest-highlights li::before {
+  content: counter(hl);
+  position: absolute;
+  top: -1.4rem;
+  left: 1.25rem;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: var(--rest-accent);
+  color: #fff;
+  font-family: var(--rest-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+}
+.theme-restaurant .rest-highlights h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.4rem;
+  font-style: italic;
+}
+.theme-restaurant .rest-highlights p {
+  margin: 0;
+  color: var(--rest-muted);
+}
+
+.theme-restaurant .rest-faq details {
+  border-bottom: 1px solid var(--rest-rule);
+  padding: 0.9rem 0;
+}
+.theme-restaurant .rest-faq summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.theme-restaurant .rest-faq p {
+  margin: 0.6rem 0 0;
+  color: var(--rest-muted);
+}
+
+/* Forms */
+.theme-restaurant .rest-card {
+  padding: clamp(1.25rem, 5vw, 2.25rem);
+  border: 1px solid var(--rest-rule);
+  border-radius: 1.25rem;
+  background: var(--rest-paper-2);
+}
+.theme-restaurant .rest-card h2 {
+  margin: 0 0 1rem;
+  text-align: left;
+  font-style: italic;
+}
+.theme-restaurant .rest-card__lede {
+  margin: -0.5rem 0 1rem;
+  color: var(--rest-muted);
+}
+.theme-restaurant .poly-form {
+  display: grid;
+  gap: 1rem;
+}
+.theme-restaurant .poly-field {
+  display: grid;
+  gap: 0.3rem;
+}
+.theme-restaurant .poly-label,
+.theme-restaurant .poly-check {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--rest-ink);
+}
+.theme-restaurant .poly-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: 400;
+}
+.theme-restaurant .poly-required {
+  color: var(--rest-link);
+}
+.theme-restaurant .poly-form input:not([type="checkbox"]):not([type="radio"]),
+.theme-restaurant .poly-form select,
+.theme-restaurant .poly-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--rest-muted);
+  border-radius: 0.6rem;
+  background: var(--rest-paper);
+  color: var(--rest-ink);
+  font: inherit;
+}
+.theme-restaurant .poly-form [aria-invalid="true"] {
+  border: 2px solid #b3261e;
+}
+.theme-restaurant .poly-error {
+  margin: 0;
+  color: #b3261e;
+  font-size: 0.875rem;
+}
+@media (prefers-color-scheme: dark) {
+  .theme-restaurant .poly-error {
+    color: #ffa59b;
+  }
+  .theme-restaurant .poly-form [aria-invalid="true"] {
+    border-color: #ffa59b;
+  }
+}
+.theme-restaurant .poly-submit {
+  justify-self: start;
+  padding: 0.75rem 1.75rem;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--rest-accent);
+  color: #fff;
+  font: 700 0.8125rem/1.2 var(--rest-sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.theme-restaurant .poly-submit:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--rest-accent) 80%, #000);
+}
+.theme-restaurant .poly-submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+.theme-restaurant .poly-confirmation {
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--rest-olive);
+  background: var(--rest-paper);
+}
+.theme-restaurant .poly-purpose,
+.theme-restaurant .poly-privacy {
+  margin: 0;
+  color: var(--rest-muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- Blocks pack (plugin) ---------- */
+.theme-restaurant .poly-block {
+  --poly-accent: var(--rest-accent);
+  --poly-text: var(--rest-ink);
+  --poly-muted: var(--rest-muted);
+  --poly-surface: var(--rest-paper-2);
+  --poly-border: var(--rest-rule);
+  --poly-radius: 1rem;
+  --pb-strong: var(--rest-link);
+  padding: 4rem 1.25rem;
+  font-family: var(--rest-sans);
+  line-height: 1.65;
+}
+.theme-restaurant .poly-block__inner {
+  max-width: var(--rest-wide);
+}
+.theme-restaurant .poly-block__heading {
+  margin-bottom: 1.25rem;
+  font-family: var(--rest-serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+}
+.theme-restaurant .poly-block__intro {
+  margin-inline: auto;
+  text-align: center;
+}
+.theme-restaurant .poly-block__item-title {
+  font-family: var(--rest-serif);
+}
+
+/* Menu */
+.theme-restaurant .poly-block--price-list {
+  background: var(--rest-paper);
+}
+.theme-restaurant .poly-price-list__sections {
+  gap: 3rem 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+.theme-restaurant .poly-price-list__title {
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 600;
+  border-bottom: 2px solid var(--rest-accent);
+}
+.theme-restaurant .poly-price-list__name {
+  font-family: var(--rest-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.theme-restaurant .poly-price-list__price {
+  color: var(--rest-link);
+  font-family: var(--rest-serif);
+  font-size: 1.15rem;
+}
+.theme-restaurant .poly-price-list__leader {
+  border-bottom-color: var(--rest-muted);
+}
+.theme-restaurant .poly-price-list__tag {
+  background: transparent;
+  border: 1px solid var(--rest-olive);
+  color: var(--rest-ink);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+.theme-restaurant .poly-price-list__description {
+  font-style: italic;
+}
+
+/* Gallery */
+.theme-restaurant .poly-block--gallery {
+  background: var(--rest-paper);
+}
+.theme-restaurant .poly-gallery__figure {
+  padding: 0.55rem 0.55rem 0.4rem;
+  background: #fffaf0;
+  border-radius: 0.35rem;
+  box-shadow: 0 0.6rem 1.4rem rgb(60 40 20 / 0.18);
+}
+.theme-restaurant .poly-gallery__item:nth-child(odd) .poly-gallery__figure {
+  transform: rotate(-1deg);
+}
+.theme-restaurant .poly-gallery__item:nth-child(even) .poly-gallery__figure {
+  transform: rotate(0.8deg);
+}
+.theme-restaurant .poly-gallery__image {
+  border-radius: 0.2rem;
+}
+.theme-restaurant .poly-gallery__caption {
+  padding: 0.5rem 0.25rem 0.35rem;
+  color: #4d3f31;
+  font-family: var(--rest-serif);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Hours and address, on olive */
+.theme-restaurant .poly-block--hours-contact {
+  background: var(--rest-olive);
+  --poly-text: var(--rest-on-olive);
+  --poly-muted: var(--rest-on-olive);
+  --poly-border: rgb(251 243 228 / 0.3);
+  --pb-strong: var(--rest-on-olive);
+  color: var(--rest-on-olive);
+}
+.theme-restaurant .poly-block--hours-contact .poly-block__heading,
+.theme-restaurant .poly-block--hours-contact .poly-block__item-title {
+  color: var(--rest-on-olive);
+}
+.theme-restaurant .poly-block--hours-contact .poly-hours-contact__title {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.theme-restaurant .poly-block--hours-contact a {
+  color: var(--rest-on-olive);
+}
+.theme-restaurant .poly-block--hours-contact .poly-hours-contact__columns {
+  max-width: 46rem;
+  margin-inline: auto;
+}
+.theme-restaurant .poly-hours-contact__row {
+  border-bottom-style: dotted;
+}
+
+/* Guests say */
+.theme-restaurant .poly-block--testimonials {
+  background: var(--rest-paper-2);
+}
+.theme-restaurant .poly-testimonials__item {
+  position: relative;
+  padding: 2.5rem 1.5rem 1.5rem;
+  border: 0;
+  border-radius: 1rem;
+  background: var(--rest-paper);
+  box-shadow: 0 0.4rem 1.2rem rgb(60 40 20 / 0.1);
+}
+.theme-restaurant .poly-testimonials__item::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.2rem;
+  left: 1.1rem;
+  color: var(--rest-link);
+  font-family: var(--rest-serif);
+  font-size: 4rem;
+  line-height: 1;
+}
+.theme-restaurant .poly-testimonials__quote {
+  font-family: var(--rest-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+/* Our story */
+.theme-restaurant .poly-block--team {
+  background: var(--rest-paper);
+}
+.theme-restaurant .poly-team__image {
+  border-radius: 9999px;
+  max-width: 11rem;
+  margin-inline: auto;
+}
+.theme-restaurant .poly-team__item {
+  text-align: center;
+}
+.theme-restaurant .poly-block--timeline {
+  background: var(--rest-paper-2);
+}
+.theme-restaurant .poly-block--timeline .poly-block__inner {
+  max-width: 44rem;
+}
+.theme-restaurant .poly-timeline__list {
+  border-left-color: var(--rest-accent);
+}
+.theme-restaurant .poly-timeline__item::before {
+  background: var(--rest-paper-2);
+}
+.theme-restaurant .poly-timeline__period {
+  font-family: var(--rest-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+/* Reserve now */
+.theme-restaurant .poly-block--cta {
+  --pb-strong: var(--rest-accent);
+  background: var(--rest-accent);
+  color: #fff;
+}
+.theme-restaurant .poly-block--cta .poly-block__heading {
+  color: #fff;
+}
+.theme-restaurant .poly-block--cta a.poly-block__button {
+  color: #5c2412;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+}
+.theme-restaurant .poly-block--cta a.poly-block__button--quiet {
+  color: #fff;
+}
+
+/* ---------- Plugin parts ---------- */
+.theme-restaurant .rest-share {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+}
+.theme-restaurant .poly-search {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+/* ---------- Footer ---------- */
+.theme-restaurant .rest-footer {
+  background: var(--rest-olive);
+  color: var(--rest-on-olive);
+  padding: 3rem 1.25rem 2rem;
+}
+.theme-restaurant .rest-footer a {
+  color: var(--rest-on-olive);
+}
+.theme-restaurant .rest-footer__grid {
+  display: grid;
+  gap: 2rem;
+  max-width: calc(var(--rest-wide) - 2.5rem);
+  margin: 0 auto;
+}
+@media (min-width: 40rem) {
+  .theme-restaurant .rest-footer__grid {
+    grid-template-columns: 1.4fr repeat(3, minmax(8rem, 1fr));
+  }
+}
+.theme-restaurant .rest-footer__about p {
+  margin: 0;
+}
+.theme-restaurant .rest-footer__name {
+  margin-bottom: 0.25rem;
+  font-family: var(--rest-serif);
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 600;
+}
+.theme-restaurant .rest-search {
+  margin-top: 1rem;
+  max-width: 22rem;
+  gap: 0.4rem;
+}
+.theme-restaurant .rest-search .poly-search-input {
+  border-color: var(--rest-on-olive);
+  border-radius: 9999px;
+  padding: 0.4rem 0.9rem;
+  color: var(--rest-on-olive);
+  font-size: 0.9rem;
+}
+.theme-restaurant .rest-search .poly-search-input::placeholder {
+  color: var(--rest-on-olive);
+  opacity: 0.8;
+}
+.theme-restaurant .rest-search .poly-search-button {
+  border-color: var(--rest-on-olive);
+  border-radius: 9999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+}
+.theme-restaurant .rest-footer h2 {
+  margin: 0 0 0.6rem;
+  color: var(--rest-on-olive);
+  font-family: var(--rest-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.theme-restaurant .rest-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.theme-restaurant .rest-footer li {
+  margin-bottom: 0.25rem;
+}
+.theme-restaurant .rest-footer__legal {
+  max-width: calc(var(--rest-wide) - 2.5rem);
+  margin: 2rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(251 243 228 / 0.3);
+  font-size: 0.85rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-restaurant a.rest-button,
+  .theme-restaurant .poly-submit,
+  .theme-restaurant .poly-gallery__figure {
+    transition: background-color 0.15s ease, transform 0.2s ease;
+  }
+  .theme-restaurant .poly-gallery__item:nth-child(n) .poly-gallery__figure:hover {
+    transform: rotate(0deg) scale(1.02);
+  }
+}
+@media print {
+  .theme-restaurant .rest-header,
+  .theme-restaurant .rest-footer {
+    display: none;
+  }
+}
+
+/* The blocks pack's own `.poly-block p { margin: 0 }` outranks its centred paragraphs, so they are centred here. */
+.theme-restaurant .poly-block__intro,
+.theme-restaurant .poly-cta__text,
+.theme-restaurant .poly-hours-contact__note {
+  margin-inline: auto;
+  text-align: center;
+}
+.theme-restaurant .poly-block__intro {
+  margin-bottom: 2.5rem;
+}
+.theme-restaurant .poly-hours-contact__note {
+  max-width: 36rem;
+  margin-top: 1.5rem;
+}
+
+/* Header order: the language switcher stays in the bar on every width (never inside the collapsed menu). */
+.theme-restaurant .rest-brand { order: 1; }
+.theme-restaurant .rest-lang { order: 2; margin-left: auto; }
+.theme-restaurant .rest-burger { order: 3; }
+.theme-restaurant .rest-navwrap { order: 4; }
+@media (min-width: 56rem) {
+  .theme-restaurant .rest-navwrap { order: 2; }
+  .theme-restaurant .rest-lang { order: 3; margin-left: 0; }
+}
+
+.theme-restaurant .rest-header__inner { max-width: 78rem; }
+@media (min-width: 56rem) {
+  .theme-restaurant .rest-nav { gap: 1.1rem; }
+  .theme-restaurant .rest-header__inner { flex-wrap: nowrap; }
+  .theme-restaurant .rest-navwrap { flex-wrap: nowrap; }
+}
+@media (min-width: 56rem) and (max-width: 74rem) {
+  .theme-restaurant .rest-brand__tag { display: none; }
+}
+
+.theme-restaurant .rest-prose__body h2 { font-size: 1.6rem; }
+.theme-restaurant .rest-prose__body h3 { font-size: 1.3rem; }
+
+.theme-restaurant .rest-prose__body a,
+.theme-restaurant .rest-faq a {
+  text-decoration: underline;
+}
+.theme-restaurant a.rest-button--light {
+  background: #fbf3e4;
+  border-color: #fbf3e4;
+  color: #3a2f12;
+}
+.theme-restaurant a.rest-button--light:hover {
+  background: #f3e5c9;
+  border-color: #f3e5c9;
+}
+
+.theme-restaurant .poly-policy-link {
+  text-decoration: underline;
+}
+
+.theme-restaurant .rest-highlights > h2 {
+  margin-bottom: 2.5rem;
+}

@@ -1,0 +1,341 @@
+{
+  "$schema": "../../docs/showcase.schema.json",
+  "slug": "event",
+  "domainPrefix": "event",
+  "name": "Sundial Weekend",
+  "tagline": "Two days of ideas, music and food by the water",
+  "theme": "event",
+  "primaryColor": "#d62f1f",
+  "secondaryColor": "#ffd84a",
+  "showDonateButton": false,
+  "header": [
+    { "label": "Schedule", "href": "/schedule" },
+    { "label": "Speakers", "href": "/speakers" },
+    { "label": "Venue", "href": "/venue" },
+    { "label": "Get tickets", "href": "/tickets" }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "heading": "The weekend",
+        "links": [
+          { "label": "Schedule", "href": "/schedule" },
+          { "label": "Speakers", "href": "/speakers" },
+          { "label": "Venue and travel", "href": "/venue" }
+        ]
+      },
+      {
+        "heading": "Join in",
+        "links": [
+          { "label": "Tickets", "href": "/tickets" },
+          { "label": "Questions", "href": "/tickets" }
+        ]
+      }
+    ]
+  },
+  "social": [
+    { "platform": "instagram", "url": "#" },
+    { "platform": "youtube", "url": "#" },
+    { "platform": "x", "url": "#" }
+  ],
+  "privacy": { "policyUrl": "/tickets", "contactEmail": "hello@sundial.example" },
+  "search": true,
+  "share": true,
+  "forms": [
+    {
+      "key": "register",
+      "title": "Register for Sundial Weekend",
+      "submitButtonLabel": "Reserve my place",
+      "confirmationMessage": "You are on the list. A confirmation would arrive by email on a real event; this demo form stores nothing beyond this test site.",
+      "purpose": "We use these details only to organise the event. This is a fictional demo.",
+      "consentRequired": true,
+      "consentLabel": "I agree that the organisers may email me about this event.",
+      "retentionDays": 60,
+      "fields": [
+        { "type": "text", "name": "name", "label": "Full name", "required": true },
+        { "type": "email", "name": "email", "label": "Email address", "required": true },
+        {
+          "type": "select",
+          "name": "ticket",
+          "label": "Ticket",
+          "required": true,
+          "options": ["Day pass (Saturday)", "Day pass (Sunday)", "Weekend pass", "Weekend pass with workshops"]
+        },
+        {
+          "type": "select",
+          "name": "diet",
+          "label": "Food preferences",
+          "options": ["No preference", "Vegetarian", "Vegan", "Gluten free", "Other (tell us at the door)"]
+        },
+        { "type": "checkbox", "name": "access", "label": "I would like to talk to someone about access needs" }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "description": "Sundial Weekend is a fictional two-day festival used to demonstrate the Polysite event theme.",
+      "blocks": [
+        {
+          "blockType": "hero",
+          "heading": "Sundial Weekend",
+          "subheading": "20 and 21 March 2027 / Harbourside Hall, Example Quay",
+          "image": "images/hero-poster.svg",
+          "alt": "A poster-style illustration of a sundial sun over blue waves",
+          "ctaLabel": "Get your ticket",
+          "ctaHref": "/tickets"
+        },
+        {
+          "blockType": "stats",
+          "items": [
+            { "value": "2", "label": "days" },
+            { "value": "3", "label": "stages" },
+            { "value": "24", "label": "speakers and performers" },
+            { "value": "8", "label": "kitchens" }
+          ]
+        },
+        {
+          "blockType": "textBlock",
+          "heading": "A weekend for curious people",
+          "body": "Sundial Weekend is a small festival of talks, workshops, live music and very good food, held every March in an old harbour hall.\n\nCome for one day or both. Sit in on a talk you have never heard of. Make something in a workshop. Eat lunch with strangers who will not be strangers by Sunday."
+        },
+        {
+          "blockType": "team",
+          "heading": "Some of the people on stage",
+          "intro": "A taste of the line-up. See everyone on the speakers page.",
+          "members": [
+            { "name": "Amara Nwosu", "role": "Opening keynote", "bio": "On designing for joy, not just for use.", "image": "images/speaker-amara.svg", "alt": "Illustrated portrait of Amara Nwosu" },
+            { "name": "Luca Brandt", "role": "Saturday, Main Stage", "bio": "Why every town needs a repair cafe.", "image": "images/speaker-luca.svg", "alt": "Illustrated portrait of Luca Brandt" },
+            { "name": "Kofi Adeyemi", "role": "Sunday, Main Stage", "bio": "A live set built from harbour recordings.", "image": "images/speaker-kofi.svg", "alt": "Illustrated portrait of Kofi Adeyemi" },
+            { "name": "Elena Voss", "role": "Workshop Barn", "bio": "Bookbinding for people who think they cannot.", "image": "images/speaker-elena.svg", "alt": "Illustrated portrait of Elena Voss" }
+          ]
+        },
+        {
+          "blockType": "pricing",
+          "heading": "Tickets",
+          "intro": "Early prices until 31 January. All prices are invented for this demo.",
+          "plans": [
+            {
+              "name": "Day pass",
+              "price": "$45",
+              "period": "one day",
+              "description": "Saturday or Sunday, all talks and music.",
+              "features": [{ "text": "Every stage, one day" }, { "text": "Lunch voucher" }],
+              "buttonLabel": "Choose a day",
+              "buttonHref": "/tickets"
+            },
+            {
+              "name": "Weekend pass",
+              "price": "$75",
+              "period": "two days",
+              "description": "The whole thing, start to finish.",
+              "features": [{ "text": "Every stage, both days" }, { "text": "Two lunch vouchers" }, { "text": "Closing party" }],
+              "buttonLabel": "Get the weekend",
+              "buttonHref": "/tickets",
+              "highlighted": true
+            },
+            {
+              "name": "Weekend plus workshops",
+              "price": "$120",
+              "period": "two days",
+              "description": "For people who like to make things.",
+              "features": [{ "text": "Everything in the weekend pass" }, { "text": "Three workshop places" }, { "text": "Materials included" }],
+              "buttonLabel": "Get the full pass",
+              "buttonHref": "/tickets"
+            }
+          ]
+        },
+        {
+          "blockType": "logos",
+          "heading": "With thanks to our made-up sponsors",
+          "items": [
+            { "name": "Harbourline", "image": "images/sponsor-harbourline.svg", "alt": "Harbourline" },
+            { "name": "Saltmarsh Coffee", "image": "images/sponsor-saltmarsh.svg", "alt": "Saltmarsh Coffee" },
+            { "name": "Oarlock", "image": "images/sponsor-oarlock.svg", "alt": "Oarlock" },
+            { "name": "Driftwood Audio", "image": "images/sponsor-driftwood.svg", "alt": "Driftwood Audio" },
+            { "name": "Tidemark Bank", "image": "images/sponsor-tidemark.svg", "alt": "Tidemark Bank" },
+            { "name": "Lanternworks", "image": "images/sponsor-lanternworks.svg", "alt": "Lanternworks" },
+            { "name": "Pebble and Pine", "image": "images/sponsor-pebble.svg", "alt": "Pebble and Pine" },
+            { "name": "Quay Brewing", "image": "images/sponsor-quaybrew.svg", "alt": "Quay Brewing" }
+          ]
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Good questions",
+          "items": [
+            { "question": "Can I come for just one day?", "answer": "Yes. Day passes cover either Saturday or Sunday." },
+            { "question": "Is the venue step-free?", "answer": "The hall, the barn and the food court are all step-free, and the quiet room has seats and low light. Tell us about anything else you need." },
+            { "question": "Will talks be recorded?", "answer": "Main Stage talks are recorded and shared two weeks later. Workshops are not." },
+            { "question": "What if it rains?", "answer": "Everything except the market is indoors. Bring a coat for the walk between buildings." }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "See you by the water",
+          "text": "Early prices end on 31 January.",
+          "buttonLabel": "Get tickets",
+          "buttonHref": "/tickets",
+          "secondaryLabel": "Read the schedule",
+          "secondaryHref": "/schedule"
+        }
+      ]
+    },
+    {
+      "title": "Schedule",
+      "slug": "schedule",
+      "description": "The full two-day programme with rooms and speakers. Print-friendly.",
+      "blocks": [
+        {
+          "blockType": "schedule",
+          "heading": "Two days, three rooms",
+          "days": [
+            {
+              "label": "Saturday 20 March",
+              "sessions": [
+                { "time": "9:00 - 10:00", "title": "Doors, coffee and a very slow breakfast", "room": "Food Court" },
+                { "time": "10:00 - 11:00", "title": "Designing for joy", "speaker": "Amara Nwosu", "room": "Main Stage", "description": "The opening keynote: small delights that make ordinary things worth using." },
+                { "time": "11:30 - 12:30", "title": "Every town needs a repair cafe", "speaker": "Luca Brandt", "room": "Main Stage", "description": "What a volunteer-run repair cafe fixes besides toasters." },
+                { "time": "11:30 - 13:00", "title": "Bookbinding for beginners", "speaker": "Elena Voss", "room": "Workshop Barn", "description": "Leave with a hand-sewn notebook. Places limited to twenty." },
+                { "time": "13:00 - 14:30", "title": "Long lunch", "room": "Food Court" },
+                { "time": "14:30 - 15:30", "title": "The sound of a working harbour", "speaker": "Kofi Adeyemi", "room": "Main Stage" },
+                { "time": "14:30 - 16:00", "title": "Reading hour", "room": "Quiet Room", "description": "A shelf of borrowed books and nothing you have to do." },
+                { "time": "20:00 - 23:00", "title": "Saturday night music", "room": "Main Stage" }
+              ]
+            },
+            {
+              "label": "Sunday 21 March",
+              "sessions": [
+                { "time": "9:30 - 10:30", "title": "Sunday slow start", "room": "Food Court" },
+                { "time": "10:30 - 11:30", "title": "Cities that listen", "speaker": "Hanna Moreau", "room": "Main Stage", "description": "Ten small experiments in letting residents steer." },
+                { "time": "10:30 - 12:30", "title": "Print a poster in one morning", "speaker": "Rafael Quintero", "room": "Workshop Barn", "description": "Screen printing from sketch to dry poster." },
+                { "time": "12:00 - 13:30", "title": "Long lunch, again", "room": "Food Court" },
+                { "time": "13:30 - 14:30", "title": "How to give a good talk", "speaker": "Mei-Lin Zhou", "room": "Main Stage" },
+                { "time": "15:00 - 16:00", "title": "A short history of the map", "speaker": "Oskar Pellegrini", "room": "Main Stage" },
+                { "time": "16:30 - 17:30", "title": "Closing party", "room": "Main Stage", "description": "Music, thank-yous and a lot of folding chairs." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Speakers",
+      "slug": "speakers",
+      "description": "Everyone on stage at Sundial Weekend (all invented).",
+      "blocks": [
+        {
+          "blockType": "team",
+          "heading": "The line-up",
+          "intro": "Eight people, eight very different talks. Portraits are illustrations of invented people.",
+          "members": [
+            { "name": "Amara Nwosu", "role": "Designer and writer", "bio": "Believes a good door handle is a love letter to a stranger.", "image": "images/speaker-amara.svg", "alt": "Illustrated portrait of Amara Nwosu" },
+            { "name": "Luca Brandt", "role": "Repair cafe organiser", "bio": "Has fixed four hundred kettles and one piano.", "image": "images/speaker-luca.svg", "alt": "Illustrated portrait of Luca Brandt" },
+            { "name": "Hanna Moreau", "role": "Urban planner", "bio": "Asks residents first and draws second.", "image": "images/speaker-hanna.svg", "alt": "Illustrated portrait of Hanna Moreau" },
+            { "name": "Kofi Adeyemi", "role": "Sound artist", "bio": "Records harbours and turns them into dance music.", "image": "images/speaker-kofi.svg", "alt": "Illustrated portrait of Kofi Adeyemi" },
+            { "name": "Elena Voss", "role": "Bookbinder", "bio": "Teaches thread, glue and patience.", "image": "images/speaker-elena.svg", "alt": "Illustrated portrait of Elena Voss" },
+            { "name": "Rafael Quintero", "role": "Printmaker", "bio": "Runs a screen-printing studio from a shipping container.", "image": "images/speaker-rafael.svg", "alt": "Illustrated portrait of Rafael Quintero" },
+            { "name": "Mei-Lin Zhou", "role": "Broadcaster", "bio": "Has interviewed three thousand people and remembers every pause.", "image": "images/speaker-meilin.svg", "alt": "Illustrated portrait of Mei-Lin Zhou" },
+            { "name": "Oskar Pellegrini", "role": "Map historian", "bio": "Collects maps of places that were never built.", "image": "images/speaker-oskar.svg", "alt": "Illustrated portrait of Oskar Pellegrini" }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Hear them all in person",
+          "buttonLabel": "Get tickets",
+          "buttonHref": "/tickets",
+          "secondaryLabel": "See the schedule",
+          "secondaryHref": "/schedule"
+        }
+      ]
+    },
+    {
+      "title": "Tickets",
+      "slug": "tickets",
+      "description": "Ticket prices and the registration form for Sundial Weekend (a demo form).",
+      "blocks": [
+        {
+          "blockType": "pricing",
+          "heading": "Choose your pass",
+          "plans": [
+            {
+              "name": "Day pass",
+              "price": "$45",
+              "period": "one day",
+              "features": [{ "text": "Every stage, one day" }, { "text": "Lunch voucher" }]
+            },
+            {
+              "name": "Weekend pass",
+              "price": "$75",
+              "period": "two days",
+              "features": [{ "text": "Every stage, both days" }, { "text": "Two lunch vouchers" }, { "text": "Closing party" }],
+              "highlighted": true
+            },
+            {
+              "name": "Weekend plus workshops",
+              "price": "$120",
+              "period": "two days",
+              "features": [{ "text": "Everything in the weekend pass" }, { "text": "Three workshop places" }, { "text": "Materials included" }]
+            }
+          ]
+        },
+        {
+          "blockType": "formEmbed",
+          "heading": "Register",
+          "form": "register"
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Before you book",
+          "items": [
+            { "question": "Can I get a refund?", "answer": "Up to fourteen days before the event, in full. After that you can pass your ticket to a friend." },
+            { "question": "Are there student or low-income tickets?", "answer": "Yes. A quarter of all places are pay-what-you-can. Choose the weekend pass and tell us in the form's access box." },
+            { "question": "Are children welcome?", "answer": "Under-12s come free with an adult. There is a quiet corner and colouring tables in the food court." }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Venue",
+      "slug": "venue",
+      "description": "Where Sundial Weekend happens, how to get there, and what is where.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "Harbourside Hall",
+          "body": "An old harbour hall and the barn behind it, on the edge of Example Quay. Everything is within a two-minute walk.\n\n## Getting here\n\n- **Train:** Example Quay station is a ten-minute walk along the water.\n- **Bike:** free supervised parking by the entrance.\n- **Car:** very limited, so please share a ride."
+        },
+        {
+          "blockType": "gallery",
+          "heading": "What is where",
+          "columns": 3,
+          "images": [
+            { "image": "images/scene-main-stage.svg", "alt": "A stage with lights and a crowd in silhouette", "caption": "The Main Stage, inside the hall" },
+            { "image": "images/scene-barn.svg", "alt": "A wooden barn with open doors", "caption": "The Workshop Barn, three rooms" },
+            { "image": "images/scene-food-court.svg", "alt": "Striped food stall awnings in a row", "caption": "The Food Court, eight kitchens" }
+          ]
+        },
+        {
+          "blockType": "gallery",
+          "columns": 2,
+          "images": [
+            { "image": "images/venue-map.svg", "alt": "A site plan: main stage, workshop barn, quiet room, food court, market and entrance", "caption": "Site plan (not to scale, and not a real place)" }
+          ]
+        },
+        {
+          "blockType": "hours-contact",
+          "heading": "Opening times and contact",
+          "hours": [
+            { "days": "Saturday 20 March", "time": "9:00 - 23:00" },
+            { "days": "Sunday 21 March", "time": "9:30 - 18:00" },
+            { "days": "Cloakroom", "time": "8:30 - 18:00" }
+          ],
+          "address": "Harbourside Hall\nExample Quay\nSampletown, EX1 4QY",
+          "phone": "+1 555 010 0142",
+          "email": "hello@sundial.example",
+          "note": "Invented address, number and email for demonstration."
+        }
+      ]
+    }
+  ]
+}

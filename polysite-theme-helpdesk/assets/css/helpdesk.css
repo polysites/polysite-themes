@@ -1,0 +1,856 @@
+/* "Help centre (example)": a knowledge-base theme. Calm blue and neutral greys, dense but readable, high contrast. A search box
+ * in the banner, topic cards, a left sidebar of topics on article pages. Scoped to .theme-helpdesk (every installed theme shares one
+ * stylesheet). --brand-primary is the blue, --brand-secondary the deep navy of the banner. System fonts only; dark variant for
+ * prefers-color-scheme: dark.
+ */
+.theme-helpdesk {
+  --hd-bg: #f5f7fb;
+  --hd-surface: #ffffff;
+  --hd-ink: #0f1b2d;
+  --hd-muted: #425066;
+  --hd-line: #d5dce8;
+  --hd-accent: var(--brand-primary, #1d4fc4);
+  --hd-link: var(--brand-primary, #1d4fc4);
+  --hd-navy: var(--brand-secondary, #0f2a4a);
+  --hd-soft: #e6edfb;
+  --hd-ok: #0b6b3a;
+  --hd-sans: Inter, "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --hd-side: 15.5rem;
+  --hd-wide: 74rem;
+  --font-heading: var(--hd-sans);
+
+  background: var(--hd-bg);
+  color: var(--hd-ink);
+  min-height: 100vh;
+}
+@media (prefers-color-scheme: dark) {
+  .theme-helpdesk {
+    --hd-bg: #0b1320;
+    --hd-surface: #121d2f;
+    --hd-ink: #e8eef8;
+    --hd-muted: #b4c2d8;
+    --hd-line: #2a3a54;
+    --hd-link: color-mix(in srgb, var(--brand-primary, #1d4fc4) 40%, #ffffff);
+    --hd-soft: #172742;
+    --hd-ok: #5fd39a;
+    --hd-navy: color-mix(in srgb, var(--brand-secondary, #0f2a4a) 70%, #000000);
+  }
+}
+.theme-helpdesk *,
+.theme-helpdesk *::before,
+.theme-helpdesk *::after {
+  box-sizing: border-box;
+}
+.theme-helpdesk .hd-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--hd-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.theme-helpdesk a:where(:not(.poly-block__button, .hd-button)) {
+  color: var(--hd-link);
+  text-underline-offset: 0.15em;
+}
+.theme-helpdesk :focus-visible {
+  outline: 3px solid var(--hd-link);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+.theme-helpdesk h1,
+.theme-helpdesk h2,
+.theme-helpdesk h3,
+.theme-helpdesk h4 {
+  font-family: var(--hd-sans);
+  color: var(--hd-ink);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.theme-helpdesk .hd-skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -4rem;
+  z-index: 60;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  background: var(--hd-ink);
+  color: var(--hd-bg);
+}
+.theme-helpdesk .hd-skip:focus {
+  top: 0.75rem;
+}
+
+/* ---------- Top bar ---------- */
+.theme-helpdesk .hd-bar {
+  background: var(--hd-surface);
+  border-bottom: 1px solid var(--hd-line);
+}
+.theme-helpdesk .hd-bar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  max-width: var(--hd-wide);
+  margin: 0 auto;
+  padding: 0.7rem 1.25rem;
+}
+.theme-helpdesk .hd-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--hd-ink);
+  text-decoration: none;
+}
+.theme-helpdesk .hd-brand__logo {
+  border-radius: 0.5rem;
+}
+.theme-helpdesk .hd-brand__name {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+.theme-helpdesk .hd-brand__tag {
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--hd-line);
+  border-radius: 9999px;
+  background: var(--hd-soft);
+  color: var(--hd-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.theme-helpdesk .hd-bar__tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.9rem;
+}
+.theme-helpdesk .hd-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--hd-accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.theme-helpdesk .hd-button:hover {
+  background: color-mix(in srgb, var(--hd-accent) 82%, #000);
+}
+.theme-helpdesk .hd-lang.poly-language-switcher a {
+  color: var(--hd-ink);
+  opacity: 1;
+  font-weight: 600;
+}
+.theme-helpdesk .hd-lang.poly-language-switcher a[aria-current="true"] {
+  text-decoration: underline;
+}
+
+/* Search (plugin): one look, two sizes */
+.theme-helpdesk .hd-search {
+  gap: 0.4rem;
+}
+.theme-helpdesk .hd-search .poly-search-input {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--hd-muted);
+  border-radius: 0.5rem;
+  background: var(--hd-surface);
+  color: var(--hd-ink);
+  font-size: 0.95rem;
+}
+.theme-helpdesk .hd-search .poly-search-input::placeholder {
+  color: var(--hd-muted);
+  opacity: 1;
+}
+.theme-helpdesk .hd-search .poly-search-button {
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--hd-ink);
+  color: var(--hd-bg);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.theme-helpdesk .hd-search--bar {
+  flex: 0 1 16rem;
+}
+.theme-helpdesk .hd-search--hero {
+  width: min(100%, 38rem);
+  margin: 1.5rem auto 0;
+}
+.theme-helpdesk .hd-search--hero .poly-search-input {
+  padding: 0.95rem 1.1rem;
+  border: 2px solid #fff;
+  border-radius: 0.8rem;
+  background: #fff;
+  color: #0f1b2d;
+  font-size: 1.1rem;
+  box-shadow: 0 0.6rem 1.6rem rgb(0 0 0 / 0.25);
+}
+.theme-helpdesk .hd-search--hero .poly-search-input::placeholder {
+  color: #4a5870;
+}
+.theme-helpdesk .hd-search--hero .poly-search-button {
+  padding: 0.95rem 1.4rem;
+  border-radius: 0.8rem;
+  background: var(--hd-accent);
+  color: #fff;
+  font-size: 1.05rem;
+  box-shadow: 0 0.6rem 1.6rem rgb(0 0 0 / 0.25);
+}
+.theme-helpdesk .hd-search--hero .poly-search-input:focus-visible,
+.theme-helpdesk .hd-search--hero .poly-search-button:focus-visible {
+  outline-color: #ffd166;
+}
+@media (max-width: 40rem) {
+  .theme-helpdesk .hd-search--bar {
+    flex: 1 1 100%;
+    order: 5;
+  }
+}
+
+/* ---------- Page structure ---------- */
+.theme-helpdesk .hd-body {
+  flex: 1 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem 2.5rem;
+  max-width: var(--hd-wide);
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+.theme-helpdesk .hd-body--home {
+  max-width: none;
+  padding: 0 0 3rem;
+}
+.theme-helpdesk .hd-content {
+  min-width: 0;
+  outline: none;
+}
+.theme-helpdesk .hd-side__wide {
+  display: none;
+}
+@media (min-width: 60rem) {
+  .theme-helpdesk .hd-body:not(.hd-body--home) {
+    grid-template-columns: var(--hd-side) minmax(0, 1fr);
+    padding-top: 2.25rem;
+  }
+  .theme-helpdesk .hd-side__wide {
+    display: block;
+    position: sticky;
+    top: 1rem;
+  }
+  .theme-helpdesk .hd-side__narrow {
+    display: none;
+  }
+}
+.theme-helpdesk .hd-side__narrow {
+  border: 1px solid var(--hd-line);
+  border-radius: 0.6rem;
+  background: var(--hd-surface);
+}
+.theme-helpdesk .hd-side__narrow summary {
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+.theme-helpdesk .hd-side__narrow .hd-topics {
+  padding: 0 1rem 1rem;
+}
+.theme-helpdesk .hd-topics ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.theme-helpdesk .hd-topics__list a,
+.theme-helpdesk .hd-topics__group a {
+  display: block;
+  padding: 0.4rem 0.75rem;
+  border-left: 3px solid transparent;
+  border-radius: 0 0.4rem 0.4rem 0;
+  color: var(--hd-ink);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.theme-helpdesk .hd-topics__list a:hover,
+.theme-helpdesk .hd-topics__group a:hover {
+  background: var(--hd-soft);
+}
+.theme-helpdesk .hd-topics a[aria-current="page"] {
+  border-left-color: var(--hd-accent);
+  background: var(--hd-soft);
+  font-weight: 700;
+}
+.theme-helpdesk .hd-topics__group {
+  margin-top: 1.25rem;
+}
+.theme-helpdesk .hd-topics__group h2 {
+  margin: 0 0 0.35rem 0.75rem;
+  color: var(--hd-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Article titles (ordinary pages) */
+.theme-helpdesk main > h1 {
+  max-width: 48rem;
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  font-weight: 800;
+}
+.theme-helpdesk main:has(.hd-hero) > h1,
+.theme-helpdesk main > h1:has(+ .hd-hero) {
+  display: none;
+}
+.theme-helpdesk .hd-body:not(.hd-body--home) main {
+  max-width: 48rem;
+}
+
+/* ---------- Blocks ---------- */
+.theme-helpdesk .hd-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.5rem, 7vw, 4.5rem) 1.25rem clamp(2.5rem, 7vw, 4rem);
+  background: var(--hd-navy);
+  color: #fff;
+  text-align: center;
+}
+.theme-helpdesk .hd-hero__art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+.theme-helpdesk .hd-hero__inner {
+  position: relative;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+.theme-helpdesk .hd-hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+}
+.theme-helpdesk .hd-hero__lede {
+  margin: 0.75rem auto 0;
+  max-width: 34rem;
+  color: #e3ecfb;
+  font-size: 1.15rem;
+}
+.theme-helpdesk .hd-hero__link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.theme-helpdesk .hd-section {
+  margin: 0 0 2rem;
+}
+.theme-helpdesk .hd-section > h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+.theme-helpdesk .hd-section--wide {
+  max-width: var(--hd-wide);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 0.5rem;
+}
+.theme-helpdesk .hd-prose__body p,
+.theme-helpdesk .hd-prose__body ul,
+.theme-helpdesk .hd-prose__body ol {
+  margin: 0 0 1rem;
+}
+.theme-helpdesk .hd-prose__body ul,
+.theme-helpdesk .hd-prose__body ol {
+  padding-left: 1.5rem;
+}
+.theme-helpdesk .hd-prose__body ul {
+  list-style: disc;
+}
+.theme-helpdesk .hd-prose__body ol {
+  list-style: decimal;
+}
+.theme-helpdesk .hd-prose__body li {
+  margin-bottom: 0.35rem;
+}
+.theme-helpdesk .hd-prose__body h2,
+.theme-helpdesk .hd-prose__body h3 {
+  margin: 1.6rem 0 0.5rem;
+  font-weight: 800;
+}
+.theme-helpdesk .hd-prose__body blockquote {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--hd-accent);
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: var(--hd-soft);
+}
+.theme-helpdesk .hd-prose__body blockquote p {
+  margin: 0;
+}
+
+/* Topic cards (home) */
+.theme-helpdesk .hd-topiccards h2 {
+  font-size: 1.6rem;
+}
+.theme-helpdesk .hd-topiccards ul {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.theme-helpdesk .hd-topiccard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 3.5rem 1.25rem 1.1rem;
+  border: 1px solid var(--hd-line);
+  border-radius: 0.8rem;
+  background: var(--hd-surface);
+}
+.theme-helpdesk .hd-topiccard:hover {
+  border-color: var(--hd-accent);
+  box-shadow: 0 0.4rem 1.2rem rgb(15 27 45 / 0.12);
+}
+.theme-helpdesk .hd-topiccard::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  width: 2rem;
+  height: 2rem;
+  background: var(--hd-link);
+  -webkit-mask: var(--hd-icon) center / contain no-repeat;
+  mask: var(--hd-icon) center / contain no-repeat;
+}
+.theme-helpdesk .hd-topiccard:nth-child(6n + 1) {
+  --hd-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 19c0-6 4-12 14-14c-1 10-7 14-14 14z'/%3E%3Cpath d='M5 19l8-8'/%3E%3C/svg%3E");
+}
+.theme-helpdesk .hd-topiccard:nth-child(6n + 2) {
+  --hd-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='M3 10h18M7 15h4'/%3E%3C/svg%3E");
+}
+.theme-helpdesk .hd-topiccard:nth-child(6n + 3) {
+  --hd-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 3v5M15 3v5M6 8h12v4a6 6 0 0 1-12 0zM12 18v3'/%3E%3C/svg%3E");
+}
+.theme-helpdesk .hd-topiccard:nth-child(6n + 4) {
+  --hd-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6'/%3E%3C/svg%3E");
+}
+.theme-helpdesk .hd-topiccard:nth-child(6n + 5) {
+  --hd-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z'/%3E%3C/svg%3E");
+}
+.theme-helpdesk .hd-topiccard:nth-child(6n) {
+  --hd-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='4'/%3E%3Cpath d='M4 21c1-5 4-7 8-7s7 2 8 7'/%3E%3C/svg%3E");
+}
+.theme-helpdesk .hd-topiccard h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.theme-helpdesk .hd-topiccard__link {
+  color: var(--hd-ink);
+  text-decoration: none;
+}
+/* the whole card is the link */
+.theme-helpdesk .hd-topiccard__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.theme-helpdesk .hd-topiccard p {
+  margin: 0;
+  color: var(--hd-muted);
+  font-size: 0.95rem;
+}
+.theme-helpdesk .hd-topiccard__more {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  color: var(--hd-link);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* Steps */
+.theme-helpdesk .hd-steps ol {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+.theme-helpdesk .hd-steps li {
+  counter-increment: step;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--hd-line);
+  border-radius: 0.7rem;
+  background: var(--hd-surface);
+}
+.theme-helpdesk .hd-steps li::before {
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 9999px;
+  background: var(--hd-accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+.theme-helpdesk .hd-steps h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.02rem;
+}
+.theme-helpdesk .hd-steps p {
+  margin: 0;
+  color: var(--hd-muted);
+  font-size: 0.94rem;
+}
+
+/* FAQ */
+.theme-helpdesk .hd-faq details {
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--hd-line);
+  border-radius: 0.6rem;
+  background: var(--hd-surface);
+}
+.theme-helpdesk .hd-faq summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+.theme-helpdesk .hd-faq details[open] summary {
+  border-bottom: 1px solid var(--hd-line);
+}
+.theme-helpdesk .hd-faq p {
+  margin: 0;
+  padding: 0.75rem 1rem 0.9rem;
+  color: var(--hd-muted);
+}
+.theme-helpdesk .hd-body--home .hd-faq {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Forms */
+.theme-helpdesk .hd-form {
+  padding: 1.25rem;
+  border: 1px solid var(--hd-line);
+  border-radius: 0.8rem;
+  background: var(--hd-surface);
+}
+.theme-helpdesk .poly-form {
+  display: grid;
+  gap: 0.9rem;
+}
+.theme-helpdesk .poly-field {
+  display: grid;
+  gap: 0.25rem;
+}
+.theme-helpdesk .poly-label,
+.theme-helpdesk .poly-check {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.theme-helpdesk .poly-check {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  font-weight: 400;
+}
+.theme-helpdesk .poly-required {
+  color: var(--hd-link);
+}
+.theme-helpdesk .poly-form input:not([type="checkbox"]):not([type="radio"]),
+.theme-helpdesk .poly-form select,
+.theme-helpdesk .poly-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--hd-muted);
+  border-radius: 0.5rem;
+  background: var(--hd-bg);
+  color: var(--hd-ink);
+  font: inherit;
+}
+.theme-helpdesk .poly-form [aria-invalid="true"] {
+  border: 2px solid #b3261e;
+}
+.theme-helpdesk .poly-error {
+  margin: 0;
+  color: #b3261e;
+  font-size: 0.875rem;
+}
+@media (prefers-color-scheme: dark) {
+  .theme-helpdesk .poly-error {
+    color: #ff9c92;
+  }
+  .theme-helpdesk .poly-form [aria-invalid="true"] {
+    border-color: #ff9c92;
+  }
+}
+.theme-helpdesk .poly-submit {
+  justify-self: start;
+  padding: 0.65rem 1.4rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--hd-accent);
+  color: #fff;
+  font: 700 0.95rem/1.2 var(--hd-sans);
+  cursor: pointer;
+}
+.theme-helpdesk .poly-submit:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--hd-accent) 82%, #000);
+}
+.theme-helpdesk .poly-submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+.theme-helpdesk .poly-confirmation {
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--hd-ok);
+  background: var(--hd-soft);
+}
+.theme-helpdesk .poly-purpose,
+.theme-helpdesk .poly-privacy {
+  margin: 0;
+  color: var(--hd-muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- Blocks pack (plugin) ---------- */
+.theme-helpdesk .poly-block {
+  --poly-accent: var(--hd-accent);
+  --poly-text: var(--hd-ink);
+  --poly-muted: var(--hd-muted);
+  --poly-surface: var(--hd-surface);
+  --poly-border: var(--hd-line);
+  --poly-radius: 0.7rem;
+  --pb-strong: var(--hd-link);
+  padding: 0;
+  margin: 0 0 2rem;
+  font-family: var(--hd-sans);
+}
+.theme-helpdesk .poly-block__inner {
+  max-width: none;
+}
+.theme-helpdesk .poly-block__heading {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.theme-helpdesk .hd-body--home .poly-block {
+  max-width: var(--hd-wide);
+  margin: 0 auto 2rem;
+  padding: 1.5rem 1.25rem 0.5rem;
+}
+
+/* Status */
+.theme-helpdesk .poly-block--stats .poly-stats__list {
+  gap: 0.9rem;
+  text-align: left;
+}
+.theme-helpdesk .poly-block--stats .poly-stats__item {
+  border: 1px solid var(--hd-line);
+  border-top: 1px solid var(--hd-line);
+  border-radius: 0.7rem;
+  background: var(--hd-surface);
+  padding: 1rem 1.1rem;
+}
+.theme-helpdesk .poly-block--stats .poly-stats__item:first-child .poly-stats__value::before {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.5rem;
+  border-radius: 9999px;
+  background: var(--hd-ok);
+  vertical-align: middle;
+}
+.theme-helpdesk .poly-stats__value {
+  font-size: 1.6rem;
+}
+.theme-helpdesk .poly-block--stats .poly-stats__item:first-child .poly-stats__value {
+  color: var(--hd-ok);
+}
+
+/* Plans */
+.theme-helpdesk .poly-pricing__item {
+  background: var(--hd-surface);
+}
+.theme-helpdesk .poly-pricing__item--highlighted {
+  border-color: var(--hd-accent);
+}
+.theme-helpdesk .poly-pricing__amount {
+  font-size: 1.8rem;
+}
+.theme-helpdesk .poly-block a.poly-block__button {
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+}
+.theme-helpdesk .poly-block--pricing a.poly-block__button--quiet {
+  color: var(--hd-link);
+}
+
+/* Integrations: logos as text chips */
+.theme-helpdesk .poly-logos__list {
+  justify-content: flex-start;
+  gap: 0.6rem;
+}
+.theme-helpdesk .poly-logos__name {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--hd-line);
+  border-radius: 0.6rem;
+  background: var(--hd-surface);
+  color: var(--hd-ink);
+}
+
+/* Support hours */
+.theme-helpdesk .poly-block--hours-contact {
+  padding: 1.25rem;
+  border: 1px solid var(--hd-line);
+  border-radius: 0.8rem;
+  background: var(--hd-surface);
+}
+.theme-helpdesk .hd-body--home .poly-block--cta,
+.theme-helpdesk .poly-block--cta {
+  padding: 2rem 1.25rem;
+  border-radius: 0.9rem;
+  background: var(--hd-navy);
+  color: #fff;
+}
+.theme-helpdesk .hd-body--home .poly-block--cta {
+  max-width: calc(var(--hd-wide) - 2.5rem);
+}
+.theme-helpdesk .poly-block--cta .poly-block__heading,
+.theme-helpdesk .poly-block--cta .poly-cta__text {
+  color: #fff;
+}
+.theme-helpdesk .poly-cta__text,
+.theme-helpdesk .poly-block__intro {
+  margin-inline: auto;
+}
+.theme-helpdesk .poly-block--cta a.poly-block__button {
+  border-color: #fff;
+  background: #fff;
+  color: #0f2a4a;
+}
+.theme-helpdesk .poly-block--cta a.poly-block__button--quiet {
+  background: transparent;
+  color: #fff;
+}
+
+/* Search results page, share buttons */
+.theme-helpdesk .poly-search {
+  max-width: 48rem;
+}
+.theme-helpdesk .poly-search mark {
+  background: color-mix(in srgb, var(--hd-accent) 25%, transparent);
+  color: inherit;
+}
+.theme-helpdesk .hd-share {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hd-line);
+}
+
+/* ---------- Footer ---------- */
+.theme-helpdesk .hd-footer {
+  border-top: 1px solid var(--hd-line);
+  background: var(--hd-surface);
+  font-size: 0.92rem;
+}
+.theme-helpdesk .hd-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem 2.5rem;
+  max-width: var(--hd-wide);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+}
+.theme-helpdesk .hd-footer__about {
+  flex: 1 1 14rem;
+  margin: 0;
+  color: var(--hd-muted);
+}
+.theme-helpdesk .hd-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.theme-helpdesk .hd-footer__links a {
+  display: inline-block;
+  padding: 0.15rem 0;
+  color: var(--hd-ink);
+}
+.theme-helpdesk .hd-footer__legal {
+  flex: 1 1 100%;
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--hd-line);
+  color: var(--hd-muted);
+  font-size: 0.85rem;
+}
+.theme-helpdesk .hd-footer__legal a {
+  color: var(--hd-muted);
+}
+@media print {
+  .theme-helpdesk .hd-bar,
+  .theme-helpdesk .hd-side,
+  .theme-helpdesk .hd-footer {
+    display: none;
+  }
+}
+
+/* Headings inside the article text (the reset removes their sizes) */
+.theme-helpdesk .hd-prose__body h2 { font-size: 1.35rem; }
+.theme-helpdesk .hd-prose__body h3 { font-size: 1.12rem; }
+.theme-helpdesk .hd-body--home .hd-faq {
+  max-width: var(--hd-wide);
+  margin: 0 auto 2rem;
+  padding: 1.5rem 1.25rem 0.5rem;
+}
+
+.theme-helpdesk .hd-prose__body a,
+.theme-helpdesk .hd-faq a {
+  text-decoration: underline;
+}
+.theme-helpdesk .poly-pricing__badge {
+  background: var(--hd-accent);
+  color: #fff;
+}
+.theme-helpdesk .poly-block a.poly-block__button:not(.poly-block__button--quiet) {
+  border-color: var(--hd-accent);
+  background: var(--hd-accent);
+  color: #fff;
+}
+.theme-helpdesk .poly-block--pricing a.poly-block__button--quiet {
+  border-color: var(--hd-link);
+}
+.theme-helpdesk .poly-block--cta a.poly-block__button:not(.poly-block__button--quiet) {
+  border-color: #fff;
+  background: #fff;
+  color: #0f2a4a;
+}
+.theme-helpdesk .poly-block--cta a.poly-block__button--quiet {
+  border-color: #fff;
+}
+
+.theme-helpdesk .poly-policy-link {
+  text-decoration: underline;
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><pattern id="g" width="80" height="80" patternUnits="userSpaceOnUse"><rect width="80" height="80" fill="#f7ecd5"/><rect width="40" height="80" fill="#b5482a" opacity=".2"/><rect width="80" height="40" fill="#b5482a" opacity=".2"/></pattern></defs><rect width="800" height="600" fill="url(#g)"/>
+<ellipse cx="404" cy="318" rx="250" ry="236" fill="#000" opacity=".12"/>
+<circle cx="400" cy="300" r="240" fill="#fffaf0"/><circle cx="400" cy="300" r="190" fill="#b8742f"/><circle cx="400" cy="300" r="176" fill="#d49a4a"/>
+<g fill="#f3d58a" stroke="#c2873a" stroke-width="4"><g id="r"><rect x="388" y="150" width="26" height="90" rx="13"/></g>
+<use href="#r" transform="rotate(30 400 300)"/><use href="#r" transform="rotate(60 400 300)"/><use href="#r" transform="rotate(90 400 300)"/><use href="#r" transform="rotate(120 400 300)"/><use href="#r" transform="rotate(150 400 300)"/><use href="#r" transform="rotate(180 400 300)"/><use href="#r" transform="rotate(210 400 300)"/><use href="#r" transform="rotate(240 400 300)"/><use href="#r" transform="rotate(270 400 300)"/><use href="#r" transform="rotate(300 400 300)"/><use href="#r" transform="rotate(330 400 300)"/></g>
+<circle cx="400" cy="300" r="48" fill="#f6e3a8" stroke="#c2873a" stroke-width="4"/><circle cx="400" cy="300" r="14" fill="#8a4a1e"/>
+<path d="M600 440q40-20 60 20t-20 60q-60 0-40-80z" fill="#fff6e0" stroke="#e8d9b7" stroke-width="3"/>
+</svg>

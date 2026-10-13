@@ -1,0 +1,11 @@
+# Monthly update proposals for the GitHub Actions the docs workflow uses, and for the docs site's own packages.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: monthly }
+  - package-ecosystem: npm
+    directory: /docs
+    schedule: { interval: monthly }
+    groups:
+      all: { patterns: ["*"], update-types: [minor, patch] }

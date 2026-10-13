@@ -1,0 +1,404 @@
+{
+  "$schema": "../../docs/showcase.schema.json",
+  "slug": "salon",
+  "domainPrefix": "salon",
+  "name": "Maison Lune",
+  "tagline": "A quiet place to be looked after",
+  "theme": "salon",
+  "primaryColor": "#9b4a63",
+  "secondaryColor": "#3e2a33",
+  "logo": "images/logo.svg",
+  "logoAlt": "Maison Lune: a crescent moon",
+  "showDonateButton": false,
+  "languages": ["en", "fr"],
+  "defaultLanguage": "en",
+  "translations": { "fr": { "tagline": "Un endroit calme où prendre soin de soi" } },
+  "header": [
+    { "label": "Treatments", "href": "/treatments", "translations": { "fr": "Soins" } },
+    { "label": "About", "href": "/about", "translations": { "fr": "À propos" } },
+    { "label": "Gift cards", "href": "/gift-cards", "translations": { "fr": "Cartes cadeaux" } },
+    { "label": "Journal", "href": "/journal", "translations": { "fr": "Journal" } },
+    { "label": "Book a visit", "href": "/contact", "translations": { "fr": "Réserver" } }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "heading": "Visit",
+        "translations": { "fr": "Venir nous voir" },
+        "links": [
+          { "label": "Opening hours and contact", "href": "/contact", "translations": { "fr": "Horaires et contact" } },
+          { "label": "Gift cards", "href": "/gift-cards", "translations": { "fr": "Cartes cadeaux" } }
+        ]
+      },
+      {
+        "heading": "Explore",
+        "translations": { "fr": "Découvrir" },
+        "links": [
+          { "label": "Treatments", "href": "/treatments", "translations": { "fr": "Soins" } },
+          { "label": "About us", "href": "/about", "translations": { "fr": "À propos" } },
+          { "label": "Journal", "href": "/journal" }
+        ]
+      }
+    ],
+    "copyright": "Maison Lune is a fictional business, made up for this demonstration."
+  },
+  "social": [
+    { "platform": "instagram", "url": "#" },
+    { "platform": "facebook", "url": "#" }
+  ],
+  "privacy": { "policyUrl": "/about", "contactEmail": "hello@maisonlune.example" },
+  "search": true,
+  "share": { "networks": ["facebook", "x", "email", "copy"], "contentTypes": ["posts", "pages"] },
+  "newsSettings": { "label": "Journal", "path": "journal", "perPage": 6 },
+  "forms": [
+    {
+      "key": "booking",
+      "title": "Booking request",
+      "submitButtonLabel": "Request a booking",
+      "confirmationMessage": "Thank you! This is a demonstration site, so nothing was sent. A real salon would write back within a day.",
+      "purpose": "We would use your details only to reply to this request. This is a demonstration site: nothing you type is kept or read.",
+      "consentRequired": true,
+      "consentLabel": "I agree to be contacted about this booking.",
+      "fields": [
+        { "type": "text", "name": "name", "label": "Your name", "required": true },
+        { "type": "email", "name": "email", "label": "Email address", "required": true },
+        { "type": "text", "name": "phone", "label": "Phone (optional)" },
+        { "type": "select", "name": "treatment", "label": "What would you like?", "options": ["A facial", "A massage", "Hands and feet", "Hair and brows", "I am not sure yet"] },
+        { "type": "text", "name": "when", "label": "Preferred day and time" },
+        { "type": "textarea", "name": "notes", "label": "Anything we should know?" }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "description": "Maison Lune is a small, fictional day spa: facials, massage, hands and feet, and a pot of tea with every visit.",
+      "blocks": [
+        {
+          "blockType": "hero",
+          "heading": "Slow beauty, made just for you",
+          "subheading": "A small day spa where every treatment begins with a pot of tea and ends with nowhere to be.",
+          "image": "images/hero.svg",
+          "alt": "An illustrated treatment room with a tall arched window, a sprig of leaves and a bottle of oil",
+          "ctaLabel": "Book a visit",
+          "ctaHref": "/contact"
+        },
+        {
+          "blockType": "featureGrid",
+          "heading": "A gentler way to spend an hour",
+          "features": [
+            { "title": "Unhurried appointments", "description": "Every treatment includes ten extra minutes, so nobody watches the clock, least of all you." },
+            { "title": "Plant-first products", "description": "Gentle oils and clays, blended in small batches by makers we know by name." },
+            { "title": "Made for you", "description": "We start with a short conversation about your skin, your week and what you need most." }
+          ]
+        },
+        {
+          "blockType": "gallery",
+          "heading": "Inside the studio",
+          "columns": 3,
+          "images": [
+            { "image": "images/stones.svg", "alt": "A tower of warm massage stones with a sprig of leaves", "caption": "Warm stones, warmer welcome" },
+            { "image": "images/oil.svg", "alt": "Amber bottles of massage oil on a wooden shelf", "caption": "Our own blend of oils" },
+            { "image": "images/orchid.svg", "alt": "A white orchid in a cream vase", "caption": "Fresh flowers every Tuesday" },
+            { "image": "images/candle.svg", "alt": "A candle burning in the evening light", "caption": "Evening appointments by candlelight" },
+            { "image": "images/towels.svg", "alt": "Folded towels and a bar of soap", "caption": "Heated towels, always" },
+            { "image": "images/bowl.svg", "alt": "A bowl of water with floating petals", "caption": "Petals in the foot bath" }
+          ]
+        },
+        {
+          "blockType": "testimonials",
+          "heading": "Kind words",
+          "items": [
+            { "quote": "I fell asleep during the scalp ritual and nobody minded. I have not felt this unhurried in years.", "name": "Priya N.", "role": "Monthly ritual member" },
+            { "quote": "The hot-stone massage fixed a stubborn shoulder, and the tea afterwards was the best part of my week.", "name": "Daniel O.", "role": "First visit in March" },
+            { "quote": "Everything is calm, from the lighting to the way they say hello. I booked my sister a gift card the same day.", "name": "Hanna W.", "role": "Regular" }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Treat yourself to an hour of quiet",
+          "text": "Book online or call us. If you are not sure what you need, we will help you choose.",
+          "buttonLabel": "Book a visit",
+          "buttonHref": "/contact",
+          "secondaryLabel": "See the treatments",
+          "secondaryHref": "/treatments"
+        },
+        {
+          "blockType": "hours-contact",
+          "heading": "Find us",
+          "hours": [
+            { "days": "Tuesday to Friday", "time": "10am - 7pm" },
+            { "days": "Saturday", "time": "9am - 5pm" },
+            { "days": "Sunday and Monday", "time": "Closed" }
+          ],
+          "address": "14 Harbour Lane\nMarlow Bay",
+          "phone": "(555) 010-0142",
+          "email": "hello@maisonlune.example",
+          "note": "Free parking for two hours behind the building. Step-free entrance on Harbour Lane."
+        }
+      ],
+      "translations": {
+        "fr": {
+          "title": "Accueil",
+          "blocks": [
+            { "heading": "La beauté en douceur, rien que pour vous", "subheading": "Un petit spa où chaque soin commence par une tasse de thé et se termine sans rien à faire d'autre.", "ctaLabel": "Réserver" },
+            {
+              "heading": "Une façon plus douce de passer une heure",
+              "features": [
+                { "title": "Des rendez-vous sans hâte", "description": "Chaque soin comprend dix minutes de plus, pour que personne ne regarde l'horloge." },
+                { "title": "Des produits d'origine végétale", "description": "Des huiles et des argiles douces, préparées en petites quantités par des artisans que nous connaissons." },
+                { "title": "Pensé pour vous", "description": "Nous commençons par une courte conversation sur votre peau, votre semaine et ce dont vous avez le plus besoin." }
+              ]
+            },
+            { "heading": "Dans l'atelier" },
+            { "heading": "Mots gentils" },
+            { "heading": "Offrez-vous une heure de calme", "text": "Réservez en ligne ou appelez-nous. Si vous ne savez pas quoi choisir, nous vous aiderons.", "buttonLabel": "Réserver", "secondaryLabel": "Voir les soins" },
+            { "heading": "Nous trouver", "hours": [{ "days": "Du mardi au vendredi" }, { "days": "Samedi" }, { "days": "Dimanche et lundi", "time": "Fermé" }] }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Treatments",
+      "slug": "treatments",
+      "description": "The Maison Lune treatment menu: facials, massage, hands and feet, hair and brows, and monthly rituals.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "From the first sip of tea to the last slow breath",
+          "body": "Every treatment is built around the same idea: enough time, gentle hands and products you can pronounce.\n\nTell us what you need when you book, or let us decide together at the door. Prices include the pot of tea and ten unhurried extra minutes."
+        },
+        {
+          "blockType": "price-list",
+          "heading": "Treatment menu",
+          "intro": "All treatments include a consultation, a heated towel and tea.",
+          "sections": [
+            {
+              "title": "Facials",
+              "items": [
+                { "name": "Moon Glow Facial", "description": "Our signature 60 minutes: cleanse, gentle exfoliation, clay mask and a facial massage.", "price": "$95", "tag": "Signature" },
+                { "name": "Clarifying Clay Facial", "description": "A purifying clay treatment for tired, congested skin. 45 minutes.", "price": "$75" },
+                { "name": "Brightening Peel", "description": "A mild fruit-acid peel to even out tone. 30 minutes.", "price": "$60", "tag": "New" }
+              ]
+            },
+            {
+              "title": "Massage",
+              "items": [
+                { "name": "Warm Stone Massage", "description": "Slow, heavy strokes with smooth heated stones. 75 minutes.", "price": "$120", "tag": "Popular" },
+                { "name": "Deep Tissue Massage", "description": "Firm, focused work on knots and tension. 60 minutes.", "price": "$105" },
+                { "name": "Scalp and Shoulder Ritual", "description": "A short, deeply calming treatment for desk-bound days. 30 minutes.", "price": "$55" },
+                { "name": "Prenatal Massage", "description": "Side-lying, supported and gentle. 60 minutes.", "price": "$100" }
+              ]
+            },
+            {
+              "title": "Hands and feet",
+              "items": [
+                { "name": "Soft Hands Manicure", "description": "Shaping, cuticle care, a hand massage and your choice of polish.", "price": "$48" },
+                { "name": "Tea Bath Pedicure", "description": "A herbal soak, a scrub and a long foot massage.", "price": "$62" },
+                { "name": "Gel colour", "description": "Added to a manicure or pedicure.", "price": "$18" }
+              ]
+            },
+            {
+              "title": "Hair and brows",
+              "items": [
+                { "name": "Gloss and blow-dry", "description": "A shine treatment followed by a soft, polished finish.", "price": "$65" },
+                { "name": "Colour refresh", "description": "Gentle, ammonia-free colour. Price depends on length.", "price": "From $110" },
+                { "name": "Brow shape and tint", "description": "Mapped to your face, shaped and tinted. 30 minutes.", "price": "$38" }
+              ]
+            }
+          ]
+        },
+        {
+          "blockType": "pricing",
+          "heading": "Monthly rituals",
+          "intro": "Come back to the same treatment every month and pay less each time.",
+          "plans": [
+            {
+              "name": "Single ritual",
+              "price": "$95",
+              "period": "per visit",
+              "description": "Any 60-minute treatment, whenever suits you.",
+              "features": [{ "text": "Choose any 60-minute treatment" }, { "text": "Book up to four weeks ahead" }, { "text": "Free to change up to 24 hours before" }],
+              "buttonLabel": "Book a visit",
+              "buttonHref": "/contact",
+              "highlighted": false
+            },
+            {
+              "name": "Monthly ritual",
+              "price": "$85",
+              "period": "per month",
+              "description": "One treatment a month, at a standing time.",
+              "features": [{ "text": "A 60-minute treatment every month" }, { "text": "Your usual therapist, where possible" }, { "text": "10% off extra treatments and products" }, { "text": "Pause for a month, no questions" }],
+              "buttonLabel": "Join the monthly ritual",
+              "buttonHref": "/contact",
+              "highlighted": true
+            },
+            {
+              "name": "Seasonal pass",
+              "price": "$240",
+              "period": "per season",
+              "description": "Three treatments to use across three months.",
+              "features": [{ "text": "Three 60-minute treatments" }, { "text": "Use them in any order" }, { "text": "Share one with a friend" }],
+              "buttonLabel": "Ask about a pass",
+              "buttonHref": "/contact",
+              "highlighted": false
+            }
+          ]
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Before you visit",
+          "items": [
+            { "question": "Do I need to prepare for a facial?", "answer": "No. Arrive with clean or lightly made-up skin; we will cleanse it for you. Tell us about any allergies or skin conditions when you book." },
+            { "question": "Which massage is right for me?", "answer": "If you want to switch off, choose the warm stone massage. If you have a specific ache, choose deep tissue. If you are unsure, we will talk it through at the start and adjust as we go." },
+            { "question": "Can I bring a friend?", "answer": "Yes. We have two linked rooms for friends, couples and parents with grown-up children. Ask for a paired booking." },
+            { "question": "Are your products suitable for sensitive skin?", "answer": "Most are. We patch-test anything new on request, and we can leave out any ingredient you would like to avoid." }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Not sure what to choose?",
+          "text": "Write to us and we will suggest a treatment for what you need this month.",
+          "buttonLabel": "Ask us",
+          "buttonHref": "/contact"
+        }
+      ]
+    },
+    {
+      "title": "About",
+      "slug": "about",
+      "description": "The story and the people behind Maison Lune, a small fictional day spa.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "Our story",
+          "body": "Maison Lune began as one treatment room above a bakery on Harbour Lane, with a borrowed massage table and a very good kettle.\n\nWe believe that looking after yourself should feel like a small act of kindness, never a chore or an indulgence you need to apologise for. So we keep things simple: warm rooms, honest products, plenty of time.\n\nToday we are four therapists, three rooms and still one very good kettle. Maison Lune is a fictional business, made up for this demonstration."
+        },
+        {
+          "blockType": "stats",
+          "heading": "A few numbers",
+          "items": [
+            { "value": "8 years", "label": "on Harbour Lane" },
+            { "value": "4", "label": "therapists, all trained nearby" },
+            { "value": "12,000+", "label": "pots of tea poured" },
+            { "value": "100%", "label": "plant-based products" }
+          ]
+        },
+        {
+          "blockType": "team",
+          "heading": "The people behind the towels",
+          "intro": "Meet the four of us. Ask for anyone by name when you book.",
+          "members": [
+            { "name": "Mara Ellison", "role": "Founder and senior esthetician", "bio": "Fifteen years of facials, and still happiest with a clay mask and a long chat.", "image": "images/team-mara.svg", "alt": "Illustrated portrait of Mara, her hair in a bun" },
+            { "name": "Teodor Wilk", "role": "Massage therapist", "bio": "Trained in deep tissue and warm-stone work. Believes every shoulder can be persuaded.", "image": "images/team-teodor.svg", "alt": "Illustrated portrait of Teodor, with short dark hair" },
+            { "name": "Sunniva Okafor", "role": "Hands and feet", "bio": "Meticulous with a cuticle, relaxed about everything else. Keeper of the polish wall.", "image": "images/team-sunniva.svg", "alt": "Illustrated portrait of Sunniva, with curly hair" },
+            { "name": "Ines Marchetti", "role": "Hair and brows", "bio": "A colourist who will always tell you when less is more.", "image": "images/team-ines.svg", "alt": "Illustrated portrait of Ines, with long hair" }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "heading": "Come and say hello",
+          "text": "We would love to meet you. The kettle is always on.",
+          "buttonLabel": "Book a visit",
+          "buttonHref": "/contact"
+        }
+      ]
+    },
+    {
+      "title": "Gift cards",
+      "slug": "gift-cards",
+      "description": "Give someone an hour of quiet with a Maison Lune gift card.",
+      "blocks": [
+        {
+          "blockType": "textBlock",
+          "heading": "Give an hour of quiet",
+          "body": "A Maison Lune gift card comes in a hand-folded envelope, with a note in your words and a sachet of our tea.\n\nCards are valid for twelve months, can be shared between friends and can be used for any treatment or product."
+        },
+        {
+          "blockType": "pricing",
+          "heading": "Choose a card",
+          "plans": [
+            { "name": "A quiet hour", "price": "$95", "period": "one treatment", "description": "Any 60-minute treatment.", "features": [{ "text": "Facial, massage or manicure" }, { "text": "A sachet of our tea" }], "buttonLabel": "Order this card", "buttonHref": "/contact", "highlighted": false },
+            { "name": "A slow afternoon", "price": "$180", "period": "two treatments", "description": "A facial and a massage, back to back.", "features": [{ "text": "Two 60-minute treatments" }, { "text": "Tea and a small treat between" }, { "text": "Heated towels throughout" }], "buttonLabel": "Order this card", "buttonHref": "/contact", "highlighted": true },
+            { "name": "A day away", "price": "$320", "period": "three treatments", "description": "Three treatments and lunch from the bakery downstairs.", "features": [{ "text": "Three treatments of your choice" }, { "text": "Lunch for one" }, { "text": "A take-home product" }], "buttonLabel": "Order this card", "buttonHref": "/contact", "highlighted": false }
+          ]
+        },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Good to know",
+          "items": [
+            { "question": "How does the card reach the person?", "answer": "We post it, or you can collect it. We can also send a printable version by email the same day." },
+            { "question": "Can the card be used for products?", "answer": "Yes. Any balance can go towards products from our shelf." },
+            { "question": "What if the recipient cannot use it?", "answer": "Cards can be passed on to someone else, and we can extend one by three months if life gets busy." }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Book a visit",
+      "slug": "contact",
+      "description": "Opening hours, address and a booking request form for Maison Lune.",
+      "blocks": [
+        {
+          "blockType": "hours-contact",
+          "heading": "Visit us",
+          "hours": [
+            { "days": "Tuesday to Friday", "time": "10am - 7pm" },
+            { "days": "Saturday", "time": "9am - 5pm" },
+            { "days": "Sunday and Monday", "time": "Closed" }
+          ],
+          "address": "14 Harbour Lane\nMarlow Bay",
+          "phone": "(555) 010-0142",
+          "email": "hello@maisonlune.example",
+          "note": "We are on the first floor, above the bakery. The entrance on Harbour Lane is step-free, and there is free parking for two hours behind the building."
+        },
+        { "blockType": "formEmbed", "heading": "Request a booking", "form": "booking" },
+        {
+          "blockType": "faqAccordion",
+          "heading": "Changes and cancellations",
+          "items": [
+            { "question": "How do I change or cancel an appointment?", "answer": "Reply to your confirmation email or call us. It is free to change or cancel up to 24 hours before." },
+            { "question": "What if I am running late?", "answer": "Let us know. We will do what we can, though a very late arrival may mean a shorter treatment." },
+            { "question": "Do you take walk-ins?", "answer": "Sometimes, if a room is free. Booking ahead is the surest way to get the time you want." }
+          ]
+        }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "title": "Five small rituals for dry winter skin",
+      "slug": "rituals-for-dry-winter-skin",
+      "excerpt": "Cold air and central heating are hard on skin. These five small habits make a big difference.",
+      "date": "2026-09-22",
+      "byline": "Mara Ellison",
+      "categories": ["Skin care"],
+      "image": "images/oil.svg",
+      "alt": "Amber bottles of massage oil on a wooden shelf",
+      "body": "Winter is hard on skin. Cold air takes moisture out, and central heating takes out what is left.\n\n## Five habits that help\n\n- Wash with lukewarm water, never hot.\n- Pat dry rather than rub.\n- Moisturise while your skin is still damp.\n- Add a few drops of facial oil at night.\n- Drink water, and wear a scarf over your cheeks when it is windy.\n\nNone of these takes more than a minute. If your skin is still tight after a fortnight, come and see us: a short facial and some honest advice often does the trick.\n\n> A little care, done often, beats a lot of care done rarely."
+    },
+    {
+      "title": "What to expect at your first hot-stone massage",
+      "slug": "first-hot-stone-massage",
+      "excerpt": "Smooth, warm and surprisingly gentle: here is what happens from the moment you arrive.",
+      "date": "2026-09-08",
+      "byline": "Teodor Wilk",
+      "categories": ["Massage"],
+      "image": "images/stones.svg",
+      "alt": "A tower of warm massage stones with a sprig of leaves",
+      "body": "Hot-stone massage sounds dramatic, but it is one of the gentlest treatments we offer.\n\n## Before you begin\n\nWe will ask about any aches, injuries or medications, and where you would like us to spend the most time. Then we leave the room while you settle under a warm blanket.\n\n## During\n\nThe stones are smooth basalt, heated in water to a comfortable warmth. We place some along your back and use others in slow strokes, so the heat reaches the muscle underneath.\n\n## Afterwards\n\nDrink a glass of water and take your time getting up. Most people feel lighter, a little sleepy, and very hungry for toast."
+    },
+    {
+      "title": "A pot of tea, three ways",
+      "slug": "a-pot-of-tea-three-ways",
+      "excerpt": "The tea we pour after every treatment, and how to make it at home.",
+      "date": "2026-08-25",
+      "byline": "Sunniva Okafor",
+      "categories": ["Slow living"],
+      "image": "images/bowl.svg",
+      "alt": "A bowl of water with floating petals",
+      "body": "Every visit to Maison Lune ends with tea. These are the three we pour most often.\n\n1. **Lemon verbena**: fresh leaves, hot water, five minutes. Bright and calming.\n2. **Ginger and honey**: three slices of ginger simmered for ten minutes, with a spoon of honey.\n3. **Roasted barley**: nutty and caffeine-free, lovely in the evening.\n\nUse a pot if you have one, warm the cups first and, most importantly, sit down while you drink it."
+    }
+  ]
+}

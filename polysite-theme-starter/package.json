@@ -1,0 +1,10 @@
+{
+  "name": "polysite-theme-starter",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
+  "type": "module",
+  "description": "The Polysite starter theme: a complete, restylable reference theme (every block plus a layout), extended by apps/web via Nuxt's `extends`. Not run standalone — see README.md.",
+  "dependencies": {
+    "nuxt": "^4.5.2"
+  }
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Portrait of Jonas Lindqvist, an illustration"><title>Portrait of Jonas Lindqvist, an illustration</title><svg viewBox="0 0 400 400" width="400" height="400"><rect width="400" height="400" fill="#ffc2d6"/>
+<circle cx="330" cy="70" r="90" fill="#fff" opacity=".18"/>
+
+<path d="M70 400 C70 320 130 290 200 290 C270 290 330 320 330 400 Z" fill="#12122b"/>
+<path d="M170 282 L230 282 L226 318 C212 328 188 328 174 318 Z" fill="#f1c9a5"/>
+<rect x="172" y="250" width="56" height="48" rx="20" fill="#f1c9a5"/>
+<ellipse cx="200" cy="205" rx="62" ry="72" fill="#f1c9a5"/>
+<path d="M143 165 C140 105 180 92 205 94 C250 96 262 130 258 168 C245 140 225 128 200 128 C175 128 155 140 143 165 Z" fill="#c28a3d"/>
+<ellipse cx="139" cy="210" rx="9" ry="14" fill="#f1c9a5"/><ellipse cx="261" cy="210" rx="9" ry="14" fill="#f1c9a5"/>
+<g fill="#2a2030"><ellipse cx="177" cy="205" rx="5" ry="6.5"/><ellipse cx="223" cy="205" rx="5" ry="6.5"/></g>
+<path d="M182 242 Q200 256 218 242" fill="none" stroke="#7a3d3d" stroke-width="5" stroke-linecap="round"/>
+<g fill="none" stroke="#1d1d2b" stroke-width="5"><rect x="158" y="190" width="38" height="30" rx="12"/><rect x="204" y="190" width="38" height="30" rx="12"/><path d="M196 204h8"/></g></svg></svg>

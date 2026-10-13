@@ -1,0 +1,10 @@
+node_modules/
+.nuxt/
+.output/
+
+# Docs site build output
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+
+# Claude Code local instructions (they live in ../.claude, not in this repository)
+CLAUDE.local.md
