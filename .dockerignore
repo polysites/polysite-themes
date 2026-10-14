@@ -1,9 +1,10 @@
 # Read when this repository is passed to a Polysite image build as a named build context
-# (docker-compose.workspace.yml in the core). The developer guide and the demo content are not part of an image.
+# (docker-compose.workspace.yml in the core). The VitePress build output of the developer guide is not part of an image;
+# docs/showcase.schema.json is, because the showcase seeder reads it.
 **/node_modules
 **/.nuxt
 **/.output
 **/.next
 .git
 .github
-docs
+docs/.vitepress
