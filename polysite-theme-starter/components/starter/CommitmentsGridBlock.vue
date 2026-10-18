@@ -15,7 +15,7 @@ defineProps<{
         <li
           v-for="(item, i) in items"
           :key="i"
-          class="rounded-[var(--poly-radius-card,1rem)] border border-neutral-200 p-6 text-left transition hover:-translate-y-0.5 hover:shadow-lg"
+          class="rounded-[var(--poly-radius-card,1rem)] border border-neutral-200 p-6 text-start transition hover:-translate-y-0.5 hover:shadow-lg"
         >
           <div
             class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--brand-primary,#f26522)] text-white"

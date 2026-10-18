@@ -71,7 +71,7 @@
 
 .theme-agency .ag-skip {
   position: absolute;
-  left: 1rem;
+  inset-inline-start: 1rem;
   top: -4rem;
   z-index: 100;
   padding: 0.6rem 1rem;
@@ -125,7 +125,8 @@
 .theme-agency .ag-brand__mark {
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 0.5rem 0.5rem 0.5rem 0.125rem;
+  border-radius: 0.5rem;
+  border-end-start-radius: 0.125rem;
   background: var(--ag-grad);
   transform: rotate(8deg);
 }
@@ -202,7 +203,7 @@
   }
   .theme-agency .ag-nav__link:hover { background: var(--ag-surface-2); }
   .theme-agency .ag-nav__link.router-link-exact-active:not(.ag-nav__link--cta) { background: var(--ag-surface-2); }
-  .theme-agency .ag-nav__link--cta { margin: 0 0 0 0.5rem; padding: 0.55rem 1.2rem; }
+  .theme-agency .ag-nav__link--cta { margin: 0; margin-inline-start: 0.5rem; padding: 0.55rem 1.2rem; }
   .theme-agency .ag-nav__link--cta:hover { background: var(--ag-accent); }
 }
 
@@ -272,10 +273,10 @@
 .theme-agency .ag-prose h2 { font-size: 1.9rem; }
 .theme-agency .ag-prose h3 { font-size: 1.4rem; }
 .theme-agency .ag-prose a { color: var(--ag-accent-ink); text-decoration: underline; text-underline-offset: 3px; }
-.theme-agency .ag-prose ul { list-style: disc; padding-left: 1.4rem; }
-.theme-agency .ag-prose ol { list-style: decimal; padding-left: 1.4rem; }
+.theme-agency .ag-prose ul { list-style: disc; padding-inline-start: 1.4rem; }
+.theme-agency .ag-prose ol { list-style: decimal; padding-inline-start: 1.4rem; }
 .theme-agency .ag-prose li + li { margin-top: 0.4em; }
-.theme-agency .ag-prose blockquote { padding-left: 1.2rem; border-left: 4px solid var(--ag-accent); color: var(--ag-muted); font-size: 1.25rem; }
+.theme-agency .ag-prose blockquote { padding-inline-start: 1.2rem; border-inline-start: 4px solid var(--ag-accent); color: var(--ag-muted); font-size: 1.25rem; }
 .theme-agency .ag-prose img { border-radius: var(--ag-radius); }
 
 /* ---------- buttons ---------- */
@@ -397,7 +398,8 @@
 .theme-agency .ag-faq__q {
   position: relative;
   display: block;
-  padding: 1.25rem 3rem 1.25rem 0;
+  padding: 1.25rem 0;
+  padding-inline-end: 3rem;
   font-family: var(--ag-font-heading);
   font-weight: 700;
   font-size: 1.2rem;
@@ -409,7 +411,7 @@
 .theme-agency .ag-faq__q::after {
   content: "+";
   position: absolute;
-  right: 0.25rem;
+  inset-inline-end: 0.25rem;
   top: 50%;
   translate: 0 -50%;
   width: 2rem;
@@ -465,7 +467,7 @@
 .theme-agency .ag-form .poly-submit:disabled { opacity: 0.6; cursor: progress; }
 .theme-agency .ag-form .poly-confirmation { padding: 1.25rem; border-radius: var(--ag-radius); background: var(--ag-surface-2); font-weight: 600; }
 .theme-agency .ag-form .poly-purpose { margin: 0; font-size: 0.85rem; color: var(--ag-muted); }
-.theme-agency .ag-form .poly-policy-link { text-decoration: underline; margin-left: 0.25rem; }
+.theme-agency .ag-form .poly-policy-link { text-decoration: underline; margin-inline-start: 0.25rem; }
 .theme-agency .ag-form .poly-privacy { display: flex; flex-direction: column; gap: 0.6rem; }
 .theme-agency .ag-signup__box {
   text-align: center;
@@ -476,7 +478,7 @@
 }
 .theme-agency .ag-signup__box .ag-lede { margin: 0 auto 1.5rem; }
 .theme-agency .ag-form--inline .poly-form { flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
-.theme-agency .ag-form--inline .poly-form > .poly-field { flex: 1 1 14rem; text-align: left; }
+.theme-agency .ag-form--inline .poly-form > .poly-field { flex: 1 1 14rem; text-align: start; }
 .theme-agency .ag-form--inline .poly-submit { align-self: flex-start; }
 .theme-agency .ag-form--inline .poly-privacy,
 .theme-agency .ag-form--inline .poly-form-message { flex-basis: 100%; }
@@ -529,4 +531,4 @@
 }
 .theme-agency .ag-social__link:hover { background: var(--ag-accent); color: var(--ag-on-accent); border-color: var(--ag-accent); }
 .theme-agency .ag-footer__legal { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--ag-line); font-size: 0.875rem; color: var(--ag-muted); }
-.theme-agency .ag-footer__legal .ag-footer__link { margin-left: 0.75rem; text-decoration: underline; }
+.theme-agency .ag-footer__legal .ag-footer__link { margin-inline-start: 0.75rem; text-decoration: underline; }

@@ -17,7 +17,7 @@ const localePath = useLocalePath();
           <template v-else>{{ item.heading }}</template>
         </h3>
         <p v-if="item.body">{{ item.body }}</p>
-        <span v-if="item.ctaLabel" class="hd-topiccard__more" aria-hidden="true">{{ item.ctaLabel }} &rarr;</span>
+        <span v-if="item.ctaLabel" class="hd-topiccard__more" aria-hidden="true">{{ item.ctaLabel }} <span class="poly-arrow">&rarr;</span></span>
       </li>
     </ul>
   </section>

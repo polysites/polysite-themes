@@ -52,7 +52,7 @@
 .theme-resume h2,
 .theme-resume h3 { color: var(--r-ink); }
 
-.theme-resume .rs-skip { position: absolute; left: 0.75rem; top: -4rem; z-index: 50; padding: 0.5rem 0.9rem; background: var(--r-ink); color: var(--r-sheet); text-decoration: none; }
+.theme-resume .rs-skip { position: absolute; inset-inline-start: 0.75rem; top: -4rem; z-index: 50; padding: 0.5rem 0.9rem; background: var(--r-ink); color: var(--r-sheet); text-decoration: none; }
 .theme-resume .rs-skip:focus { top: 0.75rem; }
 
 /* The sheet of paper. */
@@ -91,7 +91,7 @@
 .theme-resume .poly-block__heading::after { content: none; }
 .theme-resume .poly-block__inner { max-width: none; margin: 0; }
 .theme-resume .rs-prose > * + * { margin-top: 0.9em; }
-.theme-resume .rs-prose ul { padding-left: 1.2rem; list-style: disc; }
+.theme-resume .rs-prose ul { padding-inline-start: 1.2rem; list-style: disc; }
 
 /* Summary (the top of the CV). */
 .theme-resume .rs-summary { display: grid; gap: 1.25rem; align-items: start; padding: 1.5rem clamp(1.25rem, 5vw, 3rem); }
@@ -118,7 +118,7 @@
 /* Timeline (blocks-pack): dates in a column, no dots. */
 .theme-resume .poly-block { --pb-strong: var(--r-accent-text); --pb-text: var(--r-ink); --pb-muted: var(--r-muted); --pb-surface: var(--r-soft); --pb-border: var(--r-line); font-size: 1rem; }
 .theme-resume .poly-block a { color: var(--r-accent-text); }
-.theme-resume .poly-timeline__list { gap: 1.1rem; padding-left: 0; border-left: 0; }
+.theme-resume .poly-timeline__list { gap: 1.1rem; padding-inline-start: 0; border-inline-start: 0; }
 .theme-resume .poly-timeline__item { gap: 0.1rem 1.5rem; }
 .theme-resume .poly-timeline__item::before { display: none; }
 .theme-resume .poly-timeline__period { color: var(--r-muted); font-family: var(--r-mono); font-size: 0.8125rem; font-weight: 500; }
@@ -127,15 +127,15 @@
 .theme-resume .poly-timeline__description { margin-top: 0.15rem; color: var(--r-muted); }
 @media (min-width: 36rem) { .theme-resume .poly-timeline__item { grid-template-columns: 9rem 1fr; } .theme-resume .poly-timeline__period { grid-row: span 3; padding-top: 0.2rem; } }
 
-.theme-resume .poly-stats__list { gap: 0.75rem; text-align: left; }
-.theme-resume .poly-stats__item { padding: 0.75rem 1rem; border-top: 0; border-left: 3px solid var(--r-accent); border-radius: 0; }
+.theme-resume .poly-stats__list { gap: 0.75rem; text-align: start; }
+.theme-resume .poly-stats__item { padding: 0.75rem 1rem; border-top: 0; border-inline-start: 3px solid var(--r-accent); border-radius: 0; }
 .theme-resume .poly-stats__value { font-family: var(--r-serif); font-size: 1.75rem; font-weight: 600; }
 .theme-resume .poly-logos__list { justify-content: flex-start; gap: 0.4rem 1.5rem; }
 .theme-resume .poly-logos__name { color: var(--r-ink); font-size: 0.9375rem; }
-.theme-resume .poly-testimonials__item { border-left-width: 3px; background: var(--r-soft); }
+.theme-resume .poly-testimonials__item { border-inline-start-width: 3px; background: var(--r-soft); }
 .theme-resume .poly-testimonials__quote { font-size: 1rem; font-style: italic; }
 .theme-resume .poly-block a.poly-block__button { border-radius: 0.3rem; background: var(--r-accent); border-color: var(--r-accent); color: #fff; }
-.theme-resume .poly-block--cta { background: var(--r-soft); color: var(--r-ink); text-align: left; border-top: 1px solid var(--r-line); }
+.theme-resume .poly-block--cta { background: var(--r-soft); color: var(--r-ink); text-align: start; border-top: 1px solid var(--r-line); }
 .theme-resume .poly-block--cta .poly-block__heading { color: var(--r-accent-text); }
 .theme-resume .poly-cta__text { margin: 0; color: var(--r-ink); }
 .theme-resume .poly-cta__actions { justify-content: flex-start; }
@@ -167,7 +167,7 @@
 .theme-resume .rs-footer__heading { margin: 0 0 0.4rem; color: var(--r-muted); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
 .theme-resume .rs-footer ul { display: grid; gap: 0.25rem; margin: 0; padding: 0; list-style: none; }
 .theme-resume .rs-footer__legal { flex-basis: 100%; margin: 0; color: var(--r-muted); }
-.theme-resume .rs-footer__tracking { margin-left: 1rem; }
+.theme-resume .rs-footer__tracking { margin-inline-start: 1rem; }
 
 /* ---------- print: a clean one-page CV ---------- */
 @media print {

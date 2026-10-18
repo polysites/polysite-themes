@@ -75,3 +75,26 @@ typeface, tell the people running the sites which one to enter.
 There is no built-in dark mode: add it with a media query inside your own scope. For images
 that come from the CMS (`image.url`), set an explicit height or `aspect-ratio` so the page
 doesn't jump while they load.
+
+## Right-to-left languages
+
+A site can offer Arabic, Hebrew, Persian or Urdu, and Polysite then sets `<html dir="rtl">`. A stylesheet written with
+logical properties turns around by itself; one written with `left` and `right` does not. Use:
+
+| Instead of | Write |
+| --- | --- |
+| `margin-left`, `padding-right`, `border-left` | `margin-inline-start`, `padding-inline-end`, `border-inline-start` |
+| `left: 1rem`, `right: 0` | `inset-inline-start: 1rem`, `inset-inline-end: 0` |
+| `text-align: left` | `text-align: start` |
+| `float: left` | `float: inline-start` |
+| a corner like `border-radius: 0 8px 8px 0` | `border-start-end-radius` and `border-end-end-radius` |
+| Tailwind `ml-3`, `pr-4`, `text-left` | `ms-3`, `pe-4`, `text-start` |
+
+An arrow drawn as a character (`→`) points the wrong way: put `class="poly-arrow"` on it and Polysite mirrors it. Centring tricks
+(`left: 50%` with `translateX(-50%)`) are fine as they are. `scripts/check-rtl.mjs` lists every left/right left in a theme:
+
+```bash
+docker run --rm -v "$PWD":/w -w /w node:22 node scripts/check-rtl.mjs
+```
+
+Add `rtl-ok` in a comment on a line that is meant to be physical.

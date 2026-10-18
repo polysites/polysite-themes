@@ -75,7 +75,7 @@
 
 .theme-event .ev-skip {
   position: absolute;
-  left: 1rem;
+  inset-inline-start: 1rem;
   top: -5rem;
   z-index: 100;
   padding: 0.7rem 1rem;
@@ -163,7 +163,7 @@
   .theme-event .ev-nav__link { padding: 0.5rem 0.8rem; border-color: transparent; background: transparent; font-size: 0.82rem; }
   .theme-event .ev-nav__link:hover { border-color: var(--ev-line); }
   .theme-event .ev-nav__link.router-link-exact-active:not(.ev-nav__link--cta) { border-color: var(--ev-line); background: var(--ev-pop); color: #14110f; }
-  .theme-event .ev-nav__link--cta { margin-left: 0.5rem; border-color: var(--ev-line); background: var(--ev-btn-bg); }
+  .theme-event .ev-nav__link--cta { margin-inline-start: 0.5rem; border-color: var(--ev-line); background: var(--ev-btn-bg); }
   .theme-event .ev-nav__link--cta:hover { background: var(--ev-btn-bg); }
 }
 .theme-event .ev-header-search { gap: 0.35rem; }
@@ -228,10 +228,10 @@
 .theme-event .ev-prose h2 { font-size: 1.8rem; }
 .theme-event .ev-prose h3 { font-size: 1.35rem; }
 .theme-event .ev-prose a { font-weight: 700; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 3px; text-decoration-color: var(--ev-accent); }
-.theme-event .ev-prose ul { list-style: square; padding-left: 1.4rem; }
-.theme-event .ev-prose ol { list-style: decimal; padding-left: 1.4rem; }
+.theme-event .ev-prose ul { list-style: square; padding-inline-start: 1.4rem; }
+.theme-event .ev-prose ol { list-style: decimal; padding-inline-start: 1.4rem; }
 .theme-event .ev-prose li + li { margin-top: 0.4em; }
-.theme-event .ev-prose blockquote { padding: 0.5rem 0 0.5rem 1.2rem; border-left: 8px solid var(--ev-accent); font-weight: 700; font-size: 1.3rem; }
+.theme-event .ev-prose blockquote { padding: 0.5rem 0 0.5rem 1.2rem; border-inline-start: 8px solid var(--ev-accent); font-weight: 700; font-size: 1.3rem; }
 .theme-event .ev-prose img { border: var(--ev-border) solid var(--ev-line); }
 
 /* ---------- buttons ---------- */
@@ -329,7 +329,8 @@
 .theme-event .ev-faq__q {
   position: relative;
   display: block;
-  padding: 1rem 3.5rem 1rem 1.1rem;
+  padding: 1rem 1.1rem;
+  padding-inline-end: 3.5rem;
   font-weight: 900;
   font-size: 1.1rem;
   cursor: pointer;
@@ -339,7 +340,7 @@
 .theme-event .ev-faq__q::after {
   content: "+";
   position: absolute;
-  right: 0.9rem;
+  inset-inline-end: 0.9rem;
   top: 50%;
   translate: 0 -50%;
   width: 2rem;
@@ -403,11 +404,11 @@
 .theme-event .ev-form .poly-submit:disabled { opacity: 0.6; cursor: progress; }
 .theme-event .ev-form .poly-confirmation { padding: 1.25rem; border: var(--ev-border) solid var(--ev-line); background: var(--ev-pop); color: #14110f; font-weight: 800; }
 .theme-event .ev-form .poly-purpose { margin: 0; font-size: 0.85rem; color: var(--ev-muted); }
-.theme-event .ev-form .poly-policy-link { text-decoration: underline; margin-left: 0.25rem; }
+.theme-event .ev-form .poly-policy-link { text-decoration: underline; margin-inline-start: 0.25rem; }
 .theme-event .ev-form .poly-privacy { display: flex; flex-direction: column; gap: 0.6rem; }
 .theme-event .ev-signup__box { padding: 2rem 1.5rem; border: var(--ev-border) solid var(--ev-line); background: var(--ev-surface); box-shadow: var(--ev-shadow); text-align: center; }
 .theme-event .ev-form--inline .poly-form { flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
-.theme-event .ev-form--inline .poly-form > .poly-field { flex: 1 1 14rem; text-align: left; }
+.theme-event .ev-form--inline .poly-form > .poly-field { flex: 1 1 14rem; text-align: start; }
 
 .theme-event .ev-share { --poly-share-radius: 0; max-width: var(--ev-container); margin-inline: auto; padding: 1.5rem 1.25rem; }
 
@@ -437,4 +438,4 @@
 .theme-event .ev-social__link { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border: 3px solid #fff4c9; }
 .theme-event .ev-social__link:hover { background: var(--ev-pop); color: #14110f; border-color: var(--ev-pop); }
 .theme-event .ev-footer__legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 3px solid #fff4c933; font-size: 0.85rem; color: #e0d6b4; }
-.theme-event .ev-footer__legal .ev-footer__link { margin-left: 0.75rem; text-decoration: underline; }
+.theme-event .ev-footer__legal .ev-footer__link { margin-inline-start: 0.75rem; text-decoration: underline; }

@@ -16,7 +16,7 @@ const localePath = useLocalePath();
       <h1>{{ heading }}</h1>
       <p v-if="subheading" class="blog-hero__lede">{{ subheading }}</p>
       <NuxtLink v-if="ctaLabel && ctaHref" :to="localePath(ctaHref)" class="blog-more">
-        {{ ctaLabel }} <span aria-hidden="true">&rarr;</span>
+        {{ ctaLabel }} <span class="poly-arrow" aria-hidden="true">&rarr;</span>
       </NuxtLink>
     </div>
     <figure v-if="image?.url" class="blog-hero__art">

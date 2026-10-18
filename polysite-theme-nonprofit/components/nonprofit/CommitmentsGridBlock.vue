@@ -16,7 +16,7 @@ defineProps<{
           <h3 class="np-commit__title">{{ item.heading }}</h3>
           <p v-if="item.body" class="np-commit__text">{{ item.body }}</p>
           <NuxtLink v-if="item.ctaLabel && item.ctaHref" :to="item.ctaHref" class="np-commit__link">
-            {{ item.ctaLabel }}<span aria-hidden="true"> &rarr;</span>
+            {{ item.ctaLabel }}<span class="poly-arrow" aria-hidden="true"> &rarr;</span>
           </NuxtLink>
         </li>
       </ul>

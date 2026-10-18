@@ -71,7 +71,7 @@
 
 .theme-restaurant .rest-skip {
   position: absolute;
-  left: 1rem;
+  inset-inline-start: 1rem;
   top: -4rem;
   z-index: 60;
   padding: 0.5rem 1rem;
@@ -220,11 +220,15 @@
   text-decoration: none;
 }
 .theme-restaurant .rest-lang.poly-language-switcher li:first-child a {
-  border-radius: 9999px 0 0 9999px;
+  border-radius: 0;
+  border-start-start-radius: 9999px;
+  border-end-start-radius: 9999px;
 }
 .theme-restaurant .rest-lang.poly-language-switcher li:last-child a {
-  border-radius: 0 9999px 9999px 0;
-  border-left-width: 0;
+  border-radius: 0;
+  border-start-end-radius: 9999px;
+  border-end-end-radius: 9999px;
+  border-inline-start-width: 0;
 }
 .theme-restaurant .rest-lang.poly-language-switcher a[aria-current="true"] {
   background: var(--rest-ink);
@@ -300,7 +304,7 @@
 }
 .theme-restaurant .rest-prose__body ul,
 .theme-restaurant .rest-prose__body ol {
-  padding-left: 1.4rem;
+  padding-inline-start: 1.4rem;
 }
 .theme-restaurant .rest-prose__body ul {
   list-style: disc;
@@ -315,8 +319,8 @@
 }
 .theme-restaurant .rest-prose__body blockquote {
   margin: 1.4em 0;
-  padding-left: 1.2rem;
-  border-left: 3px solid var(--rest-accent);
+  padding-inline-start: 1.2rem;
+  border-inline-start: 3px solid var(--rest-accent);
   font-family: var(--rest-serif);
   font-size: 1.2rem;
   font-style: italic;
@@ -369,7 +373,7 @@
   }
   .theme-restaurant .rest-hero__panel {
     padding: 4rem max(1.5rem, calc((100vw - var(--rest-wide)) / 2)) 4rem 3rem;
-    padding-left: max(1.5rem, calc((100vw - var(--rest-wide)) / 2 + 1.25rem));
+    padding-inline-start: max(1.5rem, calc((100vw - var(--rest-wide)) / 2 + 1.25rem));
   }
   .theme-restaurant .rest-hero__art img {
     max-height: none;
@@ -401,7 +405,7 @@
   content: counter(hl);
   position: absolute;
   top: -1.4rem;
-  left: 1.25rem;
+  inset-inline-start: 1.25rem;
   display: grid;
   place-items: center;
   width: 2.5rem;
@@ -445,7 +449,7 @@
 }
 .theme-restaurant .rest-card h2 {
   margin: 0 0 1rem;
-  text-align: left;
+  text-align: start;
   font-style: italic;
 }
 .theme-restaurant .rest-card__lede {
@@ -523,7 +527,7 @@
 }
 .theme-restaurant .poly-confirmation {
   padding: 1rem 1.25rem;
-  border-left: 4px solid var(--rest-olive);
+  border-inline-start: 4px solid var(--rest-olive);
   background: var(--rest-paper);
 }
 .theme-restaurant .poly-purpose,
@@ -674,7 +678,7 @@
   content: "\201C";
   position: absolute;
   top: 0.2rem;
-  left: 1.1rem;
+  inset-inline-start: 1.1rem;
   color: var(--rest-link);
   font-family: var(--rest-serif);
   font-size: 4rem;
@@ -705,7 +709,7 @@
   max-width: 44rem;
 }
 .theme-restaurant .poly-timeline__list {
-  border-left-color: var(--rest-accent);
+  border-inline-start-color: var(--rest-accent);
 }
 .theme-restaurant .poly-timeline__item::before {
   background: var(--rest-paper-2);
@@ -860,12 +864,12 @@
 
 /* Header order: the language switcher stays in the bar on every width (never inside the collapsed menu). */
 .theme-restaurant .rest-brand { order: 1; }
-.theme-restaurant .rest-lang { order: 2; margin-left: auto; }
+.theme-restaurant .rest-lang { order: 2; margin-inline-start: auto; }
 .theme-restaurant .rest-burger { order: 3; }
 .theme-restaurant .rest-navwrap { order: 4; }
 @media (min-width: 56rem) {
   .theme-restaurant .rest-navwrap { order: 2; }
-  .theme-restaurant .rest-lang { order: 3; margin-left: 0; }
+  .theme-restaurant .rest-lang { order: 3; margin-inline-start: 0; }
 }
 
 .theme-restaurant .rest-header__inner { max-width: 78rem; }

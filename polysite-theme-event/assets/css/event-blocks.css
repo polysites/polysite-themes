@@ -44,10 +44,10 @@
 /* stats: a black band with yellow numbers */
 .theme-event .poly-block--stats { padding-block: clamp(1.75rem, 4vw, 3rem); background: var(--ev-band-bg); color: var(--ev-band-ink); border-bottom: var(--ev-border) solid var(--ev-line); }
 .theme-event .poly-stats__list { gap: 1rem; }
-.theme-event .poly-stats__item { padding: 0.5rem; border: 0; background: transparent; border-radius: 0; text-align: left; }
+.theme-event .poly-stats__item { padding: 0.5rem; border: 0; background: transparent; border-radius: 0; text-align: start; }
 .theme-event .poly-stats__value { font-family: var(--ev-font-display); font-size: clamp(2.8rem, 2rem + 4vw, 5rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.04em; color: var(--ev-band-pop); }
 .theme-event .poly-stats__label { font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--ev-band-ink); }
-.theme-event .poly-stats__list { text-align: left; }
+.theme-event .poly-stats__list { text-align: start; }
 
 /* speakers and team */
 .theme-event .poly-team__list { gap: 1.75rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); }
@@ -102,7 +102,7 @@
 .theme-event .poly-logos__image { max-height: 3rem; max-width: 12rem; }
 
 /* closing call to action: a red slab */
-.theme-event .poly-block--cta { background: var(--ev-accent); color: #fff; border-block: var(--ev-border) solid var(--ev-line); text-align: left; }
+.theme-event .poly-block--cta { background: var(--ev-accent); color: #fff; border-block: var(--ev-border) solid var(--ev-line); text-align: start; }
 .theme-event .poly-block--cta .poly-block__inner { text-align: center; }
 .theme-event .poly-block--cta .poly-block__heading { color: #fff; font-size: clamp(2.4rem, 7vw, 5.5rem); margin-bottom: 0.75rem; }
 .theme-event .poly-cta__text { max-width: 36rem; margin-inline: auto; font-size: 1.25rem; font-weight: 600; color: #fff; }
@@ -127,8 +127,8 @@
 /* testimonials, timeline, price list (kept consistent for editors who add them) */
 .theme-event .poly-testimonials__item { border: var(--ev-border) solid var(--ev-line); border-radius: 0; background: var(--ev-surface); box-shadow: var(--ev-shadow); }
 .theme-event .poly-testimonials__role { color: var(--ev-muted); }
-.theme-event .poly-timeline__list { border-left: 6px solid var(--ev-line); }
-.theme-event .poly-timeline__item::before { left: calc(-1.75rem - 0.7rem); width: 1.1rem; height: 1.1rem; border: var(--ev-border) solid var(--ev-line); border-radius: 0; background: var(--ev-pop); }
+.theme-event .poly-timeline__list { border-inline-start: 6px solid var(--ev-line); }
+.theme-event .poly-timeline__item::before { inset-inline-start: calc(-1.75rem - 0.7rem); width: 1.1rem; height: 1.1rem; border: var(--ev-border) solid var(--ev-line); border-radius: 0; background: var(--ev-pop); }
 .theme-event .poly-timeline__period { color: var(--ev-ink); font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; }
 .theme-event .poly-timeline__subtitle { color: var(--ev-muted); }
 .theme-event .poly-price-list__title { border-bottom: var(--ev-border) solid var(--ev-line); }
@@ -176,7 +176,7 @@
 .theme-event .poly-search-item { padding-block: 1.25rem; border-bottom: 3px solid var(--ev-line); }
 .theme-event .poly-search mark { background: var(--ev-pop); color: #14110f; }
 .theme-event .poly-richtext > * + * { margin-top: 1.1em; }
-.theme-event .poly-richtext ul { list-style: square; padding-left: 1.4rem; }
+.theme-event .poly-richtext ul { list-style: square; padding-inline-start: 1.4rem; }
 
 @media (prefers-reduced-motion: reduce) {
   .theme-event .poly-block a.poly-block__button:hover { transform: none; }
