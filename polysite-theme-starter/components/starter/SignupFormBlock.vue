@@ -19,6 +19,7 @@ const intake = useFormIntake(() => props.form);
       <h2 class="text-2xl font-extrabold tracking-tight text-neutral-900">{{ heading }}</h2>
       <p v-if="subheading" class="mt-2 text-neutral-600">{{ subheading }}</p>
       <div class="mt-6">
+        <PolysiteSignatureCount v-if="intake.signatures" :count="intake.signatures.count" :goal="intake.signatures.goal" />
         <PolysiteFormFields :intake="intake" :submit-label="ctaLabel" />
       </div>
     </div>
@@ -38,7 +39,7 @@ const intake = useFormIntake(() => props.form);
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  text-align: left;
+  text-align: start;
 }
 /* in a compact box the placeholder-style layout needs no visible labels */
 .starter-signup :deep(.poly-label) {
@@ -119,7 +120,7 @@ const intake = useFormIntake(() => props.form);
   color: #525252;
 }
 .starter-signup :deep(.poly-policy-link) {
-  margin-left: 0.25rem;
+  margin-inline-start: 0.25rem;
   text-decoration: underline;
 }
 </style>

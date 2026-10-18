@@ -14,6 +14,7 @@ const intake = useFormIntake(() => props.form);
     <div class="blog-letter">
       <h2>{{ heading }}</h2>
       <p v-if="subheading">{{ subheading }}</p>
+      <PolysiteSignatureCount v-if="intake.signatures" :count="intake.signatures.count" :goal="intake.signatures.goal" />
       <PolysiteFormFields :intake="intake" :submit-label="ctaLabel" />
     </div>
   </section>

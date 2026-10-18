@@ -14,6 +14,7 @@ const intake = useFormIntake(() => props.form);
   <section v-if="formIdOf(form)" class="salon-form">
     <div class="salon-form__card">
       <h2 v-if="heading" class="salon-heading salon-heading--left">{{ heading }}</h2>
+      <PolysiteSignatureCount v-if="intake.signatures" :count="intake.signatures.count" :goal="intake.signatures.goal" />
       <PolysiteFormFields :intake="intake" />
     </div>
   </section>

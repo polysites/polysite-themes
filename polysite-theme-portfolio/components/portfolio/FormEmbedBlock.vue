@@ -14,6 +14,7 @@ const intake = useFormIntake(() => props.form);
     <div class="pf-form__inner">
       <h2 v-if="heading" class="pf-label">{{ heading }}</h2>
       <div class="pf-form__body">
+        <PolysiteSignatureCount v-if="intake.signatures" :count="intake.signatures.count" :goal="intake.signatures.goal" />
         <PolysiteFormFields :intake="intake" />
       </div>
     </div>

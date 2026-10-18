@@ -13,6 +13,7 @@ const intake = useFormIntake(() => props.form);
     <div class="ev-wrap ev-wrap--form">
       <h2 v-if="heading" class="ev-h2">{{ heading }}</h2>
       <div class="ev-form">
+        <PolysiteSignatureCount v-if="intake.signatures" :count="intake.signatures.count" :goal="intake.signatures.goal" />
         <PolysiteFormFields :intake="intake" />
       </div>
     </div>

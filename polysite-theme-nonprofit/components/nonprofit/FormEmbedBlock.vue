@@ -15,6 +15,7 @@ const intake = useFormIntake(() => props.form);
       <div class="np-form-card">
         <h2 v-if="heading" class="np-h2">{{ heading }}</h2>
         <div class="np-form">
+          <PolysiteSignatureCount v-if="intake.signatures" :count="intake.signatures.count" :goal="intake.signatures.goal" />
           <PolysiteFormFields :intake="intake" />
         </div>
       </div>

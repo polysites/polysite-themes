@@ -14,6 +14,7 @@ const intake = useFormIntake(() => props.form);
     <div class="ag-wrap ag-wrap--form">
       <h2 v-if="heading" class="ag-h2">{{ heading }}</h2>
       <div class="ag-form">
+        <PolysiteSignatureCount v-if="intake.signatures" :count="intake.signatures.count" :goal="intake.signatures.goal" />
         <PolysiteFormFields :intake="intake" />
       </div>
     </div>

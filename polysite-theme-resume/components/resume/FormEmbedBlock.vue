@@ -11,6 +11,7 @@ const intake = useFormIntake(() => props.form);
 <template>
   <section v-if="formIdOf(form)" class="rs-section rs-form">
     <h2 v-if="heading" class="rs-heading">{{ heading }}</h2>
+    <PolysiteSignatureCount v-if="intake.signatures" :count="intake.signatures.count" :goal="intake.signatures.goal" />
     <PolysiteFormFields :intake="intake" />
   </section>
 </template>

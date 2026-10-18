@@ -15,6 +15,7 @@ const intake = useFormIntake(() => props.form);
   <section v-if="formIdOf(form)" class="px-4 py-[var(--poly-section-y,4rem)] sm:px-8">
     <div class="starter-form mx-auto max-w-xl">
       <h2 v-if="heading" class="mb-6 text-center text-2xl font-extrabold tracking-tight text-neutral-900">{{ heading }}</h2>
+      <PolysiteSignatureCount v-if="intake.signatures" :count="intake.signatures.count" :goal="intake.signatures.goal" />
       <PolysiteFormFields :intake="intake" />
     </div>
   </section>
@@ -118,7 +119,7 @@ const intake = useFormIntake(() => props.form);
   color: #525252;
 }
 .starter-form :deep(.poly-policy-link) {
-  margin-left: 0.25rem;
+  margin-inline-start: 0.25rem;
   text-decoration: underline;
 }
 </style>
