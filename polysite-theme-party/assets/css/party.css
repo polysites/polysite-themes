@@ -1,0 +1,115 @@
+/* Party (example): a campaign look built on the Nonprofit theme. It re-tones the Nonprofit tokens (cool paper, deep indigo, coral)
+ * and adds the page chrome: utility bar, banner, side rail, pop-up and the authorization line. Scoped to `.theme-party`, which the
+ * layout sets next to `.theme-nonprofit`, so the Nonprofit blocks keep working untouched. Colour is tokens with a dark set. */
+
+.theme-nonprofit.theme-party {
+  --np-bg: #f6f7fb;
+  --np-surface: #ffffff;
+  --np-soft: #e8ebf5;
+  --np-ink: #141a33;
+  --np-muted: #454d6b;
+  --np-line: #d5daea;
+  --np-sun: var(--brand-secondary, #e8505b);
+  --np-on-sun: #ffffff;
+  --np-radius: 0.9rem;
+  --pt-rail: 19.5rem;
+  --np-font-heading: var(--font-heading, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif);
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-nonprofit.theme-party {
+    --np-bg: #0d1226;
+    --np-surface: #151b36;
+    --np-soft: #1b2345;
+    --np-ink: #eef0fa;
+    --np-muted: #b4bbd6;
+    --np-line: #2a3359;
+  }
+}
+
+/* less playful than the Nonprofit theme: squarer picture frames, no wavy footer edge */
+.theme-party .np-hero__picture { border-radius: 1rem; border-end-start-radius: 1rem; border-width: 0; }
+.theme-party .np-footer::before { display: none; }
+.theme-party .np-button { border-radius: 0.55rem; }
+.theme-party .np-brand__mark { border-radius: 0.5rem; }
+
+/* ---------- utility bar ---------- */
+.theme-party .pt-utility { background: var(--np-deep); color: #fff; font-size: 0.85rem; }
+.theme-party .pt-utility__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.25rem 1.5rem; min-height: 2.2rem; padding-block: 0.3rem; }
+.theme-party .pt-utility__note { margin: 0; opacity: 0.85; }
+.theme-party .pt-utility__links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+.theme-party .pt-utility__links a { color: #fff; text-decoration: none; font-weight: 600; }
+.theme-party .pt-utility__links a:hover { text-decoration: underline; }
+@media (max-width: 40rem) { .theme-party .pt-utility__note { display: none; } }
+
+/* ---------- header ---------- */
+.theme-party .pt-header { border-bottom: 3px solid var(--np-sun); }
+.theme-party .pt-button--join { background: transparent; color: var(--np-primary-ink); box-shadow: inset 0 0 0 2px var(--np-primary-ink); }
+.theme-party .pt-button--join:hover { background: var(--np-primary); color: var(--np-on-primary); box-shadow: inset 0 0 0 2px var(--np-primary); transform: none; }
+
+/* ---------- banner ---------- */
+.theme-party .pt-banner { background: var(--np-sun); color: var(--np-on-sun); }
+.theme-party .pt-banner__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.55rem; }
+.theme-party .pt-banner p { margin: 0; font-size: 0.95rem; }
+.theme-party .pt-banner a { color: inherit; font-weight: 800; }
+.theme-party .pt-banner__close { flex: none; display: grid; place-items: center; width: 2rem; height: 2rem; border: 0; border-radius: 50%; background: rgb(0 0 0 / 0.18); color: inherit; cursor: pointer; }
+.theme-party .pt-banner__close:hover { background: rgb(0 0 0 / 0.32); }
+
+/* ---------- side rail ---------- */
+.theme-party .pt-with-rail { display: grid; gap: 2rem; max-width: 82rem; margin-inline: auto; padding-inline: 1rem; }
+.theme-party .pt-main { min-width: 0; }
+@media (min-width: 64rem) {
+  .theme-party .pt-with-rail { grid-template-columns: minmax(0, 1fr) var(--pt-rail); align-items: start; padding-inline: 2rem; }
+  .theme-party .pt-rail { position: sticky; top: 6rem; }
+}
+.theme-party .pt-rail { display: grid; gap: 1rem; margin-block: 2rem; }
+.theme-party .pt-card { padding: 1.15rem 1.25rem; background: var(--np-surface); border: 1px solid var(--np-line); border-radius: var(--np-radius); box-shadow: var(--np-shadow); }
+.theme-party .pt-card h2 { margin: 0 0 0.7rem; font-family: var(--np-font-heading); font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--np-primary-ink); }
+.theme-party .pt-card--action { background: var(--np-primary); border-color: var(--np-primary); color: var(--np-on-primary); }
+.theme-party .pt-card--action h2 { color: inherit; opacity: 0.85; }
+.theme-party .pt-card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.4rem; }
+.theme-party .pt-card--action a { display: block; padding: 0.55rem 0.8rem; border-radius: 0.5rem; background: rgb(255 255 255 / 0.12); color: inherit; font-weight: 700; text-decoration: none; }
+.theme-party .pt-card--action a:hover { background: rgb(255 255 255 / 0.24); }
+.theme-party .pt-amounts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+.theme-party .pt-amount { display: grid; place-items: center; padding: 0.55rem 0; border: 2px solid var(--np-sun); border-radius: 0.5rem; color: var(--np-sun); font-weight: 800; text-decoration: none; }
+.theme-party .pt-amount:hover { background: var(--np-sun); color: var(--np-on-sun); }
+.theme-party .pt-link { display: inline-block; margin-top: 0.8rem; font-weight: 700; color: var(--np-primary-ink); }
+.theme-party .pt-riding { display: flex; gap: 0.5rem; }
+.theme-party .pt-riding input { min-width: 0; flex: 1; padding: 0.55rem 0.7rem; border: 2px solid var(--np-line); border-radius: 0.5rem; background: var(--np-bg); color: inherit; font: inherit; }
+.theme-party .pt-news { gap: 0.8rem; }
+.theme-party .pt-news a { display: block; font-weight: 700; line-height: 1.3; text-decoration: none; }
+.theme-party .pt-news a:hover { text-decoration: underline; }
+.theme-party .pt-news time { font-size: 0.8rem; color: var(--np-muted); }
+.theme-party .pt-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- pop-up ---------- */
+.theme-party .pt-popup { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 1rem; background: rgb(8 12 30 / 0.62); animation: pt-fade 0.25s ease-out; }
+.theme-party .pt-popup__card { position: relative; width: min(30rem, 100%); padding: 2rem 1.75rem 1.5rem; border-radius: 1.1rem; background: var(--np-surface); color: var(--np-ink); box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.6); border-top: 8px solid var(--np-sun); outline: none; }
+.theme-party .pt-popup__close { position: absolute; inset-block-start: 0.7rem; inset-inline-end: 0.7rem; display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border: 0; border-radius: 50%; background: var(--np-soft); color: inherit; cursor: pointer; }
+.theme-party .pt-popup__eyebrow { margin: 0; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--np-sun); }
+.theme-party .pt-popup__title { margin: 0.3rem 0 0.7rem; font-family: var(--np-font-heading); font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.1; letter-spacing: -0.02em; }
+.theme-party .pt-popup__actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.2rem; }
+.theme-party .pt-popup__skip { margin-top: 0.9rem; padding: 0; border: 0; background: none; color: var(--np-muted); font: inherit; text-decoration: underline; cursor: pointer; }
+@keyframes pt-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .theme-party .pt-popup { animation: none; } }
+
+/* ---------- footer ---------- */
+.theme-party .pt-authorized { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid rgb(255 255 255 / 0.2); font-size: 0.82rem; opacity: 0.8; }
+
+/* ---------- header fit: six menu items, search, Join and Donate on one line ---------- */
+.theme-party .np-hero__title { font-size: clamp(2.2rem, 3.6vw + 0.8rem, 3.7rem); }
+@media (min-width: 62rem) {
+  .theme-party .np-header__bar { flex-wrap: nowrap; }
+  .theme-party .np-brand__name,
+  .theme-party .np-nav__link { white-space: nowrap; }
+  .theme-party .np-nav__link { padding: 0.45rem 0.65rem; font-size: 0.95rem; }
+  .theme-party .np-header__panel { gap: 0.75rem; }
+  .theme-party .np-header__tools { flex-wrap: nowrap; gap: 0.5rem; }
+  .theme-party .np-header-search .poly-search-input { width: 6rem; }
+  .theme-party .np-header__tools .np-button { padding: 0.5rem 1rem; white-space: nowrap; }
+}
+
+/* ---------- news filter chips: the Nonprofit link reset beats the plugin's white-on-dark active chip ---------- */
+.theme-party .poly-posts-category { border-color: var(--np-line); background: var(--np-surface); color: var(--np-ink); text-decoration: none; }
+.theme-party .poly-posts-category:hover { border-color: var(--np-primary-ink); }
+.theme-party .poly-posts-category--active { border-color: var(--np-primary); background: var(--np-primary); color: var(--np-on-primary); }
