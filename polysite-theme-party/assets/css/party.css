@@ -113,3 +113,13 @@
 .theme-party .poly-posts-category { border-color: var(--np-line); background: var(--np-surface); color: var(--np-ink); text-decoration: none; }
 .theme-party .poly-posts-category:hover { border-color: var(--np-primary-ink); }
 .theme-party .poly-posts-category--active { border-color: var(--np-primary); background: var(--np-primary); color: var(--np-on-primary); }
+
+/* ---------- contrast: coral text on the dark bands and in dark mode needs a lighter coral than the buttons use ---------- */
+.theme-nonprofit.theme-party { --pt-coral-light: #ff8f98; }
+.theme-nonprofit.theme-party .poly-stats__value,
+.theme-nonprofit.theme-party .np-footer__heading { color: var(--pt-coral-light); }
+@media (prefers-color-scheme: dark) {
+  .theme-party .pt-amount { border-color: var(--pt-coral-light); color: var(--pt-coral-light); }
+  .theme-party .pt-amount:hover { background: var(--pt-coral-light); color: var(--np-bg); }
+  .theme-party .pt-popup__eyebrow { color: var(--pt-coral-light); }
+}
