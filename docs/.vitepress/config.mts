@@ -4,6 +4,18 @@ import { defineConfig } from "vitepress";
 // DOCS_BASE=/ builds for local preview or a custom domain.
 const base = process.env.DOCS_BASE ?? "/polysite-themes/";
 
+// Google Analytics for the published docs only. Local previews set DOCS_BASE, so they are not counted.
+const gaId = "G-XXBECC91SR";
+const analytics: [string, Record<string, string>, string?][] = process.env.DOCS_BASE
+  ? []
+  : [
+      ["script", { async: "", src: `https://www.googletagmanager.com/gtag/js?id=${gaId}` }],
+      ["script", {}, `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date());
+gtag("config", "${gaId}");`],
+    ];
+
 export default defineConfig({
   title: "Polysite Themes",
   description: "Build themes for Polysite: start from the starter, restyle it, add it to a site.",
@@ -11,7 +23,7 @@ export default defineConfig({
   lang: "en",
   cleanUrls: true,
   lastUpdated: true,
-  head: [["link", { rel: "icon", href: `${base}favicon.svg`, type: "image/svg+xml" }]],
+  head: [["link", { rel: "icon", href: `${base}favicon.svg`, type: "image/svg+xml" }], ...analytics],
 
   themeConfig: {
     logo: { light: "/logo-horizontal.svg", dark: "/logo-horizontal-reversed.svg", alt: "Polysite CMS" },
